@@ -27,11 +27,7 @@
     .flex{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
     .searchbar{display:flex;gap:8px;flex-wrap:wrap}
     input,select{padding:8px;border-radius:8px;border:1px solid #ddd}
-    .location-image{
-      width:100%;height:160px;object-fit:cover;border-radius:12px;margin-top:8px;
-      box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
-    }
-    /* Modal */
+    .location-image{width:100%;height:160px;object-fit:cover;border-radius:12px;margin-top:8px;box-shadow:0 4px 8px rgb(0 0 0 / 0.1);}
     .modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,0.45);display:none;align-items:center;justify-content:center;padding:20px;z-index:1000;}
     .modal{width:100%;max-width:900px;background:var(--card);border-radius:12px;padding:18px;box-shadow:0 10px 30px rgba(10,10,10,0.18);max-height:90vh;overflow-y:auto;}
     .modal header{display:flex;justify-content:space-between;align-items:center}
@@ -40,7 +36,6 @@
     table{width:100%;border-collapse:collapse}
     table td{padding:6px;border-bottom:1px dashed #eee}
     .small{font-size:13px;color:#333}
-    /* Responsive */
     @media (max-width:880px){.cols{grid-template-columns:1fr}}
     footer{padding:30px 0;color:#666;text-align:center;font-size:14px;}
   </style>
@@ -105,4 +100,28 @@
     <section style="margin-top:28px;display:flex;gap:12px;align-items:center;justify-content:space-between">
       <div class="searchbar">
         <input id="searchInput" placeholder="Search by location or id" />
-        <select id="filterCounty"><option value="">All counties</option><option>Nairobi</option><option>Kisumu</option><option>Mombasa</option><option>Kitengela</option><option>Isinya
+        <select id="filterCounty">
+          <option value="">All counties</option>
+          <option>Nairobi</option>
+          <option>Kisumu</option>
+          <option>Mombasa</option>
+          <option>Kitengela</option>
+          <option>Isinya</option>
+        </select>
+      </div>
+      <button class="btn" onclick="openLoanCalculator()">Loan Calculator</button>
+    </section>
+
+    <!-- Listings -->
+    <section id="listings" style="margin-top:28px;">
+      <h2>Available Plots</h2>
+      <div class="grid">
+        <div class="card">
+          <h4>Plot #101 - Kitengela</h4>
+          <p class="price">KES 1,200,000</p>
+          <p class="muted small">50x100 residential plot</p>
+          <button class="btn secondary" onclick="openModal('Plot #101 - Kitengela')">View Details</button>
+        </div>
+        <div class="card">
+          <h4>Plot #205 - Isinya</h4>
+          <p class="price">KES

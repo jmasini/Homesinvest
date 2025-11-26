@@ -107,6 +107,18 @@
           <option>Mombasa</option>
           <option>Kitengela</option>
           <option>Isinya</option>
+<option>Mamba Delta</option>
+<option>Kiboko slopes</option>
+   <option>Kifaru corner</option>
+          <option>Nyati heights</option>
+          <option>Ndovu Gardens</option>
+<option>Mamba Delta</option>
+<option>Kiboko slopes</option>
+   <option>Duma Close</option>
+          <option>Chui plains</option>
+          <option>Swara Springs</option>
+<option>Simmba Gorge</option>
+<option>Kiboko slopes</option>
         </select>
       </div>
       <button class="btn" onclick="openLoanCalculator()">Loan Calculator</button>
@@ -118,7 +130,7 @@
       <div class="grid">
         <div class="card">
           <h4>Plot #101 - Kitengela</h4>
-          <p class="price">KES 1,200,000</p>
+          <p class="price">KES 1,300,000</p>
           <p class="muted small">50x100 residential plot</p>
           <button class="btn secondary" onclick="openModal('Plot #101 - Kitengela')">View Details</button>
         </div>

@@ -1,161 +1,104 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>HomesInvest Plots & Building Solutions</title>
-  <meta name="description" content="HomesInvest — Plots for sale in Kitengela, Isinya and other locations with flexible building solutions and loan calculator (20/30/50% deposit; 12/24/36 months). Contact sales@homesinvest.net" />
-  <!-- Chart.js CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <style>
-    :root{--brand:#d82b2b;--muted:#666;--bg:#f7f7f9;--card:#fff}
-    *{box-sizing:border-box}
-    body{font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial;line-height:1.4;margin:0;background:var(--bg);color:#111}
-    header{background:linear-gradient(90deg,var(--brand),#ff5e5e);color:#fff;padding:32px 20px}
-    .container{max-width:1100px;margin:0 auto;padding:20px}
-    .hero{display:flex;gap:24px;align-items:center;justify-content:space-between;flex-wrap:wrap}
-    .hero h1{margin:0;font-size:28px}
-    .hero p{margin:6px 0 0;color:rgba(255,255,255,0.95)}
-    .contacts{margin-top:8px;font-size:14px;}
-    .contacts a{color:#fff;text-decoration:underline;}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:12px}
-    .card{background:var(--card);padding:16px;border-radius:12px;box-shadow:0 6px 18px rgba(22,22,22,0.06)}
-    .price{font-weight:700;color:var(--brand);font-size:18px}
-    .muted{color:var(--muted);font-size:13px}
-    .btn{display:inline-block;padding:10px 14px;border-radius:10px;border:0;background:var(--brand);color:#fff;text-decoration:none;cursor:pointer}
-    .btn.secondary{background:#3b82f6}
-    .flex{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
-    .searchbar{display:flex;gap:8px;flex-wrap:wrap}
-    input,select{padding:8px;border-radius:8px;border:1px solid #ddd}
-    .location-image{width:100%;height:160px;object-fit:cover;border-radius:12px;margin-top:8px;box-shadow:0 4px 8px rgb(0 0 0 / 0.1);}
-    .modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,0.45);display:none;align-items:center;justify-content:center;padding:20px;z-index:1000;}
-    .modal{width:100%;max-width:900px;background:var(--card);border-radius:12px;padding:18px;box-shadow:0 10px 30px rgba(10,10,10,0.18);max-height:90vh;overflow-y:auto;}
-    .modal header{display:flex;justify-content:space-between;align-items:center}
-    .cols{display:grid;grid-template-columns:1fr 360px;gap:16px}
-    .plot-preview{height:220px;border-radius:8px;background:linear-gradient(180deg,#e9eefc,#fff);display:flex;align-items:center;justify-content:center;color:#334;padding:12px;font-weight:700;}
-    table{width:100%;border-collapse:collapse}
-    table td{padding:6px;border-bottom:1px dashed #eee}
-    .small{font-size:13px;color:#333}
-    @media (max-width:880px){.cols{grid-template-columns:1fr}}
-    footer{padding:30px 0;color:#666;text-align:center;font-size:14px;}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomesInvest Plots & Building Solutions</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<script>
-  const searchInput = document.getElementById('searchInput');
-  const filterCounty = document.getElementById('filterCounty');
-  const listings = document.querySelectorAll('#listings .card');
 
-  function filterListings() {
-    const searchTerm = searchInput.value.toLowerCase();
-    const county = filterCounty.value.toLowerCase();
-
-    listings.forEach(card => {
-      const text = card.innerText.toLowerCase();
-      const matchesSearch = text.includes(searchTerm);
-      const matchesCounty = county === '' || text.includes(county);
-
-      card.style.display = (matchesSearch && matchesCounty) ? '' : 'none';
-    });
-  }
-
-  searchInput.addEventListener('input', filterListings);
-  filterCounty.addEventListener('change', filterListings);
-</script>
 <body>
-  <header>
-    <div class="container">
-      <div class="hero">
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="logo">HomesInvest</div>
+        <ul>
+            <li><a href="#plots">Plots</a></li>
+            <li><a href="#loan">Loan Calculator</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
         <div>
-          <h1>HomesInvest Plots & Building Solutions</h1>
-          <p>Your trusted partner for plots, building solutions and flexible financing.</p>
-          <div class="contacts">
-            <strong>Contact us:</strong> 
-            <a href="tel:+254769485093">076 948 5093</a> · 
-            <a href="tel:+254759222512">075 922 2512</a> · 
-            Email: <a href="mailto:sales@homesinvest.net">sales@homesinvest.net</a><br>
-            Visit us: <a href="https://homesinvest.net" target="_blank" rel="noopener">https://homesinvest.net</a>
-          </div>
+            <h1>Affordable Plots in Kitengela & Isinya</h1>
+            <p>Secure your future with clean-title plots & flexible building solutions</p>
+            <a href="#plots" class="btn-primary">View Plots</a>
+        </div>
+    </section>
 
+    <!-- PLOTS SECTION -->
+    <h2 class="section-title" id="plots">Available Plots for Sale</h2>
+
+    <div class="plots-container">
+
+        <!-- PLOT 1 -->
+        <div class="plot-card">
+            <img src="images/kitengela.webp" alt="Kitengela Plots">
+            <div class="info">
+                <h3>Kitengela Elixir Homes</h3>
+                <p>Prime serviced plots located in a fast-growing neighbourhood.</p>
+                <p class="plot-price">KES 850,000</p>
+            </div>
         </div>
-        <div class="flex" style="gap:10px;flex-wrap:wrap;">
-          <a class="btn" href="#listings">View Plots</a>
-          <a class="btn secondary" href="https://homesinvest.net" target="_blank" rel="noopener">Visit Website</a>
+
+        <!-- PLOT 2 -->
+        <div class="plot-card">
+            <img src="images/isinya.webp" alt="Isinya Plots">
+            <div class="info">
+                <h3>Isinya Gardens</h3>
+                <p>Ideal for residential or commercial investment with ready titles.</p>
+                <p class="plot-price">KES 650,000</p>
+            </div>
         </div>
-      </div>
+
+        <!-- PLOT 3 -->
+        <div class="plot-card">
+            <img src="images/elixir2.webp" alt="Kitengela Plots">
+            <div class="info">
+                <h3>Elixir Homes Phase 2</h3>
+                <p>Near Tamasha road, electricity & water available.</p>
+                <p class="plot-price">KES 780,000</p>
+            </div>
+        </div>
+
     </div>
-  </header>
 
-  <main class="container">
+    <!-- LOAN CALCULATOR -->
+    <div class="loan-section" id="loan">
+        <h2>Loan Calculator</h2>
 
-    <!-- Sales charts -->
-    <section class="card" style="margin-top:-40px;">
-      <h3 style="margin:0 0 12px">Sales Overview</h3>
-      <canvas id="salesChart" height="140"></canvas>
-      <div style="display:flex;gap:8px;margin-top:12px;align-items:center">
-        <label class="muted small">Year:</label>
-        <select id="yearSelect">
-          <option value="2024">2024</option>
-          <option value="2025" selected>2025</option>
+        <label>Plot Price (KES)</label>
+        <input type="number" id="plotPrice" placeholder="Enter plot price">
+
+        <label>Deposit Option</label>
+        <select id="depositOption">
+            <option value="0.2">20% Deposit</option>
+            <option value="0.3">30% Deposit</option>
         </select>
-        <button class="btn secondary" id="refreshBtn">Refresh Data</button>
-      </div>
+
+        <label>Repayment Period (Months)</label>
+        <input type="number" id="months" placeholder="e.g. 12">
+
+        <button class="loan-btn" onclick="calculateLoan()">Calculate</button>
+
+        <div id="loanResult" class="loan-result" style="display:none;"></div>
+    </div>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact" id="contact">
+        <h2>Contact Us</h2>
+        <p>HomesInvest Plots & Building Solutions</p>
+        <p>Phone: 0769485093 / 0759222512</p>
+        <p>Email: sales@homesinvest.net</p>
     </section>
 
-    <!-- Highlighted Locations -->
-    <section style="margin-top:28px;">
-      <h2>Featured Plots by Location</h2>
-      <div class="grid">
-        <div class="card">
-          <h4>Kitengela - Aerial View</h4>
-          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=60" alt="Kitengela aerial view" class="location-image" />
-          <p class="muted small">Beautiful plots near Kitengela, perfect for investment and future homes.</p>
-        </div>
-        <div class="card">
-          <h4>Isinya - Aerial View</h4>
-          <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=60" alt="Isinya aerial view" class="location-image" />
-          <p class="muted small">Serene plots in Isinya with great potential for building your dream home.</p>
-        </div>
-      </div>
-    </section>
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2025 HomesInvest Plots & Building Solutions | <a href="https://homesinvest.net">homesinvest.net</a></p>
+    </footer>
 
-    <!-- Filters -->
-    <section style="margin-top:28px;display:flex;gap:12px;align-items:center;justify-content:space-between">
-      <div class="searchbar">
-        <input id="searchInput" placeholder="Search by location or id" />
-        <select id="filterCounty">
-          <option value="">All counties</option>
-          <option>Nairobi</option>
-          <option>Kisumu</option>
-          <option>Mombasa</option>
-          <option>Kitengela</option>
-          <option>Isinya</option>
-<option>Mamba Delta</option>
-<option>Kiboko slopes</option>
-   <option>Kifaru corner</option>
-          <option>Nyati heights</option>
-          <option>Ndovu Gardens</option>
-<option>Mamba Delta</option>
-<option>Kiboko slopes</option>
-   <option>Duma Close</option>
-          <option>Chui plains</option>
-          <option>Swara Springs</option>
-<option>Simmba Gorge</option>
-<option>Kiboko slopes</option>
-        </select>
-      </div>
-      <button class="btn" onclick="openLoanCalculator()">Loan Calculator</button>
-    </section>
-
-    <!-- Listings -->
-    <section id="listings" style="margin-top:28px;">
-      <h2>Available Plots</h2>
-      <div class="grid">
-        <div class="card">
-          <h4>Plot #101 - Kitengela</h4>
-          <p class="price">KES 1,300,000</p>
-          <p class="muted small">50x100 residential plot</p>
-          <button class="btn secondary" onclick="openModal('Plot #101 - Kitengela')">View Details</button>
-        </div>
-        <div class="card">
-          <h4>Plot #205 - Isinya</h4>
-          <p class="price">KES
+    <script src="script.js"></script>
+</body>
+</html>

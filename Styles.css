@@ -1,0 +1,261 @@
+/* ===============================
+   GLOBAL STYLES
+   =============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", Arial, sans-serif;
+}
+
+body {
+  background: #f8f8f8;
+  color: #333;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===============================
+   NAVBAR
+   =============================== */
+nav {
+  width: 100%;
+  background: #ffffff;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+nav .logo {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a75ff;
+}
+
+nav ul {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+
+nav li a {
+  font-weight: 500;
+}
+
+nav li a:hover {
+  color: #1a75ff;
+}
+
+/* ===============================
+   HERO SECTION
+   =============================== */
+.hero {
+  background: url('hero.jpg') center/cover no-repeat;
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.hero h1 {
+  color: white;
+  font-size: 50px;
+  text-shadow: 0 3px 6px rgba(0,0,0,0.4);
+}
+
+.hero p {
+  color: #f7f7f7;
+  font-size: 20px;
+  margin: 20px 0;
+}
+
+.btn-primary {
+  background: #1a75ff;
+  padding: 12px 28px;
+  font-size: 18px;
+  border-radius: 6px;
+  color: white;
+  display: inline-block;
+}
+
+.btn-primary:hover {
+  background: #0457d1;
+}
+
+/* ===============================
+   PLOTS SECTION
+   =============================== */
+.section-title {
+  text-align: center;
+  margin: 50px 0 20px;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.plots-container {
+  width: 100%;
+  padding: 20px 35px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 25px;
+}
+
+.plot-card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.09);
+  transition: transform 0.2s ease;
+}
+
+.plot-card:hover {
+  transform: scale(1.02);
+}
+
+.plot-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.plot-card .info {
+  padding: 15px;
+}
+
+.plot-card h3 {
+  font-size: 20px;
+  color: #1a1a1a;
+}
+
+.plot-card p {
+  margin: 10px 0;
+  font-size: 15px;
+}
+
+.plot-price {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a75ff;
+  margin-top: 10px;
+}
+
+/* ===============================
+   LOAN CALCULATOR
+   =============================== */
+.loan-section {
+  margin: 50px auto;
+  width: 90%;
+  max-width: 700px;
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+}
+
+.loan-section h2 {
+  margin-bottom: 15px;
+  font-size: 26px;
+  text-align: center;
+}
+
+.loan-section label {
+  display: block;
+  margin: 15px 0 5px;
+}
+
+.loan-section input,
+.loan-section select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.loan-btn {
+  margin-top: 20px;
+  width: 100%;
+  padding: 14px;
+  background: #1a75ff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 18px;
+}
+
+.loan-btn:hover {
+  background: #0457d1;
+}
+
+.loan-result {
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 10px;
+  background: #e8f0ff;
+  border-radius: 6px;
+  text-align: center;
+}
+
+/* ===============================
+   CONTACT SECTION
+   =============================== */
+.contact {
+  padding: 40px 30px;
+  background: #1a75ff;
+  color: white;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.contact p {
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+/* ===============================
+   FOOTER
+   =============================== */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #111;
+  color: #e6e6e6;
+  font-size: 15px;
+}
+
+footer a {
+  color: #1a75ff;
+}
+
+/* ===============================
+   MOBILE ADJUSTMENTS
+   =============================== */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero h1 {
+    font-size: 35px;
+  }
+
+  .hero p {
+    font-size: 18px;
+  }
+}

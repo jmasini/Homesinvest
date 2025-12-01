@@ -4,46 +4,45 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>HomesInvest Plots & Building Solutions</title>
-<meta name="description" content="HomesInvest — Affordable plots for sale in Kitengela, Isinya, Mamba Delta and more. Flexible payment plans, building solutions, and loan calculator included." />
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+<meta
+  name="description"
+  content="HomesInvest — Affordable plots for sale in Kitengela, Isinya, Mamba Delta and more. Flexible payment plans, building solutions, and loan calculator included."
+/>
+<link
+  href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+  rel="stylesheet"
+/>
 <style>
   body {
     margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: #FFF4E1; /* soft warm peach */
-    color: #333;
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #0093E9, #80D0C7);
+    color: #222;
   }
   /* NAVIGATION */
   header {
-    background: #007ACC; /* bright friendly blue */
+    background: #004d40;
     color: #fff;
     padding: 15px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 4px 8px rgba(0,122,204,0.3);
   }
   header h1 {
     margin: 0;
-    font-size: 24px;
-    font-weight: 700;
+    font-size: 22px;
   }
   nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
-    gap: 24px;
+    gap: 20px;
   }
   nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: 600;
-    font-size: 16px;
-    transition: color 0.3s ease;
-  }
-  nav ul li a:hover {
-    color: #FFD27F; /* warm highlight on hover */
   }
   .menu-btn {
     display: none;
@@ -54,9 +53,8 @@
     nav ul {
       display: none;
       flex-direction: column;
-      background: #007ACC;
+      background: #004d40;
       padding: 15px;
-      border-radius: 0 0 10px 10px;
     }
     nav ul.show {
       display: flex;
@@ -67,164 +65,102 @@
   }
   /* HERO */
   .hero {
-    /* fallback gradient with warm soft tones */
-    background: linear-gradient(135deg, #FF8A00 0%, #FFC371 100%);
-    /* If you want to add an image, you can layer it here */
-    /* background: linear-gradient(135deg, #FF8A00 0%, #FFC371 100%), url('plots-aerial.jpg') center/cover no-repeat; */
+    background: url("plots-aerial.jpg") center/cover no-repeat;
     padding: 120px 20px;
     color: white;
     text-align: center;
-    box-shadow: inset 0 0 50px #d15800;
   }
   .hero h2 {
-    font-size: 44px;
-    margin-bottom: 16px;
-    font-weight: 700;
-    text-shadow: 0 2px 6px rgba(0,0,0,0.4);
-  }
-  .hero p {
-    font-size: 20px;
-    font-weight: 500;
-    text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+    font-size: 42px;
+    margin-bottom: 20px;
   }
   /* SECTIONS */
   section {
     padding: 40px 20px;
-    background: #fffefb; /* subtle off-white */
-    border-radius: 12px;
-    margin: 20px auto;
-    max-width: 1200px;
-    box-shadow: 0 4px 12px rgba(255, 150, 70, 0.15);
   }
   /* GRID */
-  .plot-container {
+  .plot-container,
+  .building-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 24px;
+    gap: 20px;
   }
-  .plot-card {
-    background: #ffffff;
-    border-radius: 16px;
-    padding: 20px;
-    box-shadow: 0 6px 15px rgba(255, 111, 60, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  .plot-card,
+  .building-card {
+    background: white;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 2px 6px #0002;
   }
-  .plot-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 25px rgba(255, 111, 60, 0.35);
-  }
-  .plot-card img {
+  .plot-card img,
+  .building-card img {
     width: 100%;
-    border-radius: 14px;
-    margin-bottom: 14px;
-    object-fit: cover;
-  }
-  .plot-card h3 {
-    margin: 0 0 8px;
-    color: #007ACC;
-    font-weight: 700;
-  }
-  .plot-card p {
-    margin: 0 0 12px;
-    font-weight: 600;
-    color: #FF6F3C;
-    font-size: 18px;
+    border-radius: 10px;
   }
   .button {
     display: inline-block;
-    background: #FF6F3C; /* warm orange */
+    background: #004d40;
     color: white;
-    padding: 12px 20px;
-    border-radius: 8px;
+    padding: 10px 16px;
+    border-radius: 6px;
     text-decoration: none;
     margin-top: 10px;
-    font-weight: 700;
+    font-weight: 600;
     cursor: pointer;
-    box-shadow: 0 4px 10px rgba(255,111,60,0.35);
-    transition: background 0.3s ease;
   }
   .button:hover {
-    background: #e85a25;
+    background: #00332a;
   }
-  /* CONTACT BUTTONS */
-  .contact-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px;
-    justify-content: center;
-    margin-top: 24px;
+  /* BUY NOW INFO */
+  .buy-now-info {
+    font-size: 0.85em;
+    margin-top: 6px;
+    color: #004d40;
   }
-  .contact-buttons button {
-    background: #FF6F3C;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    padding: 12px 20px;
-    cursor: pointer;
-    font-weight: 700;
-    font-size: 15px;
-    box-shadow: 0 4px 12px rgba(255,111,60,0.35);
-    transition: background 0.3s ease;
+  .buy-now-info a {
+    color: #00796b;
+    text-decoration: none;
   }
-  .contact-buttons button:hover {
-    background: #e85a25;
+  .buy-now-info a:hover {
+    text-decoration: underline;
   }
   /* MODALS */
   .modal {
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.45);
+    background: #0009;
     justify-content: center;
     align-items: center;
-    z-index: 999;
   }
   .modal-content {
     background: white;
-    padding: 30px 30px 25px 30px;
-    border-radius: 16px;
-    max-width: 520px;
+    padding: 25px;
+    border-radius: 12px;
+    max-width: 500px;
     max-height: 90vh;
     overflow-y: auto;
-    box-shadow: 0 6px 18px rgba(255,111,60,0.3);
   }
-  .modal-content h3 {
-    margin-top: 0;
-    color: #FF6F3C;
-  }
-  .modal-content button {
-    background: #007ACC;
-    margin-top: 16px;
-  }
-  /* WHATSAPP FLOATING */
+  /* WHATSAPP */
   .whatsapp {
     position: fixed;
     right: 20px;
     bottom: 20px;
-    background: #25D366;
-    padding: 16px 24px;
+    background: #25d366;
+    padding: 14px 20px;
     border-radius: 50px;
     color: white;
-    font-size: 20px;
-    font-weight: 700;
+    font-size: 18px;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.7);
-    user-select: none;
-    transition: background 0.3s ease;
-    z-index: 1000;
+    box-shadow: 0 2px 5px #0004;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
   }
-  .whatsapp:hover {
-    background: #1ebe5a;
-  }
-  /* FOOTER */
-  footer {
-    background: #007ACC;
-    color: white;
-    padding: 32px 20px;
-    text-align: center;
-    font-weight: 600;
-    font-size: 16px;
-    box-shadow: inset 0 3px 8px rgba(0,0,0,0.2);
+  .whatsapp svg {
+    width: 22px;
+    height: 22px;
   }
 </style>
 </head>
@@ -244,13 +180,6 @@
 <div class="hero">
   <h2>Affordable Plots in Kitengela & Isinya</h2>
   <p>Flexible payment | Ready titles | Building options available</p>
-  <div class="contact-buttons">
-    <button onclick="contactEmail()">Email</button>
-    <button onclick="contactPhone()">Call</button>
-    <button onclick="contactX()">X (Twitter)</button>
-    <button onclick="contactFacebook()">Facebook</button>
-    <button onclick="contactInstagram()">Instagram</button>
-  </div>
 </div>
 
 <section>
@@ -258,161 +187,191 @@
     id="plotSearch"
     onkeyup="filterPlots()"
     placeholder="Search plots..."
-    style="width:100%;padding:14px;border-radius:12px;border:1px solid #FF6F3C; font-size: 16px;"
+    style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #ccc"
   />
 </section>
 
+<!-- PLOTS SECTION -->
 <section id="plots">
   <h2>Available Plots</h2>
-  <div class="contact-buttons">
-    <button onclick="contactEmail()">Email</button>
-    <button onclick="contactPhone()">Call</button>
-    <button onclick="contactX()">X (Twitter)</button>
-    <button onclick="contactFacebook()">Facebook</button>
-    <button onclick="contactInstagram()">Instagram</button>
-  </div>
   <div class="plot-container">
-    <!-- Plots cards here... (same as before) -->
+    <!-- Example Plot -->
     <div class="plot-card" id="plot101">
-      <img src="kitengela.jpg" alt="Kitengela Plot" />
+      <img src="kitengela.jpg" alt="Kitengela 50x100 plot" />
       <h3>Kitengela 50×100</h3>
       <p>KES 1,299,000</p>
       <a class="button" onclick="openPlotDetails('plot101')">View Details</a>
       <a class="button" onclick="openLoanCalculator(1299000)">Loan Calculator</a>
+      <a
+        class="button"
+        href="https://wa.me/254769485093?text=Hello%20HomesInvest%2C%20I%20want%20to%20buy%20the%20Kitengela%2050x100%20plot."
+        target="_blank"
+        rel="noopener noreferrer"
+        >Buy Now (WhatsApp)</a
+      >
+      <div class="buy-now-info">
+        Or call/SMS: <a href="tel:+254769485093">0769 485 093</a>
+      </div>
     </div>
-    <!-- more plot cards same as original -->
+
     <div class="plot-card" id="plot205">
-      <img src="isinya.jpg" alt="Isinya Plot" />
+      <img src="isinya.jpg" alt="Isinya 50x100 plot" />
       <h3>Isinya 50×100</h3>
       <p>KES 899,000</p>
       <a class="button" onclick="openPlotDetails('plot205')">View Details</a>
       <a class="button" onclick="openLoanCalculator(899000)">Loan Calculator</a>
+      <a
+        class="button"
+        href="https://wa.me/254769485093?text=Hello%20HomesInvest%2C%20I%20want%20to%20buy%20the%20Isinya%2050x100%20plot."
+        target="_blank"
+        rel="noopener noreferrer"
+        >Buy Now (WhatsApp)</a
+      >
+      <div class="buy-now-info">
+        Or call/SMS: <a href="tel:+254769485093">0769 485 093</a>
+      </div>
     </div>
+
     <div class="plot-card" id="mamba">
-      <img src="mamba.jpg" alt="Mamba Delta Estate" />
+      <img src="mamba.jpg" alt="Mamba Delta Estate plot" />
       <h3>Mamba Delta Estate</h3>
       <p>KES 900,000</p>
       <a class="button" onclick="openPlotDetails('mamba')">View Details</a>
       <a class="button" onclick="openLoanCalculator(900000)">Loan Calculator</a>
+      <a
+        class="button"
+        href="https://wa.me/254769485093?text=Hello%20HomesInvest%2C%20I%20want%20to%20buy%20a%20plot%20at%20Mamba%20Delta%20Estate."
+        target="_blank"
+        rel="noopener noreferrer"
+        >Buy Now (WhatsApp)</a
+      >
+      <div class="buy-now-info">
+        Or call/SMS: <a href="tel:+254769485093">0769 485 093</a>
+      </div>
     </div>
-    <div class="plot-card" id="duma">
-      <img src="duma.jpg" alt="Duma Close" />
-      <h3>Duma Close</h3>
-      <p>KES 1,300,000</p>
-      <a class="button" onclick="openPlotDetails('duma')">View Details</a>
-      <a class="button" onclick="openLoanCalculator(1300000)">Loan Calculator</a>
-    </div>
-    <div class="plot-card" id="kiboko">
-      <img src="kiboko.jpg" alt="DL Kiboko Slopes" />
-      <h3>DL Kiboko Slopes</h3>
-      <p>KES 1,000,000</p>
-      <a class="button" onclick="openPlotDetails('kiboko')">View Details</a>
-      <a class="button" onclick="openLoanCalculator(1000000)">Loan Calculator</a>
-    </div>
-    <div class="plot-card" id="kifaru">
-      <img src="kifaru.jpg" alt="Kifaru Corner" />
-      <h3>Kifaru Corner</h3>
-      <p>KES 1,050,000</p>
-      <a class="button" onclick="openPlotDetails('kifaru')">View Details</a>
-      <a class="button" onclick="openLoanCalculator(1050000)">Loan Calculator</a>
-    </div>
-    <div class="plot-card" id="nyati">
-      <img src="nyati.jpg" alt="Nyati Heights" />
-      <h3>Nyati Heights</h3>
-      <p>KES 1,100,000</p>
-      <a class="button" onclick="openPlotDetails('nyati')">View Details</a>
-      <a class="button" onclick="openLoanCalculator(1100000)">Loan Calculator</a>
-    </div>
-    <div class="plot-card" id="ndovu">
-      <img src="ndovu.jpg" alt="Ndovu Gardens" />
-      <h3>Ndovu Gardens</h3>
-      <p>KES 1,200,000</p>
-      <a class="button" onclick="openPlotDetails('ndovu')">View Details</a>
-      <a class="button" onclick="openLoanCalculator(1200000)">Loan Calculator</a>
-    </div>
-    <div class="plot-card" id="chui">
-      <img src="chui.jpg" alt="Chui Plains" />
-      <h3>Chui Plains</h3>
-      <p>KES 1,400,000</p>
-      <a class="button" onclick="openPlotDetails('chui')">View Details</a>
-      <a class="button" onclick="openLoanCalculator(1400000)">Loan Calculator</a>
-    </div>
-    <div class="plot-card" id="swara">
-      <img src="swara.jpg" alt="Swara Springs" />
-      <h3>Swara Springs</h3>
-      <p>KES 1,500,000</p>
-      <a class="button" onclick="openPlotDetails('swara')">View Details</a>
-      <a class="button" onclick="openLoanCalculator(1500000)">Loan Calculator</a>
-    </div>
-    <div class="plot-card" id="simba">
-      <img src="simba.jpg" alt="Simba Gorge" />
-      <h3>Simba Gorge</h3>
-      <p>KES 1,600,000</p>
-      <a class="button" onclick="openPlotDetails('simba')">View Details</a>
-      <a class="button" onclick="openLoanCalculator(1600000)">Loan Calculator</a>
-    </div>
+
+    <!-- Add other plots similarly with unique messages -->
   </div>
 </section>
 
+<!-- BUILDING SOLUTIONS SECTION -->
 <section id="building">
   <h2>Building Solutions</h2>
-  <div class="contact-buttons">
-    <button onclick="contactEmail()">Email</button>
-    <button onclick="contactPhone()">Call</button>
-    <button onclick="contactX()">X (Twitter)</button>
-    <button onclick="contactFacebook()">Facebook</button>
-    <button onclick="contactInstagram()">Instagram</button>
-  </div>
-  <div class="plot-container">
-    <div class="plot-card">
-      <h3>2 Bedroom House</h3>
-      <p>From KES 1.4M</p>
+  <div class="building-container">
+    <div class="building-card" id="solution1">
+      <img src="building1.jpg" alt="Custom Home Building" />
+      <h3>Custom Home Building</h3>
+      <p>We offer tailored home building solutions to suit your budget and style.</p>
+      <a
+        class="button"
+        href="https://wa.me/254769485093?text=Hello%20HomesInvest%2C%20I%20am%20interested%20in%20Custom%20Home%20Building%20solutions."
+        target="_blank"
+        rel="noopener noreferrer"
+        >Buy Now (WhatsApp)</a
+      >
+      <div class="buy-now-info">
+        Or call/SMS: <a href="tel:+254769485093">0769 485 093</a>
+      </div>
     </div>
-    <div class="plot-card">
-      <h3>3 Bedroom House</h3>
-      <p>From KES 2.3M</p>
+
+    <div class="building-card" id="solution2">
+      <img src="building2.jpg" alt="Architectural Design" />
+      <h3>Architectural Design</h3>
+      <p>Professional design services to bring your dream home to life.</p>
+      <a
+        class="button"
+        href="https://wa.me/254769485093?text=Hello%20HomesInvest%2C%20I%20am%20interested%20in%20Architectural%20Design%20services."
+        target="_blank"
+        rel="noopener noreferrer"
+        >Buy Now (WhatsApp)</a
+      >
+      <div class="buy-now-info">
+        Or call/SMS: <a href="tel:+254769485093">0769 485 093</a>
+      </div>
     </div>
-    <div class="plot-card">
-      <h3>4 Bedroom House</h3>
-      <p>From KES 3.8M</p>
+
+    <div class="building-card" id="solution3">
+      <img src="building3.jpg" alt="Project Management" />
+      <h3>Project Management</h3>
+      <p>End-to-end project management ensuring quality and timely delivery.</p>
+      <a
+        class="button"
+        href="https://wa.me/254769485093?text=Hello%20HomesInvest%2C%20I%20am%20interested%20in%20Project%20Management%20services."
+        target="_blank"
+        rel="noopener noreferrer"
+        >Buy Now (WhatsApp)</a
+      >
+      <div class="buy-now-info">
+        Or call/SMS: <a href="tel:+254769485093">0769 485 093</a>
+      </div>
     </div>
+
+    <!-- Add more building solutions as needed -->
   </div>
 </section>
 
+<!-- CONTACT SECTION -->
 <section id="contact">
   <h2>Contact Us</h2>
-  <div class="contact-buttons">
-    <button onclick="contactEmail()">Email</button>
-    <button onclick="contactPhone()">Call</button>
-    <button onclick="contactX()">X (Twitter)</button>
-    <button onclick="contactFacebook()">Facebook</button>
-    <button onclick="contactInstagram()">Instagram</button>
-  </div>
-  <p>Phone: 0769485093 / 0759222512</p>
-  <p>Email: sales@homesinvest.net</p>
+  <p>
+    Reach our sales team directly for inquiries and purchases.
+  </p>
+  <p>
+    Phone/WhatsApp: <a href="tel:+254769485093">0769 485 093</a><br />
+    Email: <a href="mailto:sales@homesinvest.net">sales@homesinvest.net</a>
+  </p>
 </section>
 
-<!-- PLOT DETAILS MODAL -->
-<div class="modal" id="detailsModal">
-  <div class="modal-content">
-    <h3>Plot Details</h3>
-    <div id="plotDetailsContent"></div>
-    <br />
-    <button onclick="closeDetailsModal()">Close</button>
-  </div>
-</div>
+<!-- Floating WhatsApp button -->
+<a
+  href="https://wa.me/254769485093"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="whatsapp"
+  aria-label="Chat with HomesInvest on WhatsApp"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="white"
+    viewBox="0 0 24 24"
+    stroke="none"
+  >
+    <path
+      d="M20.52 3.48A11.92 11.92 0 0012 0C5.373 0 0 5.373 0 12a11.87 11.87 0 001.645 6.055L0 24l6.158-1.608a11.953 11.953 0 005.842 1.616c6.627 0 12-5.373 12-12 0-3.2-1.252-6.21-3.638-8.51zm-8.506 15.87a9.45 9.45 0 01-4.84-1.397l-.347-.21-3.647.95.974-3.552-.224-.364a9.45 9.45 0 011.42-13.085c5.212-4.115 12.918-3.042 16.153 2.646a9.367 9.367 0 01-1.42 12.804 9.398 9.398 0 01-7.736 2.157z"
+    />
+    <path
+      d="M16.947 15.507c-.334-.167-1.975-.974-2.282-1.086-.308-.11-.532-.166-.756.167-.224.334-.87 1.086-1.067 1.312-.196.224-.394.252-.73.084-.336-.167-1.417-.52-2.7-1.66-1-.886-1.676-1.982-1.87-2.318-.196-.334-.02-.514.147-.68.15-.149.335-.394.503-.59.167-.196.224-.334.336-.556.112-.224.056-.419-.028-.586-.084-.167-.756-1.825-1.037-2.501-.273-.654-.55-.566-.756-.577-.196-.008-.42-.008-.644-.008a1.133 1.133 0 00-.664.099c-.226.11-.69.674-.69 1.637 0 .963.706 1.894.805 2.026.112.167 1.39 2.12 3.36 2.968.47.203.837.324 1.122.415.471.149.9.128 1.238.078.378-.056 1.164-.476 1.329-.937.168-.463.168-.86.112-.937-.056-.08-.206-.128-.44-.222z"
+    />
+  </svg>
+  WhatsApp
+</a>
 
-<!-- LOAN MODAL -->
-<div class="modal" id="loanModal">
-  <div class="modal-content">
-    <h3>Loan Calculator</h3>
-    <p>Plot Price: KES <span id="loanPrice"></span></p>
-    <label>Deposit Rate</label>
-    <select id="depositRate" style="width:100%;padding:8px;border-radius:6px;border:1px solid #FF6F3C;">
-      <option value="20">20% Deposit</option>
-      <option value="30">30% Deposit</option>
-      <option value="40">40% Deposit</option>
-      <option value="50">50% Deposit</option>
-    </select><br /><br />
-    <label>Repayment Months
-      
+<script>
+  // Toggle nav menu on mobile
+  function toggleMenu() {
+    const navUl = document.querySelector("nav ul");
+    navUl.classList.toggle("show");
+  }
+
+  // Filter plots by search
+  function filterPlots() {
+    const input = document.getElementById("plotSearch");
+    const filter = input.value.toLowerCase();
+    const plots = document.querySelectorAll(".plot-card");
+    plots.forEach((plot) => {
+      const text = plot.textContent.toLowerCase();
+      plot.style.display = text.includes(filter) ? "" : "none";
+    });
+  }
+
+  // Placeholder functions for plot details and loan calculator
+  function openPlotDetails(id) {
+    alert("Open details for " + id);
+  }
+
+  function openLoanCalculator(amount) {
+    alert("Open loan calculator for KES " + amount);
+  }
+</script>
+</body>
+</html>

@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>HomesInvest Plots & Building Solutions</title>
-<meta name="description" content="HomesInvest — Affordable plots for sale in Kitengela, Isinya, Mamba Delta and more. Flexible payment plans, building solutions, and loan calculator included.">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
+<meta name="description" content="HomesInvest — Affordable plots for sale in Kitengela, Isinya, Mamba Delta and more. Flexible payment plans, building solutions, and loan calculator included." />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
 <style>
 body {
   margin: 0;
@@ -14,7 +13,6 @@ body {
   background: #f5f5f5;
   color: #222;
 }
-
 /* NAVIGATION */
 header {
   background: #0c3c78;
@@ -38,7 +36,6 @@ nav ul li a {
   font-weight: 600;
 }
 .menu-btn { display: none; font-size: 26px; cursor: pointer; }
-
 @media (max-width:768px){
   nav ul {
     display: none;
@@ -49,7 +46,6 @@ nav ul li a {
   nav ul.show { display: flex; }
   .menu-btn { display: block; }
 }
-
 /* HERO */
 .hero {
   background: url('plots-aerial.jpg') center/cover no-repeat;
@@ -58,10 +54,8 @@ nav ul li a {
   text-align: center;
 }
 .hero h2 { font-size: 42px; margin-bottom: 20px; }
-
 /* SECTIONS */
 section { padding: 40px 20px; }
-
 /* GRID */
 .plot-container {
   display: grid;
@@ -78,7 +72,6 @@ section { padding: 40px 20px; }
   width: 100%;
   border-radius: 10px;
 }
-
 .button {
   display: inline-block;
   background: #0c3c78;
@@ -89,7 +82,6 @@ section { padding: 40px 20px; }
   margin-top: 10px;
   font-weight: 600;
 }
-
 /* MODALS */
 .modal {
   display: none;
@@ -107,7 +99,6 @@ section { padding: 40px 20px; }
   max-height: 90vh;
   overflow-y: auto;
 }
-
 /* WHATSAPP */
 .whatsapp {
   position: fixed;
@@ -154,9 +145,7 @@ footer {
 }
 </style>
 </head>
-
 <body>
-
 <header>
   <h1>HomesInvest</h1>
   <span class="menu-btn" onclick="toggleMenu()">☰</span>
@@ -168,196 +157,172 @@ footer {
     </ul>
   </nav>
 </header>
-
 <div class="hero">
   <h2>Affordable Plots in Kitengela & Isinya</h2>
   <p>Flexible payment | Ready titles | Building options available</p>
-<div class="section-share">
-  <button onclick="share('hero','WhatsApp')">WhatsApp</button>
-  <button onclick="share('hero','Facebook')">Facebook</button>
-  <button onclick="share('hero','X')">X</button>
-  <button onclick="share('hero','Email')">Email</button>
+  <div class="section-share">
+    <button onclick="share('Affordable plots in Kitengela & Isinya at HomesInvest','WhatsApp')">WhatsApp</button>
+    <button onclick="share('Affordable plots in Kitengela & Isinya at HomesInvest','Facebook')">Facebook</button>
+    <button onclick="share('Affordable plots in Kitengela & Isinya at HomesInvest','X')">X</button>
+    <button onclick="share('Affordable plots in Kitengela & Isinya at HomesInvest','Email')">Email</button>
+  </div>
 </div>
-</div>
-
 <!-- SEARCH -->
 <section>
   <input id="plotSearch" onkeyup="filterPlots()" placeholder="Search plots..." style="width:100%;padding:12px;border-radius:8px;border:1px solid #ccc;">
 </section>
-
 <!-- =======================
      PLOTS SECTION
 ======================= -->
 <section id="plots">
   <h2>Available Plots</h2>
-<div class="section-share">
-  <button onclick="share('Affordable plots available at HomesInvest','WhatsApp')">WhatsApp</button>
-  <button onclick="share('Affordable plots available at HomesInvest','Facebook')">Facebook</button>
-  <button onclick="share('Affordable plots available at HomesInvest','X')">X</button>
-  <button onclick="share('Affordable plots available at HomesInvest','Email')">Email</button>
-</div>
-
+  <div class="section-share">
+    <button onclick="share('Affordable plots available at HomesInvest','WhatsApp')">WhatsApp</button>
+    <button onclick="share('Affordable plots available at HomesInvest','Facebook')">Facebook</button>
+    <button onclick="share('Affordable plots available at HomesInvest','X')">X</button>
+    <button onclick="share('Affordable plots available at HomesInvest','Email')">Email</button>
+  </div>
   <div class="plot-container">
-
     <!-- KITENGELA -->
     <div class="plot-card" id="plot101">
-      <img src="kitengela.jpg">
+      <img src="kitengela.jpg" alt="Kitengela 50x100 plot">
       <h3>Kitengela 50×100</h3>
       <p>KES 1,299,000</p>
       <a class="button" onclick="openPlotDetails('plot101')">View Details</a>
       <a class="button" onclick="openLoanCalculator(1299000)">Loan Calculator</a>
     </div>
-
     <!-- ISINYA -->
     <div class="plot-card" id="plot205">
-      <img src="isinya.jpg">
+      <img src="isinya.jpg" alt="Isinya 50x100 plot">
       <h3>Isinya 50×100</h3>
       <p>KES 899,000</p>
       <a class="button" onclick="openPlotDetails('plot205')">View Details</a>
       <a class="button" onclick="openLoanCalculator(899000)">Loan Calculator</a>
     </div>
-
     <!-- MAMBA -->
     <div class="plot-card" id="mamba">
-      <img src="mamba.jpg">
+      <img src="mamba.jpg" alt="Mamba Delta Estate">
       <h3>Mamba Delta Estate</h3>
       <p>KES 900,000</p>
       <a class="button" onclick="openPlotDetails('mamba')">View Details</a>
       <a class="button" onclick="openLoanCalculator(900000)">Loan Calculator</a>
     </div>
-
     <!-- DUMA -->
     <div class="plot-card" id="duma">
-      <img src="duma.jpg">
+      <img src="duma.jpg" alt="Duma Close">
       <h3>Duma Close</h3>
       <p>KES 1,300,000</p>
       <a class="button" onclick="openPlotDetails('duma')">View Details</a>
       <a class="button" onclick="openLoanCalculator(1300000)">Loan Calculator</a>
     </div>
-
     <!-- KIBOKO -->
     <div class="plot-card" id="kiboko">
-      <img src="kiboko.jpg">
+      <img src="kiboko.jpg" alt="DL Kiboko Slopes">
       <h3>DL Kiboko Slopes</h3>
       <p>KES 1,000,000</p>
       <a class="button" onclick="openPlotDetails('kiboko')">View Details</a>
       <a class="button" onclick="openLoanCalculator(1000000)">Loan Calculator</a>
     </div>
-
     <!-- KIFARU -->
     <div class="plot-card" id="kifaru">
-      <img src="kifaru.jpg">
+      <img src="kifaru.jpg" alt="Kifaru Corner">
       <h3>Kifaru Corner</h3>
       <p>KES 1,050,000</p>
       <a class="button" onclick="openPlotDetails('kifaru')">View Details</a>
       <a class="button" onclick="openLoanCalculator(1050000)">Loan Calculator</a>
     </div>
-
     <!-- NYATI -->
     <div class="plot-card" id="nyati">
-      <img src="nyati.jpg">
+      <img src="nyati.jpg" alt="Nyati Heights">
       <h3>Nyati Heights</h3>
       <p>KES 1,100,000</p>
       <a class="button" onclick="openPlotDetails('nyati')">View Details</a>
       <a class="button" onclick="openLoanCalculator(1100000)">Loan Calculator</a>
     </div>
-
     <!-- NDOVU -->
     <div class="plot-card" id="ndovu">
-      <img src="ndovu.jpg">
+      <img src="ndovu.jpg" alt="Ndovu Gardens">
       <h3>Ndovu Gardens</h3>
       <p>KES 1,200,000</p>
       <a class="button" onclick="openPlotDetails('ndovu')">View Details</a>
       <a class="button" onclick="openLoanCalculator(1200000)">Loan Calculator</a>
     </div>
-
     <!-- CHUI -->
     <div class="plot-card" id="chui">
-      <img src="chui.jpg">
+      <img src="chui.jpg" alt="Chui Plains">
       <h3>Chui Plains</h3>
       <p>KES 1,400,000</p>
       <a class="button" onclick="openPlotDetails('chui')">View Details</a>
       <a class="button" onclick="openLoanCalculator(1400000)">Loan Calculator</a>
     </div>
-
     <!-- SWARA -->
     <div class="plot-card" id="swara">
-      <img src="swara.jpg">
+      <img src="swara.jpg" alt="Swara Springs">
       <h3>Swara Springs</h3>
       <p>KES 1,500,000</p>
       <a class="button" onclick="openPlotDetails('swara')">View Details</a>
       <a class="button" onclick="openLoanCalculator(1500000)">Loan Calculator</a>
     </div>
-
     <!-- SIMBA -->
     <div class="plot-card" id="simba">
-      <img src="simba.jpg">
+      <img src="simba.jpg" alt="Simba Gorge">
       <h3>Simba Gorge</h3>
       <p>KES 1,600,000</p>
       <a class="button" onclick="openPlotDetails('simba')">View Details</a>
       <a class="button" onclick="openLoanCalculator(1600000)">Loan Calculator</a>
     </div>
-
   </div>
 </section>
-
 <!-- =======================
      BUILDING SOLUTIONS
 ======================= -->
 <section id="building">
   <h2>Building Solutions</h2>
-<div class="section-share">
-  <button onclick="share('Affordable home building solutions at HomesInvest','WhatsApp')">WhatsApp</button>
-  <button onclick="share('Affordable home building solutions at HomesInvest','Facebook')">Facebook</button>
-  <button onclick="share('Affordable home building solutions at HomesInvest','X')">X</button>
-  <button onclick="share('Affordable home building solutions at HomesInvest','Email')">Email</button>
-</div>
-
+  <div class="section-share">
+    <button onclick="share('Affordable home building solutions at HomesInvest','WhatsApp')">WhatsApp</button>
+    <button onclick="share('Affordable home building solutions at HomesInvest','Facebook')">Facebook</button>
+    <button onclick="share('Affordable home building solutions at HomesInvest','X')">X</button>
+    <button onclick="share('Affordable home building solutions at HomesInvest','Email')">Email</button>
+  </div>
   <div class="plot-container">
     <div class="plot-card"><h3>2 Bedroom House</h3><p>From KES 1.4M</p></div>
     <div class="plot-card"><h3>3 Bedroom House</h3><p>From KES 2.3M</p></div>
     <div class="plot-card"><h3>4 Bedroom House</h3><p>From KES 3.8M</p></div>
   </div>
 </section>
-
 <!-- CONTACT -->
 <section id="contact">
   <h2>Contact Us</h2>
-<div class="section-share">
-  <button onclick="share('Contact HomesInvest for affordable plots today','WhatsApp')">WhatsApp</button>
-  <button onclick="share('Contact HomesInvest for affordable plots today','Facebook')">Facebook</button>
-  <button onclick="share('Contact HomesInvest for affordable plots today','X')">X</button>
-  <button onclick="share('Contact HomesInvest for affordable plots today','Email')">Email</button>
-</div>
+  <div class="section-share">
+    <button onclick="share('Contact HomesInvest for affordable plots today','WhatsApp')">WhatsApp</button>
+    <button onclick="share('Contact HomesInvest for affordable plots today','Facebook')">Facebook</button>
+    <button onclick="share('Contact HomesInvest for affordable plots today','X')">X</button>
+    <button onclick="share('Contact HomesInvest for affordable plots today','Email')">Email</button>
+  </div>
   <p>Phone: 0769485093 / 0759222512</p>
   <p>Email: sales@homesinvest.net</p>
 </section>
-
 <!-- PLOT DETAILS MODAL -->
 <div class="modal" id="detailsModal">
   <div class="modal-content">
     <h3>Plot Details</h3>
     <div id="plotDetailsContent"></div>
-    <br>
+    <br />
     <button onclick="closeDetailsModal()">Close</button>
   </div>
 </div>
-
 <!-- LOAN MODAL -->
 <div class="modal" id="loanModal">
   <div class="modal-content">
     <h3>Loan Calculator</h3>
-
     <p>Plot Price: KES <span id="loanPrice"></span></p>
-
     <label>Deposit Rate</label>
     <select id="depositRate" style="width:100%;padding:8px;">
       <option value="20">20% Deposit</option>
       <option value="30">30% Deposit</option>
       <option value="40">40% Deposit</option>
       <option value="50">50% Deposit</option>
-    </select><br><br>
-
+    </select><br /><br />
     <label>Repayment Months</label>
     <select id="repaymentMonths" style="width:100%;padding:8px;">
       <option value="6">6 Months</option>
@@ -365,16 +330,12 @@ footer {
       <option value="18">18 Months</option>
       <option value="24">24 Months</option>
     </select>
-
-    <br><br>
-
+    <br /><br />
     <button onclick="calculateLoan()">Calculate</button>
-
     <h4>Results:</h4>
     <p>Deposit: KES <span id="loanDeposit"></span></p>
     <p>Balance: KES <span id="loanBalance"></span></p>
     <p>Monthly: KES <span id="loanMonthly"></span></p>
-
     <button onclick="closeLoanModal()">Close</button>
   </div>
 </div>
@@ -387,24 +348,20 @@ footer {
 </div>
 <!-- WHATSAPP -->
 <div class="whatsapp" onclick="chatWhatsApp()">WhatsApp Us</div>
-
 <footer>
   <p>© 2025 HomesInvest — Plots & Building Solutions</p>
 </footer>
-
 <!-- JS -->
 <script>
 function toggleMenu() {
   document.querySelector("nav ul").classList.toggle("show");
 }
-
 function filterPlots() {
   let q = document.getElementById("plotSearch").value.toLowerCase();
   document.querySelectorAll(".plot-card").forEach(c => {
     c.style.display = c.innerText.toLowerCase().includes(q) ? "block" : "none";
   });
 }
-
 function openPlotDetails(id) {
   const card = document.getElementById(id).cloneNode(true);
   card.querySelectorAll(".button").forEach(btn => btn.remove());
@@ -414,7 +371,6 @@ function openPlotDetails(id) {
 function closeDetailsModal() {
   document.getElementById("detailsModal").style.display = "none";
 }
-
 function openLoanCalculator(price) {
   document.getElementById("loanPrice").innerText = price.toLocaleString();
   document.getElementById("loanModal").style.display = "flex";
@@ -422,69 +378,18 @@ function openLoanCalculator(price) {
 function closeLoanModal() {
   document.getElementById("loanModal").style.display = "none";
 }
-
 function calculateLoan() {
   let amount = parseFloat(document.getElementById("loanPrice").innerText.replace(/,/g,""));
   let depositRate = parseFloat(document.getElementById("depositRate").value);
   let months = parseInt(document.getElementById("repaymentMonths").value);
-
   let deposit = amount * depositRate / 100;
   let balance = amount - deposit;
   let monthly = balance / months;
-
   document.getElementById("loanDeposit").innerText = deposit.toLocaleString();
   document.getElementById("loanBalance").innerText = balance.toLocaleString();
   document.getElementById("loanMonthly").innerText = monthly.toLocaleString();
 }
-
 function chatWhatsApp() {
   window.open("https://wa.me/254769485093?text=Hello%20HomesInvest%2C%20I%20am%20interested%20in%20your%20plots.", "_blank");
 }
-function share(sectionText, platform){
-  const url = "https://homesinvest.net";
-  const text = encodeURIComponent(sectionText + " — " + url);
-
-  if(platform === "WhatsApp"){
-    window.open(`https://wa.me/?text=${text}`, "_blank");
-  }
-
-  if(platform === "Facebook"){
-    window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, "_blank");
-  }
-
-  if(platform === "X"){
-    window.open(`https://twitter.com/intent/tweet?text=${text}`, "_blank");
-  }
-
-  if(platform === "Email"){
-    location.href = `mailto:?subject=HomesInvest&body=${text}`;
-  }
-}
-<script>
-function share(sectionText, platform){
-  const pageUrl = encodeURIComponent(window.location.href);
-  const text = encodeURIComponent(sectionText + " — " + pageUrl);
-
-  if(platform === "WhatsApp"){
-    window.open(`https://wa.me/?text=${text}`, "_blank");
-  }
-
-  if(platform === "Facebook"){
-    // Facebook shares URL only
-    window.open(`https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`, "_blank");
-  }
-
-  if(platform === "X"){
-    window.open(`https://twitter.com/intent/tweet?text=${text}`, "_blank");
-  }
-
-  if(platform === "Email"){
-    location.href = `mailto:?subject=HomesInvest&body=${text}`;
-  }
-}
-</script>
-</script>
-
-</body>
- </html>
- 
+function share(sectionText

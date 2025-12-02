@@ -1,279 +1,439 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>HomesInvest Plots & Building Solutions</title>
-  <meta name="description" content="HomesInvest — Plots for sale in Kitengela, Isinya and other locations with flexible building solutions and loan calculator (20/30/50% deposit; 12/24/36 months). Contact sales@homesinvest.net" />
-  <!-- Chart.js CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <style>
-    :root{--brand:#d82b2b;--muted:#666;--bg:#f7f7f9;--card:#fff}
-    *{box-sizing:border-box}
-    body{font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial;line-height:1.4;margin:0;background:var(--bg);color:#111}
-    header{background:linear-gradient(90deg,var(--brand),#ff5e5e);color:#fff;padding:32px 20px}
-    .container{max-width:1100px;margin:0 auto;padding:20px}
-    .hero{display:flex;gap:24px;align-items:center;justify-content:space-between;flex-wrap:wrap}
-    .hero h1{margin:0;font-size:28px}
-    .hero p{margin:6px 0 0;color:rgba(255,255,255,0.95)}
-    .contacts{margin-top:8px;font-size:14px;}
-    .contacts a{color:#fff;text-decoration:underline;}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:12px}
-    .card{background:var(--card);padding:16px;border-radius:12px;box-shadow:0 6px 18px rgba(22,22,22,0.06)}
-    .price{font-weight:700;color:var(--brand);font-size:18px}
-    .muted{color:var(--muted);font-size:13px}
-    .btn{display:inline-block;padding:10px 14px;border-radius:10px;border:0;background:var(--brand);color:#fff;text-decoration:none;cursor:pointer}
-    .btn.secondary{background:#3b82f6}
-    .flex{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
-    .searchbar{display:flex;gap:8px;flex-wrap:wrap}
-    input,select{padding:8px;border-radius:8px;border:1px solid #ddd}
-    .location-image{
-      width:100%;height:160px;object-fit:cover;border-radius:12px;margin-top:8px;
-      box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>HomesInvest Plots & Building Solutions</title>
+<meta name="description" content="HomesInvest — Affordable plots for sale in Kitengela, Isinya, Mamba Delta and more. Flexible payment plans, building solutions, and loan calculator included." />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+<style>
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #e6f0fa; /* calm trustworthy blue */
+    color: #1a1a1a; /* dark text for readability */
+  }
+
+  /* NAVIGATION */
+  header {
+    background: #007ACC; /* strong trustworthy blue */
+    color: #fff;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0,122,204,0.3);
+  }
+  header h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+  }
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 24px;
+  }
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+  nav ul li a:hover {
+    color: #99ccff; /* lighter blue highlight on hover */
+  }
+  .menu-btn {
+    display: none;
+    font-size: 26px;
+    cursor: pointer;
+  }
+  @media (max-width: 768px) {
+    nav ul {
+      display: none;
+      flex-direction: column;
+      background: #007ACC;
+      padding: 15px;
+      border-radius: 0 0 10px 10px;
     }
-    /* Modal */
-    .modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,0.45);display:none;align-items:center;justify-content:center;padding:20px;z-index:1000;}
-    .modal{width:100%;max-width:900px;background:var(--card);border-radius:12px;padding:18px;box-shadow:0 10px 30px rgba(10,10,10,0.18);max-height:90vh;overflow-y:auto;}
-    .modal header{display:flex;justify-content:space-between;align-items:center}
-    .cols{display:grid;grid-template-columns:1fr 360px;gap:16px}
-    .plot-preview{height:220px;border-radius:8px;background:linear-gradient(180deg,#e9eefc,#fff);display:flex;align-items:center;justify-content:center;color:#334;padding:12px;font-weight:700;}
-    table{width:100%;border-collapse:collapse}
-    table td{padding:6px;border-bottom:1px dashed #eee}
-    .small{font-size:13px;color:#333}
-    /* Responsive */
-    @media (max-width:880px){.cols{grid-template-columns:1fr}}
-    footer{padding:30px 0;color:#666;text-align:center;font-size:14px;}
-  </style>
+    nav ul.show {
+      display: flex;
+    }
+    .menu-btn {
+      display: block;
+    }
+  }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, #3399FF 0%, #66b2ff 100%);
+    padding: 120px 20px;
+    color: white;
+    text-align: center;
+    box-shadow: inset 0 0 50px #005ea2;
+  }
+  .hero h2 {
+    font-size: 44px;
+    margin-bottom: 16px;
+    font-weight: 700;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+  }
+  .hero p {
+    font-size: 20px;
+    font-weight: 500;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+  }
+
+  /* SECTIONS */
+  section {
+    padding: 40px 20px;
+    background: #ffffff; /* clean white background */
+    border-radius: 12px;
+    margin: 20px auto;
+    max-width: 1200px;
+    box-shadow: 0 4px 12px rgba(0,122,204,0.15);
+  }
+
+  /* GRID */
+  .plot-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+  .plot-card {
+    background: #f0f7ff; /* very light blue */
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 6px 15px rgba(51,153,255,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .plot-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(51,153,255,0.35);
+  }
+  .plot-card img {
+    width: 100%;
+    border-radius: 14px;
+    margin-bottom: 14px;
+    object-fit: cover;
+  }
+  .plot-card h3 {
+    margin: 0 0 8px;
+    color: #007ACC;
+    font-weight: 700;
+  }
+  .plot-card p {
+    margin: 0 0 12px;
+    font-weight: 600;
+    color: #3399FF; /* accent blue */
+    font-size: 18px;
+  }
+
+  /* BUTTONS */
+  .button {
+    display: inline-block;
+    background: #3399FF; /* bright accent blue */
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-top: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(51,153,255,0.35);
+    transition: background 0.3s ease;
+  }
+  .button:hover {
+    background: #005ea2; /* darker blue hover */
+  }
+
+  /* CONTACT BUTTONS */
+  .contact-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    justify-content: center;
+    margin-top: 24px;
+  }
+  .contact-buttons button {
+    background: #3399FF;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 15px;
+    box-shadow: 0 4px 12px rgba(51,153,255,0.35);
+    transition: background 0.3s ease;
+  }
+  .contact-buttons button:hover {
+    background: #005ea2;
+  }
+
+  /* MODALS */
+  .modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+  .modal-content {
+    background: white;
+    padding: 30px 30px 25px 30px;
+    border-radius: 16px;
+    max-width: 520px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 6px 18px rgba(51,153,255,0.3);
+  }
+  .modal-content h3 {
+    margin-top: 0;
+    color: #3399FF;
+  }
+  .modal-content button {
+    background: #007ACC;
+    margin-top: 16px;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  .modal-content button:hover {
+    background: #005ea2;
+  }
+
+  /* WHATSAPP FLOATING */
+  .whatsapp {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background: #25D366;
+    padding: 16px 24px;
+    border-radius: 50px;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.7);
+    user-select: none;
+    transition: background 0.3s ease;
+    z-index: 1000;
+  }
+  .whatsapp:hover {
+    background: #1ebe5a;
+  }
+
+  /* FOOTER */
+  footer {
+    background: #007ACC;
+    color: white;
+    padding: 32px 20px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 16px;
+    box-shadow: inset 0 3px 8px rgba(0,0,0,0.2);
+  }
+</style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <div class="hero">
-        <div>
-          <h1>HomesInvest Plots & Building Solutions</h1>
-          <p>Your trusted partner for plots, building solutions and flexible financing.</p>
-          <div class="contacts">
-            <strong>Contact us:</strong> 
-            <a href="tel:+254769485093">076 948 5093</a> · 
-            <a href="tel:+254759222512">075 922 2512</a> · 
-            Email: <a href="mailto:sales@homesinvest.net">sales@homesinvest.net</a><br>
-            Visit us: <a href="https://homesinvest.net" target="_blank" rel="noopener">https://homesinvest.net</a>
-          </div>
-        </div>
-        <div class="flex" style="gap:10px;flex-wrap:wrap;">
-          <a class="btn" href="#listings">View Plots</a>
-          <a class="btn secondary" href="https://homesinvest.net" target="_blank" rel="noopener">Visit Website</a>
-        </div>
-      </div>
+<header>
+  <h1>HomesInvest</h1>
+  <span class="menu-btn" onclick="toggleMenu()">☰</span>
+  <nav>
+    <ul>
+      <li><a href="#plots">Plots for Sale</a></li>
+      <li><a href="#building">Building Solutions</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="hero">
+  <h2>Affordable Plots in Kitengela & Isinya</h2>
+  <p>Flexible payment | Ready titles | Building options available</p>
+  <div class="contact-buttons">
+    <button onclick="contactEmail()">Email</button>
+    <button onclick="contactPhone()">Call</button>
+    <button onclick="contactX()">X (Twitter)</button>
+    <button onclick="contactFacebook()">Facebook</button>
+    <button onclick="contactInstagram()">Instagram</button>
+  </div>
+</div>
+
+<section>
+  <input
+    id="plotSearch"
+    onkeyup="filterPlots()"
+    placeholder="Search plots..."
+    style="width:100%;padding:14px;border-radius:12px;border:1px solid #3399FF; font-size: 16px;"
+  />
+</section>
+
+<section id="plots">
+  <h2>Available Plots</h2>
+  <div class="contact-buttons">
+    <button onclick="contactEmail()">Email</button>
+    <button onclick="contactPhone()">Call</button>
+    <button onclick="contactX()">X (Twitter)</button>
+    <button onclick="contactFacebook()">Facebook</button>
+    <button onclick="contactInstagram()">Instagram</button>
+  </div>
+  <div class="plot-container">
+    <div class="plot-card" id="plot101">
+      <img src="kitengela.jpg" alt="Kitengela Plot" />
+      <h3>Kitengela 50×100</h3>
+      <p>KES 1,299,000</p>
+      <a class="button" onclick="openPlotDetails('plot101')">View Details</a>
+      <a class="button" onclick="openLoanCalculator(1299000)">Loan Calculator</a>
     </div>
-  </header>
-
-  <main class="container">
-
-    <!-- Sales charts -->
-    <section class="card" style="margin-top:-40px;">
-      <h3 style="margin:0 0 12px">Sales Overview</h3>
-      <canvas id="salesChart" height="140"></canvas>
-      <div style="display:flex;gap:8px;margin-top:12px;align-items:center">
-        <label class="muted small">Year:</label>
-        <select id="yearSelect">
-          <option value="2024">2024</option>
-          <option value="2025" selected>2025</option>
-        </select>
-        <button class="btn secondary" id="refreshBtn">Refresh Data</button>
-      </div>
-    </section>
-
-    <!-- Highlighted Locations -->
-    <section style="margin-top:28px;">
-      <h2>Featured Plots by Location</h2>
-      <div class="grid">
-        <div class="card">
-          <h4>Kitengela - Aerial View</h4>
-          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=60" alt="Kitengela aerial view" class="location-image" />
-          <p class="muted small">Beautiful plots near Kitengela, perfect for investment and future homes.</p>
-        </div>
-        <div class="card">
-          <h4>Isinya - Aerial View</h4>
-          <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=60" alt="Isinya aerial view" class="location-image" />
-          <p class="muted small">Serene plots in Isinya with great potential for building your dream home.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Filters -->
-    <section style="margin-top:28px;display:flex;gap:12px;align-items:center;justify-content:space-between">
-      <div class="searchbar">
-        <input id="searchInput" placeholder="Search by location or id" />
-        <select id="filterCounty"><option value="">All counties</option><option>Nairobi</option><option>Kisumu</option><option>Mombasa</option><option>Kitengela</option><option>Isinya</option></select>
-        <select id="sortBy"><option value="priceAsc">Price low→high</option><option value="priceDesc">Price high→low</option><option value="areaDesc">Area large→small</option></select>
-      </div>
-      <div class="muted small">Showing <span id="listingCount">0</span> plots</div>
-    </section>
-
-    <!-- Listings -->
-    <section id="listings" class="grid" style="margin-top:12px">
-      <!-- dynamically populated cards -->
-    </section>
-
-    <!-- Modal: Building solutions & loan calculator -->
-    <div id="modalBackdrop" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle" tabindex="-1">
-      <div class="modal">
-        <header>
-          <h3 id="modalTitle">Plot — 001</h3>
-          <div><button id="closeModal" class="btn" aria-label="Close modal">Close</button></div>
-        </header>
-        <div class="cols" style="margin-top:12px">
-          <div>
-            <div class="plot-preview" id="modalPreview">Plot preview</div>
-            <p class="small muted" id="modalDesc">Description and location</p>
-            <h4 style="margin-top:10px">Available Building Solutions</h4>
-            <div id="solutionsList"></div>
-          </div>
-
-          <aside class="card" style="padding:12px">
-            <h4 style="margin:0 0 8px">Loan Calculator</h4>
-
-            <label class="small" for="calcPrice">Plot price (KES)</label>
-            <input id="calcPrice" type="number" value="1000000" min="0" />
-
-            <div style="margin-top:8px">
-              <label class="small">Deposit</label>
-              <div class="flex" style="margin-top:6px" role="radiogroup" aria-label="Select deposit percentage">
-                <label><input type="radio" name="deposit" value="20" checked/> 20%</label>
-                <label><input type="radio" name="deposit" value="30" style="margin-left:6px"/> 30%</label>
-                <label><input type="radio" name="deposit" value="50" style="margin-left:6px"/> 50%</label>
-              </div>
-            </div>
-
-            <div style="margin-top:8px">
-              <label class="small" for="installments">Installments</label>
-              <select id="installments" aria-label="Installment period">
-                <option value="12">12 months</option>
-                <option value="24">24 months</option>
-                <option value="36">36 months</option>
-              </select>
-            </div>
-
-            <div style="margin-top:8px">
-              <label class="small" for="annualRate">Annual interest rate (%)</label>
-              <input id="annualRate" type="number" value="10" min="0" step="0.1" />
-            </div>
-
-            <div style="margin-top:12px;display:flex;gap:8px;align-items:center">
-              <button id="calcBtn" class="btn">Calculate</button>
-              <button id="bookBtn" class="btn secondary">Book Plot</button>
-            </div>
-
-            <div id="calcResults" style="margin-top:12px" aria-live="polite"></div>
-          </aside>
-        </div>
-      </div>
+    <div class="plot-card" id="plot205">
+      <img src="isinya.jpg" alt="Isinya Plot" />
+      <h3>Isinya 50×100</h3>
+      <p>KES 899,000</p>
+      <a class="button" onclick="openPlotDetails('plot205')">View Details</a>
+      <a class="button" onclick="openLoanCalculator(899000)">Loan Calculator</a>
     </div>
-
-  </main>
-
-  <footer class="container">
-    <div class="card" style="text-align:center">
-      <p style="margin:6px 0">Contact: 076 948 5093 · 075 922 2512 · Email: <a href="mailto:sales@homesinvest.net">sales@homesinvest.net</a> · <a href="https://homesinvest.net" target="_blank" rel="noopener">https://homesinvest.net</a></p>
-      <p style="margin:6px 0">© HomesInvest Plots & Building Solutions — All rights reserved</p>
+    <div class="plot-card" id="mamba">
+      <img src="mamba.jpg" alt="Mamba Delta Estate" />
+      <h3>Mamba Delta Estate</h3>
+      <p>KES 900,000</p>
+      <a class="button" onclick="openPlotDetails('mamba')">View Details</a>
+      <a class="button" onclick="openLoanCalculator(900000)">Loan Calculator</a>
     </div>
-  </footer>
+    <div class="plot-card" id="duma">
+      <img src="duma.jpg" alt="Duma Close" />
+      <h3>Duma Close</h3>
+      <p>KES 1,300,000</p>
+      <a class="button" onclick="openPlotDetails('duma')">View Details</a>
+      <a class="button" onclick="openLoanCalculator(1300000)">Loan Calculator</a>
+    </div>
+    <div class="plot-card" id="kiboko">
+      <img src="kiboko.jpg" alt="Kiboko Slopes" />
+      <h3>DL Kiboko Slopes</h3>
+      <p>KES 1,000,000</p>
+      <a class="button" onclick="openPlotDetails('kiboko')">View Details</a>
+      <a class="button" onclick="openLoanCalculator(1000000)">Loan Calculator</a>
+    </div>
+    <div class="plot-card" id="kifaru">
+      <img src="kifaru.jpg" alt="Kifaru Corner" />
+      <h3>Kifaru Corner</h3>
+      <p>KES 1,050,000</p>
+      <a class="button" onclick="openPlotDetails('kifaru')">View Details</a>
+      <a class="button" onclick="openLoanCalculator(1050000)">Loan Calculator</a>
+    </div>
+    <div class="plot-card" id="nyati">
+      <img src="nyati.jpg" alt="Nyati Heights" />
+      <h3>Nyati Heights</h3>
+      <p>KES 1,100,000</p>
+      <a class="button" onclick="openPlotDetails('nyati')">View Details</a>
+      <a class="button" onclick="openLoanCalculator(1100000)">Loan Calculator</a>
+    </div>
+    <div class="plot-card" id="ndovu">
+      <img src="ndovu.jpg" alt="Ndovu Gardens" />
+      <h3>Ndovu Gardens</h3>
+      <p>KES 1,200,000</p>
+      <a class="button" onclick="openPlotDetails('ndovu')">View Details</a>
+      <a class="button" onclick="openLoanCalculator(1200000)">Loan Calculator</a>
+    </div>
+    <div class="plot-card" id="chui">
+      <img src="chui.jpg" alt="Chui Plains" />
+      <h3>Chui Plains</h3>
+      <p>KES 1,400,000</p>
+      <a class="button" onclick="openPlotDetails('chui')">View Details</a>
+      <a class="button" onclick="openLoanCalculator(1400000)">Loan Calculator</a>
+    </div>
+    <div class="plot-card" id="swara">
+      <img src="swara.jpg" alt="Swara Springs" />
+      <h3>Swara Springs</h3>
+      <p>KES 1,500,000</p>
+      <a class="button" onclick="openPlotDetails('swara')">View Details</a>
+      <a class="button" onclick="openLoanCalculator(1500000)">Loan Calculator</a>
+    </div>
+    <div class="plot-card" id="simba">
+      <img src="simba.jpg" alt="Simba Gorge" />
+      <h3>Simba Gorge</h3>
+      <p>KES 1,600,000</p>
+      <a class="button" onclick="openPlotDetails('simba')">View Details</a>
+      <a class="button" onclick="openLoanCalculator(1600000)">Loan Calculator</a>
+    </div>
+  </div>
+</section>
 
-  <script>
-    /* ======= Sample dataset of plots ======= */
-    const plots = [
-      {id:'PL-001',title:'Valley Ridge Plot',county:'Nairobi',area:400,price:1500000,desc:'Near main road, serviced( water + power )',imageColor:'#e9f2ff'},
-      {id:'PL-002',title:'Lakeside Plot',county:'Kisumu',area:600,price:2200000,desc:'Scenic views, 5km from town',imageColor:'#fff0f0'},
-      {id:'PL-003',title:'Coastline Plot',county:'Mombasa',area:500,price:1800000,desc:'Close to beach, good investment',imageColor:'#f8ffe9'},
-      {id:'PL-004',title:'Greenfield',county:'Nairobi',area:250,price:900000,desc:'Affordable starter plot',imageColor:'#fff7e6'},
-      {id:'PL-005',title:'Hilltop Estate',county:'Nairobi',area:800,price:4200000,desc:'Premium plot with views',imageColor:'#f0f7ff'},
-      {id:'PL-006',title:'Kitengela Green',county:'Kitengela',area:350,price:1300000,desc:'Close to town, peaceful neighborhood',imageColor:'#e0ffe7'},
-      {id:'PL-007',title:'Isinya Valley',county:'Isinya',area:550,price:2100000,desc:'Quiet area with scenic views',imageColor:'#f0fff0'}
-    ];
+<section id="building">
+  <h2>Building Solutions</h2>
+  <div class="contact-buttons">
+    <button onclick="contactEmail()">Email</button>
+    <button onclick="contactPhone()">Call</button>
+    <button onclick="contactX()">X (Twitter)</button>
+    <button onclick="contactFacebook()">Facebook</button>
+    <button onclick="contactInstagram()">Instagram</button>
+  </div>
+  <div class="plot-container">
+    <div class="plot-card">
+      <h3>2 Bedroom House</h3>
+      <p>From KES 1.4M</p>
+    </div>
+    <div class="plot-card">
+      <h3>3 Bedroom House</h3>
+      <p>From KES 2.3M</p>
+    </div>
+    <div class="plot-card">
+      <h3>4 Bedroom House</h3>
+      <p>From KES 3.8M</p>
+    </div>
+  </div>
+</section>
 
-    /* Render listings */
-    const listingsEl = document.getElementById('listings');
-    function renderListings(dataset){
-      listingsEl.innerHTML='';
-      dataset.forEach(p=>{
-        const el = document.createElement('div');el.className='card';
-        el.innerHTML = `
-          <div style="display:flex;gap:12px;align-items:center">
-            <div style="width:88px;height:66px;border-radius:8px;background:${p.imageColor};display:flex;align-items:center;justify-content:center;font-weight:700;color:#444">${p.id}</div>
-            <div style="flex:1">
-              <div style="display:flex;justify-content:space-between;align-items:start">
-                <div>
-                  <div style="font-weight:700">${p.title}</div>
-                  <div class="muted small">${p.county} · ${p.area} m²</div>
-                </div>
-                <div style="text-align:right">
-                  <div class="price">KES ${numberWithCommas(p.price)}</div>
-                  <div class="muted small">${p.id}</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div style="margin-top:10px;display:flex;gap:8px;justify-content:flex-end">
-            <button class="btn" onclick="openModal('${p.id}')">Building solutions</button>
-            <button class="btn secondary" onclick="quickCalc(${p.price})">Quick calculate</button>
-          </div>
-        `;
-        listingsEl.appendChild(el);
-      });
-      document.getElementById('listingCount').textContent = dataset.length;
-    }
-    renderListings(plots);
+<section id="contact">
+  <h2>Contact Us</h2>
+  <div class="contact-buttons">
+    <button onclick="contactEmail()">Email</button>
+    <button onclick="contactPhone()">Call</button>
+    <button onclick="contactX()">X (Twitter)</button>
+    <button onclick="contactFacebook()">Facebook</button>
+    <button onclick="contactInstagram()">Instagram</button>
+  </div>
+  <p>Phone: 0769485093 / 0759222512</p>
+  <p>Email: sales@homesinvest.net</p>
+</section>
 
-    function numberWithCommas(x){return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g,",");}
+<!-- PLOT DETAILS MODAL -->
+<div class="modal" id="detailsModal">
+  <div class="modal-content">
+    <h3>Plot Details</h3>
+    <div id="plotDetailsContent"></div>
+    <br />
+    <button onclick="closeDetailsModal()">Close</button>
+  </div>
+</div>
 
-    /* ======= Modal behaviour & dynamic content ======= */
-    const modalBackdrop = document.getElementById('modalBackdrop');
-    const modalTitle = document.getElementById('modalTitle');
-    const modalDesc = document.getElementById('modalDesc');
-    const modalPreview = document.getElementById('modalPreview');
-    const solutionsList = document.getElementById('solutionsList');
-    const calcPrice = document.getElementById('calcPrice');
-    const calcResults = document.getElementById('calcResults');
-
-    function openModal(id){
-      const p = plots.find(x=>x.id===id);
-      if(!p) return;
-      modalBackdrop.style.display='flex';
-      modalTitle.textContent = `${p.title} — ${p.id}`;
-      modalDesc.textContent = p.desc + ' · ' + p.county + ' · ' + p.area + ' m²';
-      modalPreview.style.background = `linear-gradient(180deg, ${p.imageColor}, #fff)`;
-      modalPreview.textContent = p.title;
-      calcPrice.value = p.price;
-
-      // Building solutions presets (example):
-      const solutions = [
-        {id:'sol-basic',name:'Foundation + Shell (Basic)',cost: p.area*2000,desc:'Basic foundation + shell structure (no finishes)'},
-        {id:'sol-standard',name:'Standard Build',cost:p.area*3500,desc:'Foundation, shell, roofing and basic finishes'},
-        {id:'sol-premium',name:'Premium Finish',cost:p.area*6000,desc:'High-end finishes, fixtures and landscaping'}
-      ];
-      solutionsList.innerHTML = '';
-      solutions.forEach(s=>{
-        const row = document.createElement('div');
-        row.style.marginBottom='8px';
-        row.innerHTML = `<label><input type="checkbox" data-cost="${s.cost}" class="solutionCheckbox"/> <strong>${s.name}</strong> — KES ${numberWithCommas(s.cost)}<div class="muted small">${s.desc}</div></label>`;
-        solutionsList.appendChild(row);
-      });
-
-      // clear results
-      calcResults.innerHTML='';
-    }
-    document.getElementById('closeModal').addEventListener('click',()=>modalBackdrop.style.display='none');
-    modalBackdrop.addEventListener('click',(e)=>{if(e.target===modalBackdrop)modalBackdrop.style.display='none'});
-
-    /* Quick calculate - prefill calculator and show modal */
-    function quickCalc(price){
-      calcPrice.value = price;
-      openModal(plots[0].id);
-    }
-
-    /* ======= Loan calculator logic ======= */
-    function calculateLoan({price,depositPercent,months,annualRate,extraCosts=0}){
-      // deposit amount
-      const deposit = price * (depositPercent/100);
-      const principal = Math.max(0
+<!-- LOAN MODAL -->
+<div class="modal" id="loanModal">
+  <div class="modal-content">
+    <h3>Loan Calculator</h3>
+    <p>Plot Price: KES <span id="loanPrice"></span></p>
+    <label>Deposit Rate</label>
+    <select id="depositRate" style="width:100%;padding:8px;border-radius:6px;border:1px solid #3399FF;">
+      <option value="20">20% Deposit</option>
+      <option value="30">30% Deposit</option>
+      <option value="40">40% Deposit</option>
+      <option value="50">50% Deposit</option>
+    </select><br /><br />
+    <label>Repayment Months</label>
+    <select id="repaymentMonths" style="width:100%;padding:8px;border-radius:6px;border:1px solid #3399FF;">
+      <option value="12">12 months</option>
+      <option value="24">24 months</option>
+      <option value="36">36 months</option>
+      <option value="48">48 months</option>
+      <option value="60">60 months</option>
+    </select><br /><br />
+    <p>Deposit Amount: KES <span id="depositAmount">0</span></p>
+    <p>Loan Amount:

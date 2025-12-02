@@ -223,6 +223,84 @@
     max-height: 100%;
     border-radius: 10px;
   }
+
+  /* Loan Calculator Modal */
+  #loanCalculatorModal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.75);
+    justify-content: center;
+    align-items: center;
+    z-index: 11000;
+  }
+  #loanCalculatorModal > div {
+    background: #fff; 
+    padding: 20px; 
+    border-radius: 10px; 
+    max-width: 400px; 
+    width: 90%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+  }
+  #loanModalCloseBtn {
+    position: absolute;
+    top: 10px; right: 10px;
+    background: #00796b; 
+    border: none; 
+    color: #fff;
+    border-radius: 50%;
+    width: 30px; 
+    height: 30px; 
+    cursor: pointer;
+    font-weight: bold; 
+    font-size: 20px;
+    line-height: 1;
+  }
+  #loanCalculatorModal h2 {
+    margin-top: 0; 
+    margin-bottom: 15px; 
+    color: #004d40;
+  }
+  #loanCalcForm {
+    display: flex; 
+    flex-direction: column; 
+    gap: 15px;
+  }
+  #loanCalcForm label {
+    font-weight: 600;
+  }
+  #loanCalcForm input {
+    width: 100%; 
+    padding: 8px; 
+    font-size: 16px; 
+    border: 1px solid #ccc; 
+    border-radius: 6px;
+    margin-top: 5px;
+  }
+  #loanCalcForm button {
+    background: #00796b; 
+    color: #fff; 
+    padding: 10px; 
+    font-weight: 600; 
+    font-size: 16px; 
+    border: none; 
+    border-radius: 6px; 
+    cursor: pointer;
+  }
+  #loanCalcForm button:hover,
+  #loanCalcForm button:focus {
+    background-color: #004d40;
+    outline: none;
+  }
+  #loanResult {
+    margin-top: 15px; 
+    font-weight: 700; 
+    color: #004d40; 
+    font-size: 18px;
+  }
 </style>
 </head>
 <body>
@@ -348,79 +426,50 @@
         Or call/SMS: <a href="tel:+254759222512">0759 222 2512</a> | WhatsApp: <a href="https://wa.me/254769485093" target="_blank" rel="noopener noreferrer">+254769485093</a>
       </div>
     </div>
-    <div class="plot-card" data-name="dl kiboko slopes" id="kiboko">
-      <img src="kiboko.jpg" alt="DL Kiboko Slopes" />
-      <h3>DL Kiboko Slopes</h3>
-      <p>KES 1,000,000</p>
-      <a
-        class="button"
-        href="#"
-        role="button"
-        tabindex="0"
-        onclick="showImageModal('kiboko.jpg', 'DL Kiboko Slopes plot'); return false;"
-      >View Details</a>
-      <a class="button" onclick="openLoanCalculator(1000000)" role="button" tabindex="0">Loan Calculator</a>
-      <a
-        class="button"
-        href="https://wa.me/254769485093?text=Hello%20HomesInvest%2C%20I%20want%20to%20buy%20a%20plot%20at%20DL%20Kiboko%20Slopes."
-        target="_blank"
-        rel="noopener noreferrer"
-      >Buy Now (WhatsApp)</a>
-      <div class="buy-now-info">
-        Or call/SMS: <a href="tel:+254759222512">0759 222 2512</a> | WhatsApp: <a href="https://wa.me/254769485093" target="_blank" rel="noopener noreferrer">+254769485093</a>
-      </div>
-    </div>
-    <div class="plot-card" data-name="kifaru corner" id="kifaru">
-      <img src="kifaru.jpg" alt="Kifaru Corner" />
-      <h3>Kifaru Corner</h3>
-      <p>KES 1,050,000</p>
-      <a
-        class="button"
-        href="#"
-        role="button"
-        tabindex="0"
-        onclick="showImageModal('kifaru.jpg', 'Kifaru Corner plot'); return false;"
-      >View Details</a>
-      <a class="button" onclick="openLoanCalculator(1050000)" role="button" tabindex="0">Loan Calculator</a>
-      <a
-        class="button"
-        href="https://wa.me/254769485093?text=Hello%20HomesInvest%2C%20I%20want%20to%20buy%20a%20plot%20at%20Kifaru%20Corner."
-        target="_blank"
-        rel="noopener noreferrer"
-      >Buy Now (WhatsApp)</a>
-      <div class="buy-now-info">
-        Or call/SMS: <a href="tel:+254759222512">0759 222 2512</a> | WhatsApp: <a href="https://wa.me/254769485093" target="_blank" rel="noopener noreferrer">+254769485093</a>
-      </div>
-    </div>
-    <div class="plot-card" data-name="nyati heights" id="nyati">
-      <img src="nyati.jpg" alt="Nyati Heights" />
-      <h3>Nyati Heights</h3>
-      <p>KES 1,100,000</p>
-      <a
-        class="button"
-        href="#"
-        role="button"
-        tabindex="0"
-        onclick="showImageModal('nyati.jpg', 'Nyati Heights plot'); return false;"
-      >View Details</a>
-      <a class="button" onclick="openLoanCalculator(1100000)" role="button" tabindex="0">Loan Calculator</a>
-      <a
-        class="button"
-        href="https://wa.me/254769485093?text=Hello%20HomesInvest%2C%20I%20want%20to%20buy%20a%20plot%20at%20Nyati%20Heights."
-        target="_blank"
-        rel="noopener noreferrer"
-      >Buy Now (WhatsApp)</a>
-      <div class="buy-now-info">
-        Or call/SMS: <a href="tel:+254759222512">0759 222 2512</a> | WhatsApp: <a href="https://wa.me/254769485093" target="_blank" rel="noopener noreferrer">+254769485093</a>
-      </div>
-    </div>
-    <div class="plot-card" data-name="ndovu gardens" id="ndovu">
-      <img src="ndovu.jpg" alt="Ndovu Gardens" />
-      <h3>Ndovu Gardens</h3>
-      <p>KES 1,200,000</p>
-      <a
-        class="button"
-        href="#"
-        role="button"
-        tabindex
-        
+  </div>
+</section>
+
+<!-- Building Solutions Section placeholder -->
+<section id="building" aria-label="Building Solutions">
+  <h2>Building Solutions</h2>
+  <p>Coming soon...</p>
+</section>
+
+<!-- Contact Section placeholder -->
+<section id="contact" aria-label="Contact Information">
+  <h2>Contact Us</h2>
+  <p>Email: sales@homesinvest.net</p>
+  <p>Phone: +254759222512</p>
+  <p>WhatsApp: +254769485093</p>
+</section>
+
+<!-- Image Modal -->
+<div id="imageModal" role="dialog" aria-modal="true" aria-label="Plot image preview" tabindex="-1">
+  <div>
+    <button id="modalCloseBtn" aria-label="Close image preview">&times;</button>
+    <img id="modalImage" src="" alt="" />
+  </div>
+</div>
+
+<!-- Loan Calculator Modal -->
+<div id="loanCalculatorModal" role="dialog" aria-modal="true" aria-label="Loan Calculator" tabindex="-1">
+  <div>
+    <button id="loanModalCloseBtn" aria-label="Close loan calculator">&times;</button>
+    <h2>Loan Calculator</h2>
+    <form id="loanCalcForm">
+      <label>
+        Loan Amount (KES):
+        <input type="number" id="loanAmount" name="loanAmount" min="0" required />
+      </label>
+      <label>
+        Interest Rate (% per year):
+        <input type="number" id="interestRate" name="interestRate" min="0" step="0.01" value="12" required />
+      </label>
+      <label>
+        Loan Term (years):
+        <input type="number" id="loanTerm" name="loanTerm" min="1" max="30" value="10" required />
+      </label>
+      <button type="submit">Calculate</button>
+    </form>
+    <div
+  

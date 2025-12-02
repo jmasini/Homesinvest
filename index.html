@@ -1,412 +1,374 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>HomesInvest Plots & Building Solutions</title>
-<meta
-  name="description"
-  content="HomesInvest — Affordable plots for sale in Kitengela, Isinya, Mamba Delta and more. Flexible payment plans, building solutions, and loan calculator included."
-/>
-<link
-  href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
-  rel="stylesheet"
-/>
-<style>
-  body {
-    margin: 0;
-    font-family: "Poppins", sans-serif;
-    background: linear-gradient(135deg, #0093E9, #80D0C7);
-    color: #222;
-  }
-  /* NAVIGATION */
-  header {
-    background: #004d40;
-    color: #fff;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    z-index: 9999;
-  }
-  header h1 {
-    margin: 0;
-    font-size: 22px;
-  }
-  nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 20px;
-  }
-  nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-  }
-  .menu-btn {
-    display: none;
-    font-size: 28px;
-    cursor: pointer;
-  }
-  @media (max-width: 768px) {
-    nav ul {
-      display: none;
-      flex-direction: column;
-      background: #004d40;
-      padding: 15px;
-      position: absolute;
-      top: 60px;
-      right: 20px;
-      border-radius: 8px;
-      min-width: 150px;
-      box-shadow: 0 4px 10px #0009;
-    }
-    nav ul.show {
-      display: flex;
-    }
-    .menu-btn {
-      display: block;
-    }
-  }
-
-  /* Buttons */
-  .button {
-    display: inline-block;
-    padding: 8px 12px;
-    background-color: #00796b;
-    color: #fff;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: 600;
-    cursor: pointer;
-    margin-right: 8px;
-    margin-top: 8px;
-  }
-  .button:hover,
-  .button:focus {
-    background-color: #004d40;
-    outline: none;
-  }
-
-  /* HERO */
-  .hero {
-    background: url("plots-aerial.jpg") center/cover no-repeat;
-    padding: 120px 20px;
-    color: white;
-    text-align: center;
-  }
-  .hero h2 {
-    font-size: 42px;
-    margin-bottom: 20px;
-    text-shadow: 1px 1px 5px #000a;
-  }
-  .hero p {
-    font-size: 18px;
-    font-weight: 500;
-    text-shadow: 1px 1px 3px #000a;
-  }
-
-  /* SECTIONS */
-  section {
-    padding: 40px 20px;
-    max-width: 1200px;
-    margin: auto;
-  }
-
-  /* Search input */
-  #plotSearch {
-    width: 100%;
-    max-width: 400px;
-    padding: 10px 15px;
-    font-size: 16px;
-    border-radius: 6px;
-    border: none;
-    box-shadow: 0 0 5px rgba(0,0,0,0.2);
-    margin-bottom: 20px;
-  }
-
-  /* Contact Buttons */
-  .contact-buttons {
-    margin-bottom: 30px;
-  }
-  .contact-buttons button {
-    background-color: #00796b;
-    border: none;
-    color: white;
-    padding: 10px 18px;
-    font-weight: 600;
-    border-radius: 6px;
-    margin-right: 12px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  .contact-buttons button:hover,
-  .contact-buttons button:focus {
-    background-color: #004d40;
-    outline: none;
-  }
-
-  /* Plot Cards Grid */
-  .plot-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-    gap: 24px;
-  }
-
-  .plot-card {
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgb(0 0 0 / 0.15);
-    padding: 15px;
-    color: #222;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .plot-card img {
-    width: 100%;
-    border-radius: 10px;
-    object-fit: cover;
-    max-height: 160px;
-    margin-bottom: 12px;
-  }
-  .plot-card h3 {
-    margin: 0 0 6px 0;
-    font-weight: 700;
-    text-align: center;
-  }
-  .plot-card p {
-    margin: 0 0 12px 0;
-    font-weight: 600;
-    color: #00796b;
-  }
-  .buy-now-info {
-    margin-top: 10px;
-    font-size: 14px;
-    color: #555;
-  }
-  .buy-now-info a {
-    color: #00796b;
-    text-decoration: none;
-  }
-  .buy-now-info a:hover,
-  .buy-now-info a:focus {
-    text-decoration: underline;
-  }
-</style>
-</head>
-<body>
-
-<header>
-  <h1>HomesInvest</h1>
-  <span
-    class="menu-btn"
-    onclick="toggleMenu()"
-    aria-label="Toggle menu"
-    role="button"
-    tabindex="0"
-  >☰</span>
-  <nav>
-    <ul id="nav-menu">
-      <li><a href="#plots">Plots for Sale</a></li>
-      <li><a href="#building">Building Solutions</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-</header>
-
-<div class="hero" role="banner">
-  <h2>Affordable Plots in Kitengela &amp; Isinya</h2>
-  <p>Flexible payment | Ready titles | Building options available</p>
-</div>
-
-<section id="plots" aria-label="Plots for sale">
-  <input
-    id="plotSearch"
-    onkeyup="filterPlots()"
-    placeholder="Search plots..."
-    aria-label="Search plots"
-    type="search"
+  <!-- Basic SEO -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HomesInvest Kenya - Real Estate Solutions</title>
+  <meta
+    name="description"
+    content="HomesInvest Kenya offers tailored real estate solutions for local and international buyers. Call +254769485093 or email sales@homesinvest.net today."
+  />
+  <meta
+    name="keywords"
+    content="HomesInvest Kenya, real estate, property, building solutions, diaspora investment, Machakos, Nairobi, Kenya homes"
   />
 
-  <div class="contact-buttons" role="region" aria-label="Contact options">
-    <button onclick="contactEmail()" aria-label="Contact by email">Email</button>
-    <button onclick="contactPhone()" aria-label="Contact by phone">Call</button>
+  <!-- Open Graph -->
+  <meta property="og:title" content="HomesInvest Kenya - Real Estate Solutions" />
+  <meta
+    property="og:description"
+    content="Tailored property solutions for local and international buyers."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.homesinvest.net" />
+  <meta property="og:image" content="https://www.homesinvest.net/images/cover.jpg" />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "RealEstateAgent",
+      "name": "HomesInvest Kenya",
+      "url": "https://www.homesinvest.net",
+      "email": "sales@homesinvest.net",
+      "telephone": "+254769485093",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "KE"
+      }
+    }
+  </script>
+
+  <!-- Google Analytics GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "G-XXXXXXXXXX"); // Replace with your GA4 Measurement ID
+  </script>
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    /* Reset & base */
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #0093e9, #80d0c7);
+      color: #222;
+    }
+
+    /* Navigation */
+    header {
+      background: #004d40;
+      color: #fff;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 9999;
+    }
+    header .logo {
+      font-weight: 700;
+      font-size: 1.5rem;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: 20px;
+    }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      user-select: none;
+    }
+    .lang-switch button {
+      margin-left: 10px;
+      background: #00796b;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 4px;
+      color: white;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .lang-switch button:hover,
+    .lang-switch button:focus {
+      background: #004d40;
+      outline: none;
+    }
+
+    /* Responsive nav */
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background: #004d40;
+        padding: 15px;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        border-radius: 8px;
+        min-width: 150px;
+        box-shadow: 0 4px 10px #0009;
+      }
+      nav ul.show {
+        display: flex;
+      }
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    /* Sections */
+    section {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* Buttons */
+    button,
+    a.cta {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+      font-weight: 600;
+      color: white;
+    }
+    button {
+      background: #007bff;
+    }
+    a.cta {
+      background: #28a745;
+      margin-right: 10px;
+    }
+    button:hover,
+    a.cta:hover,
+    button:focus,
+    a.cta:focus {
+      opacity: 0.85;
+      outline: none;
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      justify-content: center;
+      align-items: center;
+      z-index: 10000;
+    }
+    .modal-content {
+      background: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      max-width: 500px;
+      width: 90%;
+      text-align: center;
+      position: relative;
+    }
+    .close {
+      position: absolute;
+      right: 15px;
+      top: 10px;
+      font-size: 24px;
+      font-weight: 700;
+      cursor: pointer;
+      user-select: none;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">🏠 HomesInvest Kenya</div>
+    <span class="menu-toggle" aria-label="Toggle menu" role="button" tabindex="0">☰</span>
+    <nav>
+      <ul>
+        <li><a href="#building-solutions" id="nav-solutions">Building Solutions</a></li>
+        <li><a href="#contact" id="nav-contact">Contact</a></li>
+        <li><a href="#about" id="nav-about">About Us</a></li>
+      </ul>
+    </nav>
+    <div class="lang-switch">
+      <button onclick="setLang('en')" aria-label="Switch to English">English</button>
+      <button onclick="setLang('sw')" aria-label="Switch to Kiswahili">Kiswahili</button>
+    </div>
+  </header>
+
+  <section id="building-solutions">
+    <h2 id="solutions-title">Building Solutions</h2>
+    <p id="solutions-text">
+      Explore our tailored solutions for local and international clients.
+    </p>
+    <button onclick="openModal()" id="view-details-btn">View Details</button>
+  </section>
+
+  <div id="detailsModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-text">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()" role="button" tabindex="0" aria-label="Close modal">&times;</span>
+      <h3 id="modal-title">Our Building Solutions</h3>
+      <p id="modal-text">
+        We provide end-to-end real estate solutions including property sourcing, financing, construction, and legal support. Whether you are in Kenya or abroad, we make property investment seamless.
+      </p>
+    </div>
   </div>
 
-  <div class="plot-container" id="plotsGrid">
+  <section id="contact">
+    <h2 id="contact-title">Contact Us</h2>
+    <a
+      href="tel:+254769485093"
+      class="cta"
+      onclick="gtag('event', 'call_click', {event_category: 'CTA', event_label: 'Call +254769485093'})"
+      id="call1"
+      >📞 Call +254769485093</a
+    >
+    <a
+      href="tel:+254759222512"
+      class="cta"
+      onclick="gtag('event', 'call_click', {event_category: 'CTA', event_label: 'Call +254759222512'})"
+      id="call2"
+      >📞 Call +254759222512</a
+    >
+    <a
+      href="mailto:sales@homesinvest.net"
+      class="cta"
+      style="background: #007bff;"
+      onclick="gtag('event', 'email_click', {event_category: 'CTA', event_label: 'Email sales@homesinvest.net'})"
+      id="email-btn"
+      >✉️ Email Us</a
+    >
+  </section>
 
-    <div class="plot-card" data-name="kitengela 50x100" id="plot101">
-      <img src="kitengela.jpg" alt="Kitengela 50x100 plot" />
-      <h3>Kitengela 50×100</h3>
-      <p>KES 1,299,000</p>
-      <a class="button" onclick="openPlotDetails('plot101')" role="button" tabindex="0">View Details</a>
-      <a class="button" onclick="openLoanCalculator(1299000)" role="button" tabindex="0">Loan Calculator</a>
-      <a
-        class="button"
-        href="https://wa.me/254769485093?text=Hello%20HomesInvest%2C%20I%20want%20to%20buy%20the%20Kitengela%2050x100%20plot."
-        target="_blank"
-        rel="noopener noreferrer"
-        >Buy Now (WhatsApp)</a
-      >
-      <div class="buy-now-info">
-        Or call/SMS: <a href="tel:+254769485093">0769 485 093</a>
-      </div>
-    </div>
+  <section id="about">
+    <h2 id="about-title">About Us</h2>
+    <p id="about-text">
+      HomesInvest Kenya is dedicated to making property ownership accessible for local and diaspora investors. We combine transparency, accessibility, and tailored solutions to empower clients worldwide.
+    </p>
+  </section>
 
-    <div class="plot-card" data-name="isinya 50x100" id="plot205">
-      <img src="isinya.jpg" alt="Isinya 50x100 plot" />
-      <h3>Isinya 50×100</h3>
-      <p>KES 899,000</p>
-      <a class="button" onclick="openPlotDetails('plot205')" role="button" tabindex="0">View Details</a>
-      <a class="button" onclick="openLoanCalculator(899000)" role="button" tabindex="0">Loan Calculator</a>
-      <a
-        class="button"
-        href="https://wa.me/254769485093?text=Hello%20HomesInvest%2C%20I%20want%20to%20buy%20the%20Isinya%2050x100%20plot."
-        target="_blank"
-        rel="noopener noreferrer"
-        >Buy Now (WhatsApp)</a
-      >
-      <div class="buy-now-info">
-        Or call/SMS: <a href="tel:+254769485093">0769 485 093</a>
-      </div>
-    </div>
+  <script>
+    // Mobile menu toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navUl = document.querySelector('nav ul');
+    menuToggle.addEventListener('click', () => {
+      navUl.classList.toggle('show');
+    });
+    menuToggle.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        navUl.classList.toggle('show');
+      }
+    });
 
-    <div class="plot-card" data-name="mamba delta estate" id="mamba">
-      <img src="mamba.jpg" alt="Mamba Delta Estate plot" />
-      <h3>Mamba Delta Estate</h3>
-      <p>KES 900,000</p>
-      <a class="button" onclick="openPlotDetails('mamba')" role="button" tabindex="0">View Details</a>
-      <a class="button" onclick="openLoanCalculator(900000)" role="button" tabindex="0">Loan Calculator</a>
-      <a
-        class="button"
-        href="https://wa.me/254769485093?text=Hello%20HomesInvest%2C%20I%20want%20to%20buy%20a%20plot%20at%20Mamba%20Delta%20Estate."
-        target="_blank"
-        rel="noopener noreferrer"
-        >Buy Now (WhatsApp)</a
-      >
-      <div class="buy-now-info">
-        Or call/SMS: <a href="tel:+254769485093">0769 485 093</a>
-      </div>
-    </div>
+    // Modal functions with tracking
+    function openModal() {
+      document.getElementById('detailsModal').style.display = 'flex';
+      gtag('event', 'view_details_open', {
+        event_category: 'Engagement',
+        event_label: 'Building Solutions Modal',
+      });
+    }
+    function closeModal() {
+      document.getElementById('detailsModal').style.display = 'none';
+      gtag('event', 'view_details_close', {
+        event_category: 'Engagement',
+        event_label: 'Building Solutions Modal',
+      });
+    }
 
-    <div class="plot-card" data-name="duma close" id="duma">
-      <img src="duma.jpg" alt="Duma Close" />
-      <h3>Duma Close</h3>
-      <p>KES 1,300,000</p>
-      <a class="button" onclick="openPlotDetails('duma')" role="button" tabindex="0">View Details</a>
-      <a class="button" onclick="openLoanCalculator(1300000)" role="button" tabindex="0">Loan Calculator</a>
-      <a
-        class="button"
-        href="https://wa.me/254769485093?text=Hello%20HomesInvest%2C%20I%20want%20to%20buy%20a%20plot%20at%20Duma%20Close."
-        target="_blank"
-        rel="noopener noreferrer"
-        >Buy Now (WhatsApp)</a
-      >
-      <div class="buy-now-info">
-        Or call/SMS: <a href="tel:+254769485093">0769 485 093</a>
-      </div>
-    </div>
+    // Close modal on Esc key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeModal();
+      }
+    });
 
-    <div class="plot-card" data-name="dl kiboko slopes" id="kiboko">
-      <img src="kiboko.jpg" alt="DL Kiboko Slopes" />
-      <h3>DL Kiboko Slopes</h3>
-      <p>KES 1,000,000</p>
-      <a class="button" onclick="openPlotDetails('kiboko')" role="button" tabindex="0">View Details</a>
-      <a class="button" onclick="openLoanCalculator(1000000)" role="button" tabindex="0">Loan Calculator</a>
-      <a
-        class="button"
-        href="https://wa.me/254769485093?text=Hello%20HomesInvest%2C%20I%20want%20to%20buy%20a%20plot%20at%20DL%20Kiboko%20Slopes."
-        target="_blank"
-        rel="noopener noreferrer"
-        >Buy Now (WhatsApp)</a
-      >
-      <div class="buy-now-info">
-        Or call/SMS: <a href="tel:+254769485093">0769 485 093</a>
-      </div>
-    </div>
+    // Language dictionary
+    const translations = {
+      en: {
+        navSolutions: "Building Solutions",
+        navContact: "Contact",
+        navAbout: "About Us",
+        solutionsTitle: "Building Solutions",
+        solutionsText: "Explore our tailored solutions for local and international clients.",
+        viewDetailsBtn: "View Details",
+        modalTitle: "Our Building Solutions",
+        modalText:
+          "We provide end-to-end real estate solutions including property sourcing, financing, construction, and legal support. Whether you are in Kenya or abroad, we make property investment seamless.",
+        contactTitle: "Contact Us",
+        call1: "📞 Call +254769485093",
+        call2: "📞 Call +254759222512",
+        emailBtn: "✉️ Email Us",
+        aboutTitle: "About Us",
+        aboutText:
+          "HomesInvest Kenya is dedicated to making property ownership accessible for local and diaspora investors. We combine transparency, accessibility, and tailored solutions to empower clients worldwide.",
+      },
+      sw: {
+        navSolutions: "Suluhisho za Ujenzi",
+        navContact: "Wasiliana",
+        navAbout: "Kuhusu Sisi",
+        solutionsTitle: "Suluhisho za Ujenzi",
+        solutionsText: "Gundua suluhisho zetu zilizobinafsishwa kwa wateja wa ndani na wa kimataifa.",
+        viewDetailsBtn: "Tazama Maelezo",
+        modalTitle: "Suluhisho Zetu za Ujenzi",
+        modalText:
+          "Tunatoa suluhisho kamili za mali ikiwa ni pamoja na upatikanaji wa mali, fedha, ujenzi, na msaada wa kisheria. Iwe uko Kenya au ugenini, tunafanya uwekezaji wa mali kuwa rahisi.",
+        contactTitle: "Wasiliana Nasi",
+        call1: "📞 Piga +254769485093",
+        call2: "📞 Piga +254759222512",
+        emailBtn: "✉️ Tuma Barua Pepe",
+        aboutTitle: "Kuhusu Sisi",
+        aboutText:
+          "HomesInvest Kenya imejizatiti kufanya umiliki wa mali uwe rahisi kwa wawekezaji wa ndani na wa diaspora. Tunachanganya uwazi, upatikanaji, na suluhisho zilizobinafsishwa kuwahudumia wateja wetu duniani kote.",
+      },
+    };
 
-    <div class="plot-card" data-name="kifaru corner" id="kifaru">
-      <img src="kifaru.jpg" alt="Kifaru Corner" />
-      <h3>Kifaru Corner</h3>
-      <p>KES 1,050,000</p>
-      <a class="button" onclick="openPlotDetails('kifaru')" role="button" tabindex="0">View Details</a>
-      <a class="button" onclick="openLoanCalculator(1050000)" role="button" tabindex="0">Loan Calculator</a>
-      <a
-        class="button"
-        href="https://wa.me/254769485093?text=Hello%20HomesInvest%2C%20I%20want%20to%20buy%20a%20plot%20at%20Kifaru%20Corner."
-        target="_blank"
-        rel="noopener noreferrer"
-        >Buy Now (WhatsApp)</a
-      >
-      <div class="buy-now-info">
-        Or call/SMS: <a href="tel:+254769485093">0769 485 093</a>
-      </div>
-    </div>
+    function setLang(lang) {
+      if (!translations[lang]) return;
+      document.getElementById('nav-solutions').textContent = translations[lang].navSolutions;
+      document.getElementById('nav-contact').textContent = translations[lang].navContact;
+      document.getElementById('nav-about').textContent = translations[lang].navAbout;
+      document.getElementById('solutions-title').textContent = translations[lang].solutionsTitle;
+      document.getElementById('solutions-text').textContent = translations[lang].solutionsText;
+      document.getElementById('view-details-btn').textContent = translations[lang].viewDetailsBtn;
+      document.getElementById('modal-title').textContent = translations[lang].modalTitle;
+      document.getElementById('modal-text').textContent = translations[lang].modalText;
+      document.getElementById('contact-title').textContent = translations[lang].contactTitle;
+      document.getElementById('call1').textContent = translations[lang].call1;
+      document.getElementById('call2').textContent = translations[lang].call2;
+      document.getElementById('email-btn').textContent = translations[lang].emailBtn;
+      document.getElementById('about-title').textContent = translations[lang].aboutTitle;
+      document.getElementById('about-text').textContent = translations[lang].aboutText;
+    }
 
-    <div class="plot-card" data-name="nyati heights" id="nyati">
-      <img src="nyati.jpg" alt="Nyati Heights" />
-      <h3>Nyati Heights</h3>
-      <p>KES 1,100,000</p>
-      <a class="button" onclick="openPlotDetails('nyati')" role="button" tabindex="0">View Details</a>
-      <a class="button" onclick="openLoanCalculator(1100000)" role="button" tabindex="0">Loan Calculator</a>
-      <a
-        class="button"
-        href="https://wa.me/254769485093?text=Hello%20HomesInvest%2C%20I%20want%20to%20buy%20a%20plot%20at%20Nyati%20Heights."
-        target="_blank"
-        rel="noopener noreferrer"
-        >Buy Now (WhatsApp)</a
-      >
-      <div class="buy-now-info">
-        Or call/SMS: <a href="tel:+254769485093">0769 485 093</a>
-      </div>
-    </div>
-
-    <div class="plot-card" data-name="ndovu gardens" id="ndovu">
-      <img src="ndovu.jpg" alt="Ndovu Gardens" />
-      <h3>Ndovu Gardens</h3>
-      <p>KES 1,200,000</p>
-      <a class="button" onclick="openPlotDetails('ndovu')" role="button" tabindex="0">View Details</a>
-      <a class="button" onclick="openLoanCalculator(1200000)" role="button" tabindex="0">Loan Calculator</a>
-      <a
-        class="button"
-        href="https://wa.me/254769485093?text=Hello%20HomesInvest%2C%20I%20want%20to%20buy%20a%20plot%20at%20Ndovu%20Gardens."
-        target="_blank"
-        rel="noopener noreferrer"
-        >Buy Now (WhatsApp)</a
-      >
-      <div class="buy-now-info">
-        Or call/SMS: <a href="tel:+254769485093">0769 485 093</a>
-      </div>
-    </div>
-
-    <div class="plot-card" data-name="chui plains" id="chui">
-      <img src="chui.jpg" alt="Chui Plains" />
-      <h3>Chui Plains</h3>
-      <p>KES 1,400,000</p>
-      <a class="button" onclick="openPlotDetails('chui')" role="button" tabindex="0">View Details</a>
-      <a class="button" onclick="openLoanCalculator(1400000)" role="button" tabindex="0">Loan Calculator</a>
-      <a
-        class="button"
-        href="https://wa.me/254769485093?text=Hello%20HomesInvest%2C%20I%20want%20to%20buy%20a%20plot%20at%20DL%20Chui%20Plains."
-        target="_blank"
-        rel="noopener noreferrer"
-        >Buy Now (WhatsApp)</a
-      >
-      <div class="buy-now-info">
-        Or call/SMS: <a href="tel:+254769485093">0769 485 093</a>
-      </div>
-    </div>
-
-    <div class="plot-card" data-name="swara springs" id="swara">
-      <img src="swara.jpg" alt="Swara Springs" />
-      <h3>Swara Springs</h3>
-      <p>KES 1,500,000</p>
-      <a class="button" onclick="openPlotDetails('swara')" role="button" tabindex="0">View Details</a>
-      <a class="button" onclick="openLoanCalculator(1500000)" role="button" tabindex="0">Loan Calculator</a>
-      <a
-        class="button"
-        href="https://wa.me/254769485093?text=Hello%20HomesInvest%2C%20I%20want%20to%20
+    // Default language
+    setLang('en');
+  </script>
+</body>
+</html>

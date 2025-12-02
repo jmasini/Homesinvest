@@ -1,428 +1,345 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>HomesInvest Plots & Building Solutions</title>
-<meta name="description" content="HomesInvest — Affordable plots for sale in Kitengela, Isinya, Mamba Delta and more. Flexible payment plans, building solutions, and loan calculator included." />
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>HomesInvest — Affordable Plots & Building Solutions in Kenya</title>
+
+<meta name="description"
+content="HomesInvest offers affordable plots for sale in Kitengela, Isinya, Mamba Delta and surroundings. Electricity, water, 3-phase power & Kilimanjaro views. Book site visit today. Bank financing available with KCB, Equity & Coop Bank.">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
 <style>
-  body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: #E6F0FA; /* trust blue soft background */
-    color: #333;
-  }
-  /* NAVIGATION */
-  header {
-    background: #007ACC; /* bright friendly blue */
-    color: #fff;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 4px 8px rgba(0,122,204,0.3);
-  }
-  header h1 {
-    margin: 0;
-    font-size: 24px;
-    font-weight: 700;
-  }
-  nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 24px;
-  }
-  nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 16px;
-    transition: color 0.3s ease;
-  }
-  nav ul li a:hover {
-    color: #FFD27F; /* warm highlight on hover */
-  }
-  .menu-btn {
-    display: none;
-    font-size: 26px;
-    cursor: pointer;
-  }
-  @media (max-width: 768px) {
-    nav ul {
-      display: none;
-      flex-direction: column;
-      background: #007ACC;
-      padding: 15px;
-      border-radius: 0 0 10px 10px;
-    }
-    nav ul.show {
-      display: flex;
-    }
-    .menu-btn {
-      display: block;
-    }
-  }
-  /* HERO */
-  .hero {
-    background: linear-gradient(135deg, #007ACC 0%, #005A9E 100%);
-    padding: 120px 20px;
-    color: white;
-    text-align: center;
-    box-shadow: inset 0 0 50px rgba(0, 90, 158, 0.7);
-  }
-  .hero h2 {
-    font-size: 44px;
-    margin-bottom: 16px;
-    font-weight: 700;
-    text-shadow: 0 2px 6px rgba(0,0,0,0.5);
-  }
-  .hero p {
-    font-size: 20px;
-    font-weight: 500;
-    text-shadow: 0 1px 4px rgba(0,0,0,0.4);
-  }
-  /* SECTIONS */
-  section {
-    padding: 40px 20px;
-    background: #fff;
-    border-radius: 12px;
-    margin: 20px auto;
-    max-width: 1200px;
-    box-shadow: 0 4px 12px rgba(0, 122, 204, 0.15);
-  }
-  /* GRID */
-  .plot-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 24px;
-  }
-  .plot-card {
-    background: #ffffff;
-    border-radius: 16px;
-    padding: 20px;
-    box-shadow: 0 6px 15px rgba(0, 122, 204, 0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  .plot-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 25px rgba(0, 122, 204, 0.3);
-  }
-  .plot-card img {
-    width: 100%;
-    border-radius: 14px;
-    margin-bottom: 14px;
-    object-fit: cover;
-  }
-  .plot-card h3 {
-    margin: 0 0 8px;
-    color: #007ACC;
-    font-weight: 700;
-  }
-  .plot-card p {
-    margin: 0 0 12px;
-    font-weight: 600;
-    color: #007ACC;
-    font-size: 18px;
-  }
-  .button {
-    display: inline-block;
-    background: #007ACC; /* trust blue */
-    color: white;
-    padding: 12px 20px;
-    border-radius: 8px;
-    text-decoration: none;
-    margin-top: 10px;
-    font-weight: 700;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0,122,204,0.35);
-    transition: background 0.3s ease;
-  }
-  .button:hover {
-    background: #005A9E;
-  }
-  /* CONTACT BUTTONS */
-  .contact-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px;
-    justify-content: center;
-    margin-top: 24px;
-  }
-  .contact-buttons button {
-    background: #007ACC;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    padding: 12px 20px;
-    cursor: pointer;
-    font-weight: 700;
-    font-size: 15px;
-    box-shadow: 0 4px 12px rgba(0,122,204,0.35);
-    transition: background 0.3s ease;
-  }
-  .contact-buttons button:hover {
-    background: #005A9E;
-  }
-  /* LEAD FORM */
-  form#leadCaptureForm {
-    max-width: 600px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-  }
-  form#leadCaptureForm input,
-  form#leadCaptureForm select {
-    padding: 12px 14px;
-    border: 1px solid #007ACC;
-    border-radius: 8px;
-    font-size: 16px;
-    outline: none;
-    transition: border-color 0.3s ease;
-  }
-  form#leadCaptureForm input:focus,
-  form#leadCaptureForm select:focus {
-    border-color: #005A9E;
-  }
-  form#leadCaptureForm button {
-    background: #007ACC;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    padding: 14px;
-    font-weight: 700;
-    font-size: 18px;
-    cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0,122,204,0.4);
-    transition: background 0.3s ease;
-  }
-  form#leadCaptureForm button:hover {
-    background: #005A9E;
-  }
-  /* MODALS */
-  .modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.45);
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
-  }
-  .modal-content {
-    background: white;
-    padding: 30px 30px 25px 30px;
-    border-radius: 16px;
-    max-width: 520px;
-    max-height: 90vh;
-    overflow-y: auto;
-    box-shadow: 0 6px 18px rgba(0,122,204,0.3);
-  }
-  .modal-content h3 {
-    margin-top: 0;
-    color: #007ACC;
-  }
-  .modal-content button {
-    background: #007ACC;
-    margin-top: 16px;
-    color: white;
-    border: none;
-    padding: 10px 18px;
-    border-radius: 8px;
-    cursor: pointer;
-  }
-  .modal-content button:hover {
-    background: #005A9E;
-  }
-  /* WHATSAPP FLOATING */
-  .whatsapp {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    background: #25D366;
-    padding: 16px 24px;
-    border-radius: 50px;
-    color: white;
-    font-size: 20px;
-    font-weight: 700;
-    cursor: pointer;
-    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.7);
-    user-select: none;
-    transition: background 0.3s ease;
-    z-index: 1000;
-  }
-  .whatsapp:hover {
-    background: #1ebe5a;
-  }
-  /* FOOTER */
-  footer {
-    background: #007ACC;
-    color: white;
-    padding: 32px 20px;
-    text-align: center;
-    font-weight: 600;
-    font-size: 16px;
-    box-shadow: inset 0 3px 8px rgba(0,0,0,0.2);
-  }
+body{
+  margin:0;
+  font-family:Poppins, sans-serif;
+  background:#f7f9fc;
+  color:#222;
+}
+
+header{
+  background:#0a3d62;
+  color:#fff;
+  padding:40px 15px;
+  text-align:center;
+}
+
+header h1{
+  margin:0;
+  font-size:34px;
+}
+
+header p{
+  margin-top:10px;
+  font-size:18px;
+}
+
+section{
+  padding:60px 15px;
+  max-width:1200px;
+  margin:auto;
+}
+
+h2{
+  text-align:center;
+  color:#0a3d62;
+  margin-bottom:15px;
+}
+
+.lead-text{
+  text-align:center;
+  max-width:700px;
+  margin:0 auto 35px;
+  color:#555;
+}
+
+.plot-container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;
+}
+
+.plot-card{
+  background:#fff;
+  padding:20px;
+  border-radius:12px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.08);
+  text-align:center;
+}
+
+.plot-card img{
+  width:100%;
+  border-radius:10px;
+}
+
+.plot-card h3{
+  margin-top:12px;
+}
+
+.features{
+  font-size:14px;
+  text-align:left;
+  margin:12px 0;
+}
+
+.features li{
+  margin:6px 0;
+}
+
+.price{
+  font-size:20px;
+  font-weight:600;
+  margin:10px 0;
+}
+
+.button{
+  display:inline-block;
+  margin:8px 5px;
+  background:#007acc;
+  color:#fff;
+  padding:10px 18px;
+  border-radius:8px;
+  text-decoration:none;
+  transition:0.2s ease;
+  font-weight:600;
+}
+
+.button:hover{
+ background:#005fa3;
+}
+
+.cta-row{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:15px;
+  margin-top:30px;
+}
+
+.bank-partners{
+  text-align:center;
+  background:#e6f0f9;
+  border-radius:14px;
+  padding:40px 20px;
+}
+
+.bank-partners h3{
+  color:#0a3d62;
+}
+
+.bank-list{
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  flex-wrap:wrap;
+  margin-top:15px;
+  font-weight:600;
+  font-size:18px;
+}
+
+form{
+  max-width:650px;
+  margin:auto;
+  background:#fff;
+  padding:25px;
+  border-radius:14px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.08);
+}
+
+form input, form textarea, form button{
+  width:100%;
+  padding:12px;
+  margin:8px 0;
+  border-radius:6px;
+  border:1px solid #ccc;
+}
+
+form button{
+  background:#0a3d62;
+  color:#fff;
+  font-weight:600;
+  border:none;
+  cursor:pointer;
+}
+
+form button:hover{
+  background:#052c48;
+}
+
+footer{
+  text-align:center;
+  background:#0a3d62;
+  color:#fff;
+  padding:20px;
+}
 </style>
+
 </head>
+
 <body>
+
 <header>
-  <h1>HomesInvest</h1>
-  <span class="menu-btn" onclick="toggleMenu()">☰</span>
-  <nav>
-    <ul>
-      <li><a href="#plots">Plots for Sale</a></li>
-      <li><a href="#building">Building Solutions</a></li>
-      <li><a href="#lead">Get in Touch</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+  <h1>HomesInvest Kenya</h1>
+  <p>Affordable Plots • Building Solutions • Flexible Payments • Bank Financing Available</p>
 </header>
 
-<div class="hero">
-  <h2>Affordable Plots in Kitengela & Isinya</h2>
-  <p>Flexible payment | Ready titles | Building options available</p>
-  <div class="contact-buttons">
-    <button onclick="contactEmail()">Email</button>
-    <button onclick="contactPhone()">Call</button>
-    <button onclick="contactX()">X (Twitter)</button>
-    <button onclick="contactFacebook()">Facebook</button>
-    <button onclick="contactInstagram()">Instagram</button>
-  </div>
+<!-- PLOTS -->
+<section id="plots">
+<h2>Available Plots</h2>
+
+<p class="lead-text">
+Each HomesInvest plot comes with reliable infrastructure and luxury suburban living —
+perfect for homes, vacation getaway properties & retirement havens.
+</p>
+
+<div class="plot-container">
+
+<div class="plot-card">
+<img src="kitengela.jpg" alt="Kitengela Plot">
+<h3>Kitengela 50×100</h3>
+
+<ul class="features">
+<li>✅ Electricity & Water supply</li>
+<li>✅ 3-Phase power on site</li>
+<li>✅ Clean fresh suburban air</li>
+<li>✅ Warm holiday climate</li>
+<li>✅ Retirement & vacation friendly</li>
+<li>✅ Stunning Kilimanjaro views</li>
+</ul>
+
+<div class="price">KES 1,299,000</div>
+
+<a href="#lead" class="button">Book Plot Today</a>
+<a href="#lead" class="button">Book Site Visit</a>
 </div>
 
-<section id="plots">
-  <h2>Available Plots</h2>
-  <p>Find your perfect plot with flexible payment options.</p>
-  <div class="contact-buttons">
-    <button onclick="contactEmail()">Email</button>
-    <button onclick="contactPhone()">Call</button>
-    <button onclick="contactX()">X (Twitter)</button>
-    <button onclick="contactFacebook()">Facebook</button>
-    <button onclick="contactInstagram()">Instagram</button>
-  </div>
-  <div class="plot-container">
-    <div class="plot-card" id="plot101">
-      <img src="kitengela.jpg" alt="Kitengela Plot" />
-      <h3>Kitengela 50×100</h3>
-      <p>KES 1,299,000</p>
-      <a class="button" onclick="openPlotDetails('plot101')">View Details</a>
-      <a class="button" onclick="openLoanCalculator(1299000)">Loan Calculator</a>
-    </div>
-    <div class="plot-card" id="plot205">
-      <img src="isinya.jpg" alt="Isinya Plot" />
-      <h3>Isinya 50×100</h3>
-      <p>KES 899,000</p>
-      <a class="button" onclick="openPlotDetails('plot205')">View Details</a>
-      <a class="button" onclick="openLoanCalculator(899000)">Loan Calculator</a>
-    </div>
-    <div class="plot-card" id="mamba">
-      <img src="mamba.jpg" alt="Mamba Delta Estate" />
-      <h3>Mamba Delta Estate</h3>
-      <p>KES 900,000</p>
-      <a class="button" onclick="openPlotDetails('mamba')">View Details</a>
-      <a class="button" onclick="openLoanCalculator(900000)">Loan Calculator</a>
-    </div>
-    <div class="plot-card" id="duma">
-      <img src="duma.jpg" alt="Duma Close" />
-      <h3>Duma Close</h3>
-      <p>KES 1,300,000</p>
-      <a class="button" onclick="openPlotDetails('duma')">View Details</a>
-      <a class="button" onclick="openLoanCalculator(1300000)">Loan Calculator</a>
-    </div>
-    <div class="plot-card" id="kiboko">
-      <img src="kiboko.jpg" alt="Kiboko Slopes" />
-      <h3>DL Kiboko Slopes</h3>
-      <p>KES 1,000,000</p>
-      <a class="button" onclick="openPlotDetails('kiboko')">View Details</a>
-      <a class="button" onclick="openLoanCalculator(1000000)">Loan Calculator</a>
-    </div>
-    <div class="plot-card" id="kifaru">
-      <img src="kifaru.jpg" alt="Kifaru Corner" />
-      <h3>Kifaru Corner</h3>
-      <p>KES 1,050,000</p>
-      <a class="button" onclick="openPlotDetails('kifaru')">View Details</a>
-      <a class="button" onclick="openLoanCalculator(1050000)">Loan Calculator</a>
-    </div>
-    <div class="plot-card" id="nyati">
-      <img src="nyati.jpg" alt="Nyati Heights" />
-      <h3>Nyati Heights</h3>
-      <p>KES 1,100,000</p>
-      <a class="button" onclick="openPlotDetails('nyati')">View Details</a>
-      <a class="button" onclick="openLoanCalculator(1100000)">Loan Calculator</a>
-    </div>
-    <div class="plot-card" id="ndovu">
-      <img src="ndovu.jpg" alt="Ndovu Gardens" />
-      <h3>Ndovu Gardens</h3>
-      <p>KES 1,200,000</p>
-      <a class="button" onclick="openPlotDetails('ndovu')">View Details</a>
-      <a class="button" onclick="openLoanCalculator(1200000)">Loan Calculator</a>
-    </div>
-    <div class="plot-card" id="chui">
-      <img src="chui.jpg" alt="Chui Plains" />
-      <h3>Chui Plains</h3>
-      <p>KES 1,400,000</p>
-      <a class="button" onclick="openPlotDetails('chui')">View Details</a>
-      <a class="button" onclick="openLoanCalculator(1400000)">Loan Calculator</a>
-    </div>
-    <div class="plot-card" id="swara">
-      <img src="swara.jpg" alt="Swara Springs" />
-      <h3>Swara Springs</h3>
-      <p>KES 1,500,000</p>
-      <a class="button" onclick="openPlotDetails('swara')">View Details</a>
-      <a class="button" onclick="openLoanCalculator(1500000)">Loan Calculator</a>
-    </div>
-    <div class="plot-card" id="simba">
-      <img src="simba.jpg" alt="Simba Gorge" />
-      <h3>Simba Gorge</h3>
-      <p>KES 1,600,000</p>
-      <a class="button" onclick="openPlotDetails('simba')">View Details</a>
-      <a class="button" onclick="openLoanCalculator(1600000)">Loan Calculator</a>
-    </div>
-  </div>
+<div class="plot-card">
+<img src="isinyaplot.jpg" alt="Isinya Plot">
+<h3>Isinya 50×100</h3>
+
+<ul class="features">
+<li>✅ Electricity & Water supply</li>
+<li>✅ 3-Phase power</li>
+<li>✅ Fresh clean countryside air</li>
+<li>✅ Warm climate</li>
+<li>✅ Perfect for getaway homes</li>
+<li>✅ Kilimanjaro peak visibility</li>
+</ul>
+
+<div class="price">KES 990,000</div>
+
+<a href="#lead" class="button">Book Plot Today</a>
+<a href="#lead" class="button">Book Site Visit</a>
+</div>
+
+<div class="plot-card">
+<img src="mamba.jpg" alt="Mamba Delta">
+<h3>Mamba Delta</h3>
+
+<ul class="features">
+<li>✅ Electricity connectivity</li>
+<li>✅ Clean water supply</li>
+<li>✅ 3-Phase high-load power</li>
+<li>✅ Green fresh air suburbs</li>
+<li>✅ Ideal retirement haven</li>
+<li>✅ Views toward Mt Kilimanjaro</li>
+</ul>
+
+<div class="price">KES 850,000</div>
+
+<a href="#lead" class="button">Book Plot Today</a>
+<a href="#lead" class="button">Book Site Visit</a>
+</div>
+
+</div>
+
+<div class="cta-row">
+<a class="button" href="#lead">Book Site Visit</a>
+<a class="button" href="#lead">Book Plot Today</a>
+<a class="button" href="#lead">Request Bank Financing Info</a>
+</div>
+
 </section>
 
+<!-- BUILDING -->
 <section id="building">
-  <h2>Building Solutions</h2>
-  <p>Quality building options tailored to your budget.</p>
-  <div class="contact-buttons">
-    <button onclick="contactEmail()">Email</button>
-    <button onclick="contactPhone()">Call</button>
-    <button onclick="contactX()">X (Twitter)</button>
-    <button onclick="contactFacebook()">Facebook</button>
-    <button onclick="contactInstagram()">Instagram</button>
-  </div>
-  <div class="plot-container">
-    <div class="plot-card">
-      <h3>2 Bedroom House</h3>
-      <p>From KES 1.4M</p>
-      <a class="button" onclick="openLoanCalculator(1400000)">Loan Calculator</a>
-    </div>
-    <div class="plot-card">
-      <h3>3 Bedroom House</h3>
-      <p>From KES 2.3M</p>
-      <a class="button" onclick="openLoanCalculator(2300000)">Loan Calculator</a>
-    </div>
-    <div class="plot-card">
-      <h3>4 Bedroom House</h3>
-      <p>From KES 3.8M</p>
-      <a class="button" onclick="openLoanCalculator(3800000)">Loan Calculator</a>
-    </div>
-  </div>
+<h2>Building Solutions</h2>
+
+<p class="lead-text">
+We design and build quality affordable homes — with flexible financing support.
+</p>
+
+<div class="plot-container">
+
+<div class="plot-card">
+<h3>2 Bedroom Bungalow</h3>
+<p>From <strong>KES 1.4M</strong></p>
+<a class="button" href="#lead">Book Building Consultation</a>
+</div>
+
+<div class="plot-card">
+<h3>3 Bedroom Bungalow</h3>
+<p>From <strong>KES 2.3M</strong></p>
+<a class="button" href="#lead">Request Quote</a>
+</div>
+
+<div class="plot-card">
+<h3>4 Bedroom Family Home</h3>
+<p>From <strong>KES 3.8M</strong></p>
+<a class="button" href="#lead">Request Quote</a>
+</div>
+
+</div>
 </section>
 
+<!-- PARTNERS -->
+<section class="bank-partners">
+
+<h3>Bank Financing Available With:</h3>
+
+<div class="bank-list">
+<span>Kenya Commercial Bank (KCB)</span>
+<span>Equity Bank Kenya</span>
+<span>Co-operative Bank of Kenya</span>
+</div>
+
+<p style="margin-top:16px;">
+We assist buyers with mortgage applications & plot financing through our approved bank partners.
+</p>
+
+</section>
+
+<!-- LEAD FORM -->
 <section id="lead">
-  <h2>Get in Touch</h2>
-  <p>Fill out the form below and our sales team will contact you shortly.</p>
-  <form id="leadCaptureForm" method="POST" action="https://api.web3forms.com/submit" onsubmit="return handleSubmit(event)">
-    <!-- Replace YOUR_WEB3FORMS_ACCESS_KEY below -->
-    <input type="hidden" name="access_key" value="8949f955-6dc3-40ef-937d-593bf6235c1e" />
-    <!-- Optional redirect after successful submit -->
-    <input type="hidden" name="redirect" value="" />
-    
-    <input type="text" name="name" required placeholder
-                      
+
+<h2>Book a Visit • Request Financing • Get a Quote</h2>
+
+<form action="https://api.web3forms.com/submit" method="POST">
+<input type="hidden" name="access_key" value="8949f955-6dc3-40ef-937d-593bf6235c1e">
+
+<input type="text" name="name" placeholder="Full name" required>
+<input type="email" name="email" placeholder="Email address">
+<input type="tel" name="phone" placeholder="Phone or WhatsApp number" required>
+
+<textarea name="message"
+placeholder="I’d like to... book a site visit / buy a plot / apply for financing / request a building quote"
+required></textarea>
+
+<button type="submit">Send Request</button>
+
+</form>
+
+</section>
+
+<footer>
+<p>
+© 2025 HomesInvest Kenya |  
+sales@homesinvest.net | +254 769 485 093  
+</p>
+</footer>
+
+</body>
+  </html>
+  

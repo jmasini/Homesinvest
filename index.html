@@ -3,546 +3,214 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HomesInvest Kenya | Property Marketplace</title>
 
-<title>HomesInvest — Affordable Plots & Building Solutions in Kenya</title>
+<meta name="description" content="Buy, Sell, Rent or Lease property in Kenya. Featured listings, bank financing, Google Maps locations, WhatsApp instant support.">
 
-<meta name="description"
-content="HomesInvest offers affordable plots for sale in Kitengela, Isinya, Mamba Delta and surroundings. Electricity, water, 3-phase power & Kilimanjaro views. Book site visit today. Bank financing available with KCB, Equity & Coop Bank.">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-/* Floating contact buttons */
-.floating-contact {
-  position: fixed;
-  right: 18px;
-  bottom: 18px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  z-index: 9999;
-}
-
-.float-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
-  color: #fff;
-  font-size: 24px;
-  text-decoration: none;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-  transition: 0.2s ease;
-}
-
-.float-btn:hover {
-  transform: scale(1.1);
-}
-
-.whatsapp { background: #25D366; }
-.call { background: #007ACC; }
-.email { background: #0a3d62; }
-body{
-  margin:0;
-  font-family:Poppins, sans-serif;
-  background:#f7f9fc;
-  color:#222;
-}
-
-header{
-  background:#0a3d62;
-  color:#fff;
-  padding:40px 15px;
-  text-align:center;
-}
-
-header h1{
-  margin:0;
-  font-size:34px;
-}
-
-header p{
-  margin-top:10px;
-  font-size:18px;
-}
-
-section{
-  padding:60px 15px;
-  max-width:1200px;
-  margin:auto;
-}
-
-h2{
-  text-align:center;
-  color:#0a3d62;
-  margin-bottom:15px;
-}
-
-.lead-text{
-  text-align:center;
-  max-width:700px;
-  margin:0 auto 35px;
-  color:#555;
-}
-
-.plot-container{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:20px;
-}
-
-.plot-card{
-  background:#fff;
-  padding:20px;
-  border-radius:12px;
-  box-shadow:0 4px 12px rgba(0,0,0,0.08);
-  text-align:center;
-}
-
-.plot-card img{
-  width:100%;
-  border-radius:10px;
-}
-
-.plot-card h3{
-  margin-top:12px;
-}
-
-.features{
-  font-size:14px;
-  text-align:left;
-  margin:12px 0;
-}
-
-.features li{
-  margin:6px 0;
-}
-
-.price{
-  font-size:20px;
-  font-weight:600;
-  margin:10px 0;
-}
-
-.button{
-  display:inline-block;
-  margin:8px 5px;
-  background:#007acc;
-  color:#fff;
-  padding:10px 18px;
-  border-radius:8px;
-  text-decoration:none;
-  transition:0.2s ease;
-  font-weight:600;
-}
-
-.button:hover{
- background:#005fa3;
-}
-
-.cta-row{
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:15px;
-  margin-top:30px;
-}
-
-.bank-partners{
-  text-align:center;
-  background:#e6f0f9;
-  border-radius:14px;
-  padding:40px 20px;
-}
-
-.bank-partners h3{
-  color:#0a3d62;
-}
-
-.bank-list{
-  display:flex;
-  justify-content:center;
-  gap:40px;
-  flex-wrap:wrap;
-  margin-top:15px;
-  font-weight:600;
-  font-size:18px;
-}
-
-form{
-  max-width:650px;
-  margin:auto;
-  background:#fff;
-  padding:25px;
-  border-radius:14px;
-  box-shadow:0 4px 12px rgba(0,0,0,0.08);
-}
-
-form input, form textarea, form button{
-  width:100%;
-  padding:12px;
-  margin:8px 0;
-  border-radius:6px;
-  border:1px solid #ccc;
-}
-
-form button{
-  background:#0a3d62;
-  color:#fff;
-  font-weight:600;
-  border:none;
-  cursor:pointer;
-}
-
-form button:hover{
-  background:#052c48;
-}
-
-footer{
-  text-align:center;
-  background:#0a3d62;
-  color:#fff;
-  padding:20px;
-}
+body{margin:0;font-family:Poppins,sans-serif;background:#eef5ff;color:#333}
+header{background:#005bbb;color:#fff;padding:15px 20px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:1000}
+header h1{margin:0;font-size:22px}
+nav a{color:#fff;margin-left:15px;text-decoration:none;font-weight:600}
+.hero{background:linear-gradient(135deg,#005bbb,#003f7f);color:#fff;text-align:center;padding:90px 20px}
+.hero h2{font-size:40px;margin-bottom:10px}
+.hero p{font-size:18px}
+section{max-width:1200px;margin:30px auto;background:#fff;padding:30px;border-radius:16px;box-shadow:0 6px 20px rgba(0,91,187,.15)}
+h2{color:#005bbb}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
+.card{padding:20px;border-radius:14px;box-shadow:0 5px 14px rgba(0,0,0,.1)}
+.featured{border:3px solid gold;background:#fffbea}
+.btn{display:inline-block;background:#005bbb;color:#fff;padding:14px 22px;border-radius:10px;font-weight:700;text-decoration:none;margin-top:10px}
+.btn.whatsapp{background:#25D366}
+.btn.call{background:#ff9800}
+input,select,textarea{width:100%;padding:12px;margin-top:10px;border-radius:8px;border:1px solid #005bbb}
+form button{margin-top:15px;border:none}
+.float{position:fixed;right:20px;bottom:20px;z-index:999}
+.float a{display:block;margin-top:10px;padding:14px 20px;border-radius:50px;color:#fff;font-weight:700;text-decoration:none}
+.whatsapp-float{background:#25D366}
+.call-float{background:#ff9800}
+.email-float{background:#005bbb}
+footer{text-align:center;padding:30px;background:#005bbb;color:#fff}
+small{color:#666}
 </style>
-
 </head>
-<a class="button"
- href="https://wa.me/254769485093?text=Hello%20HomesInvest%2C%20I%20am%20an%20international%20buyer%20interested%20in%20investing%20in%20Kenya.%20Please%20share%20details%20and%20virtual%20site%20visit%20options."
- target="_blank">
- 🌍 Diaspora Buyers
-</a>
-<!-- Floating Contact Buttons -->
-<div class="floating-contact">
-<!-- WhatsApp Floating Chat -->
-<a class="float-btn whatsapp"
-   href="https://wa.me/254769485093?text=Hello%20HomesInvest%2C%20I%20am%20interested%20in%20booking%20a%20site%20visit%20and%20learning%20more%20about%20available%20plots.%0AMy%20name%3A%20%0ALocation%20of%20interest%3A%20"
-   target="_blank"
-   title="Chat on WhatsApp">
-   💬
-</a>
-  <!-- WhatsApp Chat -->
-  <a class="float-btn whatsapp"
-     href="https://wa.me/254769485093"
-     target="_blank"
-     title="Chat on WhatsApp">
-    💬
-  </a>
 
-  <!-- Phone Call -->
-  <a class="float-btn call"
-     href="tel:+254759222512"
-     title="Call Us">
-    📞
-  </a>
-
-  <!-- Email -->
-  <a class="float-btn email"
-     href="mailto:sales@homesinvest.net"
-     title="Email Us">
-    ✉️
-  </a>
-
-</div>
 <body>
 
 <header>
-  <h1>HomesInvest Kenya</h1>
-  <p>Affordable Plots • Building Solutions • Flexible Payments • Bank Financing Available</p>
+<h1>HomesInvest</h1>
+<nav>
+<a href="#featured">Featured</a>
+<a href="#search">Search</a>
+<a href="#list">List Property</a>
+<a href="#contact">Contact</a>
+</nav>
 </header>
-<a class="button"
- href="https://wa.me/254769485093?text=Hello%20HomesInvest%2C%20I%20am%20an%20international%20buyer%20interested%20in%20investing%20in%20Kenya.%20Please%20share%20details%20and%20virtual%20site%20visit%20options."
- target="_blank">
- 🌍 Diaspora Buyers
-</a>
-<!-- PLOTS -->
-<section id="plots">
-<h2>Available Plots</h2>
 
-<p class="lead-text">
-Each HomesInvest plot comes with reliable infrastructure and luxury suburban living —
-perfect for homes, vacation getaway properties & retirement havens.
-</p>
+<!-- HERO -->
+<div class="hero">
+<h2>Kenya’s Smart Property Marketplace</h2>
+<p>Buy • Sell • Rent • Lease | Bank Financing Available</p>
 
-<div class="plot-container">
-
-<div class="plot-card">
-<img src="kitengela.jpg" alt="Kitengela Plot">
-<h3>Kitengela 50×100</h3>
-
-<ul class="features">
-<li>✅ Electricity & Water supply</li>
-<li>✅ 3-Phase power on site</li>
-<li>✅ Clean fresh suburban air</li>
-<li>✅ Warm holiday climate</li>
-<li>✅ Retirement & vacation friendly</li>
-<li>✅ Stunning Kilimanjaro views</li>
-</ul>
-
-<div class="price">KES 1,299,000</div>
-
-<a href="#lead" class="button">Book Plot Today</a>
-<a href="#lead" class="button">Book Site Visit</a>
-</div>
-<a class="button"
-   href="https://wa.me/254769485093?text=Hello%20HomesInvest%2C%20I%27m%20interested%20in%20the%20Kitengela%2050x100%20plot%20and%20would%20like%20to%20book%20a%20site%20visit."
-   target="_blank">
-   Book Site Visit
-</a>
-<div class="plot-card">
-<img src="isinyaplot.jpg" alt="Isinya Plot">
-<h3>Isinya 50×100</h3>
-
-<ul class="features">
-<li>✅ Electricity & Water supply</li>
-<li>✅ 3-Phase power</li>
-<li>✅ Fresh clean countryside air</li>
-<li>✅ Warm climate</li>
-<li>✅ Perfect for getaway homes</li>
-<li>✅ Kilimanjaro peak visibility</li>
-</ul>
-
-<div class="price">KES 990,000</div>
-
-<a href="#lead" class="button">Book Plot Today</a>
-<a href="#lead" class="button">Book Site Visit</a>
-</div>
-<a class="button"
-   href="https://wa.me/254769485093?text=Hello%20HomesInvest%2C%20I%27m%20interested%20in%20the%20Isinya%2050x100%20plot%20and%20would%20like%20to%20book%20a%20site%20visit."
-   target="_blank">
-   Book Site Visit
-</a>
-<div class="plot-card">
-<img src="mamba.jpg" alt="Mamba Delta">
-<h3>Mamba Delta</h3>
-
-<ul class="features">
-<li>✅ Electricity connectivity</li>
-<li>✅ Clean water supply</li>
-<li>✅ 3-Phase high-load power</li>
-<li>✅ Green fresh air suburbs</li>
-<li>✅ Ideal retirement haven</li>
-<li>✅ Views toward Mt Kilimanjaro</li>
-</ul>
-
-<div class="price">KES 850,000</div>
-
-<a href="#lead" class="button">Book Plot Today</a>
-<a href="#lead" class="button">Book Site Visit</a>
-</div>
-
-</div>
-<a class="button"
-   href="https://wa.me/254769485093?text=Hello%20HomesInvest%2C%20I%27m%20interested%20in%20the%20mamba%2050x100%20plot%20and%20would%20like%20to%20book%20a%20site%20visit."
-   target="_blank">
-   Book Site Visit
-</a>
-<div class="cta-row">
-<a class="button" href="#lead">Book Site Visit</a>
-<a class="button" href="#lead">Book Plot Today</a>
-<a class="button" href="#lead">Request Bank Financing Info</a>
-</div>
-<div class="plot-container">
-    <div class="plot-card" id="plot101">
-      <img src="kitengela.jpg" alt="Kitengela Plot" />
-      <h3>Kitengela 50×100</h3>
-      <p>KES 1,299,000</p>
-      <a class="button" onclick="openPlotDetails('plot101')">View Details</a>
-      <a class="button" onclick="openLoanCalculator(1299000)">Loan Calculator</a>
-    </div>
-    <div class="plot-card" id="plot205">
-      <img src="isinya.jpg" alt="Isinya Plot" />
-      <h3>Isinya 50×100</h3>
-      <p>KES 899,000</p>
-      <a class="button" onclick="openPlotDetails('plot205')">View Details</a>
-      <a class="button" onclick="openLoanCalculator(899000)">Loan Calculator</a>
-    </div>
-    <div class="plot-card" id="mamba">
-      <img src="mamba.jpg" alt="Mamba Delta Estate" />
-      <h3>Mamba Delta Estate</h3>
-      <p>KES 900,000</p>
-      <a class="button" onclick="openPlotDetails('mamba')">View Details</a>
-      <a class="button" onclick="openLoanCalculator(900000)">Loan Calculator</a>
-    </div>
-    <div class="plot-card" id="duma">
-      <img src="duma.jpg" alt="Duma Close" />
-      <h3>Duma Close</h3>
-      <p>KES 1,300,000</p>
-      <a class="button" onclick="openPlotDetails('duma')">View Details</a>
-      <a class="button" onclick="openLoanCalculator(1300000)">Loan Calculator</a>
-    </div>
-    <div class="plot-card" id="kiboko">
-      <img src="kiboko.jpg" alt="Kiboko Slopes" />
-      <h3>DL Kiboko Slopes</h3>
-      <p>KES 1,000,000</p>
-      <a class="button" onclick="openPlotDetails('kiboko')">View Details</a>
-      <a class="button" onclick="openLoanCalculator(1000000)">Loan Calculator</a>
-    </div>
-    <div class="plot-card" id="kifaru">
-      <img src="kifaru.jpg" alt="Kifaru Corner" />
-      <h3>Kifaru Corner</h3>
-      <p>KES 1,050,000</p>
-      <a class="button" onclick="openPlotDetails('kifaru')">View Details</a>
-      <a class="button" onclick="openLoanCalculator(1050000)">Loan Calculator</a>
-    </div>
-    <div class="plot-card" id="nyati">
-      <img src="nyati.jpg" alt="Nyati Heights" />
-      <h3>Nyati Heights</h3>
-      <p>KES 1,100,000</p>
-      <a class="button" onclick="openPlotDetails('nyati')">View Details</a>
-      <a class="button" onclick="openLoanCalculator(1100000)">Loan Calculator</a>
-    </div>
-    <div class="plot-card" id="ndovu">
-      <img src="ndovu.jpg" alt="Ndovu Gardens" />
-      <h3>Ndovu Gardens</h3>
-      <p>KES 1,200,000</p>
-      <a class="button" onclick="openPlotDetails('ndovu')">View Details</a>
-      <a class="button" onclick="openLoanCalculator(1200000)">Loan Calculator</a>
-    </div>
-    <div class="plot-card" id="chui">
-      <img src="chui.jpg" alt="Chui Plains" />
-      <h3>Chui Plains</h3>
-      <p>KES 1,400,000</p>
-      <a class="button" onclick="openPlotDetails('chui')">View Details</a>
-      <a class="button" onclick="openLoanCalculator(1400000)">Loan Calculator</a>
-    </div>
-    <div class="plot-card" id="swara">
-      <img src="swara.jpg" alt="Swara Springs" />
-      <h3>Swara Springs</h3>
-      <p>KES 1,500,000</p>
-      <a class="button" onclick="openPlotDetails('swara')">View Details</a>
-      <a class="button" onclick="openLoanCalculator(1500000)">Loan Calculator</a>
-    </div>
-    <div class="plot-card" id="simba">
-      <img src="simba.jpg" alt="Simba Gorge" />
-      <h3>Simba Gorge</h3>
-      <p>KES 1,600,000</p>
-      <a class="button" onclick="openPlotDetails('simba')">View Details</a>
-      <a class="button" onclick="openLoanCalculator(1600000)">Loan Calculator</a>
-    </div>
-<ul style="font-weight:600;color:#005A9E;">
-<li>✅ Electricity & 3-Phase Power Connection</li>
-<li>✅ Reliable Water Supply</li>
-<li>✅ Clean Fresh Suburban Air</li>
-<li>✅ Warm Climate Ideal for Vacation & Retirement Homes</li>
-<li>✅ Stunning Views of Mt. Kilimanjaro Peaks</li>
-<li>✅ Ready Titles & Secure Gated Estates</li>
-</ul>
-
-</section>
-
-<!-- BUILDING -->
-<section id="building">
-<h2>Building Solutions</h2>
-
-<p class="lead-text">
-We design and build quality affordable homes — with flexible financing support.
-</p>
-
-<div class="plot-container">
-
-<div class="plot-card">
-<h3>2 Bedroom Bungalow</h3>
-<p>From <strong>KES 1.4M</strong></p>
-<a class="button" href="#lead">Book Building Consultation</a>
-</div>
-
-<div class="plot-card">
-<h3>3 Bedroom Bungalow</h3>
-<p>From <strong>KES 2.3M</strong></p>
-<a class="button" href="#lead">Request Quote</a>
-</div>
-<div class="contact-buttons">
-
-<a class="button"
- href="https://wa.me/254769485093?text=Hello%20HomesInvest,%20I%20want%20to%20book%20a%20site%20visit%20to%20view%20your%20available%20plots.%0AMy%20name:%20%0ALocation%20of%20interest:%20%0APreferred%20visit%20day:%20"
- target="_blank">
+<a class="btn whatsapp" target="_blank"
+href="https://wa.me/254759222512?text=Hello%20HomesInvest,%20I%20want%20to%20book%20a%20site%20visit.">
 📍 Book Site Visit
 </a>
-
-<a class="button"
- href="https://wa.me/254769485093?text=Hello%20HomesInvest,%20I%20want%20to%20reserve%20a%20plot%20today.%0APlot:%20%0AMy%20budget:%20"
- target="_blank">
-🏡 Book Plot Today
-</a>
-
-<a class="button"
- href="https://wa.me/254769485093?text=Hello%20HomesInvest,%0AI%20am%20a%20diaspora%20buyer%20looking%20to%20invest%20in%20Kenya.%20Kindly%20share%20details%20and%20virtual%20tour%20options."
- target="_blank">
-🌍 Diaspora Investors
-</a>
-
-<a class="button" href="tel:+254759222512">
-📞 Call Now
-</a>
-
-<a class="button" href="mailto:sales@homesinvest.net">
-✉️ Email
-</a>
-
 </div>
-<div class="plot-card">
-<h3>4 Bedroom Family Home</h3>
-<p>From <strong>KES 3.8M</strong></p>
-<a class="button" href="#lead">Request Quote</a>
+
+<!-- FEATURED LISTINGS -->
+<section id="featured">
+<h2>🔥 Featured Properties</h2>
+
+<div class="grid">
+
+<div class="card featured">
+<h3>Kitengela Prime 50×100</h3>
+<p><strong>KES 1,299,000</strong></p>
+<p>Electricity • Water • 3-Phase Power</p>
+
+<iframe
+src="https://www.google.com/maps?q=Kitengela,Kenya&output=embed"
+width="100%" height="220" style="border:0;border-radius:10px" loading="lazy"></iframe>
+
+<a class="btn whatsapp" target="_blank"
+href="https://wa.me/254759222512?text=FEATURED%20PROPERTY:%20Kitengela%2050x100.%20I%20am%20interested.">
+Enquire Instantly
+</a>
+
+<small>⭐ Featured – Paid Listing</small>
 </div>
 
 </div>
 </section>
 
-<!-- PARTNERS -->
-<section class="bank-partners">
+<!-- SEARCH -->
+<section id="search">
+<h2>Find Property Fast</h2>
 
-<h3>Bank Financing Available With:</h3>
+<div class="grid">
+<select>
+<option>Property Type</option>
+<option>Plot / Land</option>
+<option>House</option>
+<option>Apartment</option>
+<option>Room</option>
+</select>
 
-<div class="bank-list">
-<span>Kenya Commercial Bank (KCB)</span>
-<span>Equity Bank Kenya</span>
-<span>Co-operative Bank of Kenya</span>
+<select>
+<option>Buy / Rent / Lease</option>
+<option>Buy</option>
+<option>Rent</option>
+<option>Lease</option>
+</select>
+
+<select>
+<option>Location</option>
+<option>Kitengela</option>
+<option>Isinya</option>
+<option>Mombasa</option>
+</select>
+
+<input placeholder="Budget (KES)">
+
+<a class="btn whatsapp" target="_blank"
+href="https://wa.me/254759222512?text=PROPERTY%20SEARCH:%20Please%20assist%20me%20find%20a%20property.">
+Search via WhatsApp
+</a>
 </div>
-
-<p style="margin-top:16px;">
-We assist buyers with mortgage applications & plot financing through our approved bank partners.
-</p>
-
 </section>
 
-<!-- LEAD FORM -->
-<section id="lead">
+<!-- WHY BUY -->
+<section>
+<h2>Why Our Properties</h2>
+<div class="grid">
+<div class="card">⚡ Electricity & 3-Phase Power</div>
+<div class="card">💧 Reliable Water Supply</div>
+<div class="card">🌿 Fresh Suburban Air</div>
+<div class="card">☀️ Warm Climate – Retirement & Vacation Homes</div>
+<div class="card">🗻 Scenic Views incl. Mt. Kilimanjaro</div>
+</div>
+</section>
 
-<h2>Book a Visit • Request Financing • Get a Quote</h2>
+<!-- LIST PROPERTY -->
+<section id="list">
+<h2>List Property (Sell Faster)</h2>
 
 <form action="https://api.web3forms.com/submit" method="POST">
 <input type="hidden" name="access_key" value="8949f955-6dc3-40ef-937d-593bf6235c1e">
 
-<input type="text" name="name" placeholder="Full name" required>
-<input type="email" name="email" placeholder="Email address">
-<input type="tel" name="phone" placeholder="Phone or WhatsApp number" required>
+<select name="role" required>
+<option value="">I am a…</option>
+<option>Landlord / Owner</option>
+<option>Agent</option>
+<option>Developer</option>
+</select>
 
-<textarea name="message"
-placeholder="I’d like to... book a site visit / buy a plot / apply for financing / request a building quote"
-required></textarea>
+<select name="property_type" required>
+<option value="">Property Type</option>
+<option>Plot / Land</option>
+<option>House</option>
+<option>Apartment</option>
+<option>Rooms</option>
+</select>
 
-<button type="submit">Send Request</button>
+<select name="transaction" required>
+<option value="">Sale / Rent / Lease</option>
+<option>Sale</option>
+<option>Rent</option>
+<option>Lease</option>
+</select>
 
+<input name="location" placeholder="Location" required>
+<input name="price" placeholder="Price (KES)" required>
+<input name="phone" placeholder="Phone / WhatsApp" required>
+
+<input name="google_maps_link"
+placeholder="Paste Google Maps location link">
+
+<label>
+<input type="checkbox" name="featured" value="Yes">
+ Make this a <strong>Featured Property (Paid)</strong>
+</label>
+
+<textarea name="description" placeholder="Utilities, access roads, views"></textarea>
+
+<button class="btn" type="submit">Submit Property</button>
+
+<small>
+Featured Listings:
+KES 2,500 (7 days) • KES 7,000 (30 days)
+</small>
 </form>
-
 </section>
-<ul style="font-weight:600;color:#005A9E;">
-<li>✅ Electricity & 3-Phase Power Connection</li>
-<li>✅ Reliable Water Supply</li>
-<li>✅ Clean Fresh Suburban Air</li>
-<li>✅ Warm Climate Ideal for Vacation & Retirement Homes</li>
-<li>✅ Stunning Views of Mt. Kilimanjaro Peaks</li>
-<li>✅ Ready Titles & Secure Gated Estates</li>
-</ul>
+
+<!-- CONTACT -->
+<section id="contact">
+<h2>Instant Contact</h2>
+
+<a class="btn whatsapp" target="_blank"
+href="https://wa.me/254759222512?text=GENERAL%20ENQUIRY:%20Please%20assist.">
+💬 WhatsApp (Instant Reply)
+</a>
+
+<a class="btn call" href="tel:+254759222512">📞 Call</a>
+<a class="btn" href="mailto:homesinvest2@gmail.com">✉️ Email</a>
+</section>
+
+<!-- FLOATING BUTTONS -->
+<div class="float">
+<a class="whatsapp-float" target="_blank"
+href="https://wa.me/254759222512?text=Hello%20HomesInvest,%20I%20need%20assistance.">
+💬 WhatsApp
+</a>
+<a class="call-float" href="tel:+254759222512">📞 Call</a>
+<a class="email-float" href="mailto:homesinvest2@gmail.com">✉️ Email</a>
+</div>
+
 <footer>
-<p>
-© 2025 HomesInvest Kenya |  
-sales@homesinvest.net | +254 769 485 093  
-</p>
+© 2026 HomesInvest Kenya | Smart Property Marketplace
 </footer>
 
 </body>

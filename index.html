@@ -37,27 +37,162 @@
 </script>
 
 <style>
-body{margin:0;font-family:sans-serif;background:#eef5ff;color:#333}
-h1,h2,h3{margin:0}
-a{text-decoration:none}
-header{background:#005bbb;color:#fff;padding:15px 20px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:1000}
-nav a{color:#fff;margin-left:15px;font-weight:600}
-.hero{background:linear-gradient(135deg,#005bbb,#003f7f);color:#fff;text-align:center;padding:80px 20px}
-section{max-width:1200px;margin:30px auto;background:#fff;padding:30px;border-radius:16px;box-shadow:0 6px 20px rgba(0,91,187,.15)}
-h2{color:#005bbb;margin-bottom:20px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
-.card{padding:20px;border-radius:14px;box-shadow:0 5px 14px rgba(0,0,0,.1)}
-.featured{border:3px solid gold;background:#fffbea}
-.btn{display:inline-block;background:#005bbb;color:#fff;padding:14px 22px;border-radius:10px;font-weight:700;margin-top:10px}
-.btn.whatsapp{background:#25D366}
-input,select,textarea{width:100%;padding:12px;margin-top:10px;border-radius:8px;border:1px solid #005bbb}
-.float{position:fixed;right:20px;bottom:20px;z-index:999}
-.float a{display:block;margin-top:10px;padding:14px 20px;border-radius:50px;color:#fff;font-weight:700}
-.whatsapp-float{background:#25D366}
-.call-float{background:#ff9800}
-.email-float{background:#005bbb}
-footer{text-align:center;padding:30px;background:#005bbb;color:#fff}
-small{color:#666}
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: #eef5ff;
+  color: #333;
+}
+h1, h2, h3 {
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+header {
+  background: #005bbb;
+  color: #fff;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+nav a {
+  color: #fff;
+  margin-left: 15px;
+  font-weight: 600;
+}
+.hero {
+  background: linear-gradient(135deg,#005bbb,#003f7f);
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px;
+}
+section {
+  max-width: 1200px;
+  margin: 30px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,91,187,.15);
+}
+h2 {
+  color: #005bbb;
+  margin-bottom: 20px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+}
+.card {
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 5px 14px rgba(0,0,0,.1);
+}
+.featured {
+  border: 3px solid gold;
+  background: #fffbea;
+}
+.btn {
+  display: inline-block;
+  background: #005bbb;
+  color: #fff;
+  padding: 14px 22px;
+  border-radius: 10px;
+  font-weight: 700;
+  margin-top: 10px;
+  cursor: pointer;
+  border: none;
+}
+.btn.whatsapp {
+  background: #25D366;
+}
+input, select, textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: 1px solid #005bbb;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+.float {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 999;
+}
+.float a {
+  display: block;
+  margin-top: 10px;
+  padding: 14px 20px;
+  border-radius: 50px;
+  color: #fff;
+  font-weight: 700;
+}
+.whatsapp-float {
+  background: #25D366;
+}
+.call-float {
+  background: #ff9800;
+}
+.email-float {
+  background: #005bbb;
+}
+footer {
+  text-align: center;
+  padding: 30px;
+  background: #005bbb;
+  color: #fff;
+}
+small {
+  color: #666;
+}
+
+/* Slideshow Styles */
+#riverside .slideshow {
+  position: relative;
+  max-width: 100%;
+  height: 400px;
+  margin: 20px auto 0;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 5px 14px rgba(0,0,0,.1);
+}
+#riverside .slideshow img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+  border-radius: 14px;
+}
+#riverside .slideshow img.active {
+  display: block;
+}
+
+/* Slideshow navigation */
+#riverside .nav-buttons {
+  text-align: center;
+  margin-top: 12px;
+}
+#riverside .nav-buttons button {
+  background: #005bbb;
+  border: none;
+  color: white;
+  padding: 8px 14px;
+  margin: 0 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background 0.3s ease;
+}
+#riverside .nav-buttons button:hover {
+  background: #003f7f;
+}
 </style>
 </head>
 
@@ -84,7 +219,26 @@ small{color:#666}
 
 <section id="riverside">
   <h2>🏙️ Riverside Nairobi – 2 Bedroom Furnished Apartment (To Let)</h2>
-  <!-- Images and slideshow code here -->
+
+  <div class="slideshow" aria-live="polite" aria-atomic="true">
+    <img src="Riverside-sitting.jpg" alt="Spacious living room with modern furniture in Riverside Nairobi apartment" class="active" loading="lazy" />
+    <img src="Riverside-dinning.jpg" alt="Dining area with elegant setup in Riverside Nairobi apartment" loading="lazy" />
+    <img src="Riverside-Tv.jpg" alt="TV lounge with cozy seating in Riverside Nairobi apartment" loading="lazy" />
+    <img src="Riverside-kitchen.jpg" alt="Modern fitted kitchen in Riverside Nairobi apartment" loading="lazy" />
+    <img src="Riverside-workarea.jpg" alt="Dedicated work area in Riverside Nairobi apartment" loading="lazy" />
+    <img src="Riverside-restarea.jpg" alt="Relaxation corner in Riverside Nairobi apartment" loading="lazy" />
+    <img src="Riverside-bedwindow.jpg" alt="Ensuite bedroom with large window in Riverside Nairobi apartment" loading="lazy" />
+    <img src="Riverside-bed3.jpg" alt="Second furnished bedroom in Riverside Nairobi apartment" loading="lazy" />
+    <img src="Riverside-bed4.jpg" alt="Bedroom with stylish decor in Riverside Nairobi apartment" loading="lazy" />
+    <img src="Riverside-washroom.jpg" alt="Modern washroom in Riverside Nairobi apartment" loading="lazy" />
+    <img src="Riverside-Gym.jpg" alt="Fully equipped gym in Riverside Nairobi apartment complex" loading="lazy" />
+    <img src="Riverside-porch.jpg" alt="Balcony with outdoor seating in Riverside Nairobi apartment" loading="lazy" />
+    <img src="Riverside-views.jpg" alt="Scenic views from Riverside Nairobi apartment" loading="lazy" />
+  </div>
+  <div class="nav-buttons" aria-label="Slideshow controls">
+    <button id="prevBtn" aria-label="Previous image">‹ Prev</button>
+    <button id="nextBtn" aria-label="Next image">Next ›</button>
+  </div>
 </section>
 
 <section id="featured">
@@ -229,7 +383,6 @@ WhatsApp: ${whatsapp}`;
   <p><strong>Email:</strong> homesinvest2@gmail.com</p>
 </section>
 
-<!-- ==== FEATURED PAYMENT SECTION ADDED HERE ==== -->
 <section id="featured-payment">
   <h2>⭐ Boost to Featured Listing</h2>
 
@@ -289,9 +442,4 @@ WhatsApp: ${whatsapp}`;
 </div>
 
 <footer>
-  <p>© 2026 HomesInvest Kenya — All Rights Reserved</p>
-</footer>
-
-</body>
-      </html>
-  
+  <p>© 2026 Homes

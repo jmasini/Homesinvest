@@ -105,6 +105,7 @@ h2 {
   border-radius: 10px;
   font-weight: 700;
   margin-top: 10px;
+  cursor: pointer;
 }
 .btn.whatsapp {
   background: #25D366;
@@ -131,6 +132,7 @@ input, select, textarea {
   border-radius: 50px;
   color: #fff;
   font-weight: 700;
+  text-align: center;
 }
 .whatsapp-float {
   background: #25D366;
@@ -206,56 +208,17 @@ input, select, textarea {
   }
 }
 
-/* Featured Payment Section */
-#featured-payment {
-  max-width: 600px;
-  margin: 30px auto;
-  background: #f4f9ff;
-  padding: 20px;
-  border-radius: 14px;
-}
-
-#featured-payment h3 {
-  color: #005bbb;
-}
-
-#featured-payment ol {
-  padding-left: 20px;
-}
-
-#featured-payment form label {
-  display: block;
-  margin-top: 12px;
-  font-weight: 600;
-}
-
-#featured-payment form input[type="text"],
-#featured-payment form input[type="tel"],
-#featured-payment form input[type="file"] {
-  width: 100%;
-  padding: 10px;
-  margin-top: 6px;
-  border-radius: 8px;
-  border: 1px solid #005bbb;
-}
-
-#featured-payment form button {
-  margin-top: 15px;
+footer {
+  text-align: center;
+  padding: 30px;
   background: #005bbb;
   color: #fff;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 10px;
-  font-weight: 700;
-  cursor: pointer;
+  margin-top: 30px;
+  font-size: 0.9rem;
+  letter-spacing: 0.03em;
 }
-
-#featured-payment .btn.whatsapp {
-  margin-top: 15px;
-  display: inline-block;
-  padding: 12px 20px;
-  font-weight: 700;
-  border-radius: 10px;
+small {
+  color: #666;
 }
 </style>
 
@@ -267,7 +230,7 @@ input, select, textarea {
   <nav>
     <a href="#featured">Featured</a>
     <a href="#list">List Property</a>
-    <a href="#search">Search</a>
+    <a href="#search">Get Your Property</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
@@ -285,8 +248,8 @@ input, select, textarea {
 
 <section id="riverside">
   <h2>🏙️ Riverside Nairobi – 2 Bedroom Furnished Apartment (To Let)</h2>
+  <p><strong>Rent:</strong> KES 300,000/month (inclusive of all services & wifi)</p>
 
-  <!-- Single Image Slideshow -->
   <div class="gallery-wrapper" aria-live="polite" aria-atomic="true">
     <div class="slideshow-slide active">
       <img src="Riverside-sitting.jpg" loading="lazy" alt="Spacious living room with modern furniture in Riverside Nairobi apartment" />
@@ -331,7 +294,6 @@ input, select, textarea {
       <img src="Riverside-openview.jpg" loading="lazy" alt="Open view from Riverside Nairobi apartment" />
     </div>
 
-    <!-- Navigation buttons -->
     <div class="slideshow-nav">
       <button id="prev-slide" aria-label="Previous Slide">&#10094;</button>
       <button id="next-slide" aria-label="Next Slide">&#10095;</button>
@@ -342,22 +304,22 @@ input, select, textarea {
 <section id="list">
   <h2>List Property (Sell Faster)</h2>
   <form
+    id="listForm"
     action="https://api.web3forms.com/submit"
     method="POST"
     enctype="multipart/form-data"
   >
-    <input
-      type="hidden"
-      name="access_key"
-      value="8949f955-6dc3-40ef-937d-593bf6235c1e"
-    />
-    <input type="hidden" name="subject" value="PROPERTY LISTING" />
+    <input type="hidden" name="access_key" value="8949f955-6dc3-40ef-937d-593bf6235c1e" />
+    <input type="hidden" name="subject" value="New Property Listing Submission" />
+    <input type="hidden" name="redirect" value="https://www.homesinvest.net/thank-you" />
+    
     <select name="role" required>
       <option value="">I am a…</option>
       <option>Landlord / Owner</option>
       <option>Agent</option>
       <option>Developer</option>
     </select>
+    
     <select name="property_type" required>
       <option value="">Property Type</option>
       <option>Plot / Land</option>
@@ -365,12 +327,15 @@ input, select, textarea {
       <option>Apartment</option>
       <option>Rooms</option>
     </select>
+    
     <input name="location" placeholder="Location" required />
     <input name="price" placeholder="Price (KES)" required />
     <input name="phone" placeholder="Phone / WhatsApp" required />
     <textarea name="description" placeholder="Utilities, access roads, views"></textarea>
-    <label>Upload Images (optional)</label>
-    <input type="file" name="attachment" accept="image/*" multiple />
+    
+    <label for="image-upload">Upload Property Images (optional)</label>
+    <input type="file" id="image-upload" name="attachment" accept="image/*" multiple />
+    
     <button class="btn" type="submit">Submit Property</button>
   </form>
 </section>
@@ -379,7 +344,7 @@ input, select, textarea {
   <h2>Get Your Property</h2>
   <form id="propertyForm">
     <label>Type of Property:</label>
-    <select id="propertyType" required>
+    <select id="propertyType" name="propertyType">
       <option>House</option>
       <option>Apartment</option>
       <option>Land</option>
@@ -387,7 +352,7 @@ input, select, textarea {
     </select>
 
     <label>Transaction Type:</label>
-    <select id="transactionType" required>
+    <select id="transactionType" name="transactionType">
       <option>Buy</option>
       <option>Sell</option>
       <option>Rent</option>
@@ -396,37 +361,32 @@ input, select, textarea {
     </select>
 
     <label>Location Needed:</label>
-    <input type="text" id="location" placeholder="e.g. Nairobi, Westlands" required />
+    <input type="text" id="location" name="location" placeholder="e.g. Nairobi, Westlands" />
 
     <label>Price Budget (KES):</label>
-    <input type="number" id="budget" required />
+    <input type="number" id="budget" name="budget" />
 
     <label>Telephone:</label>
-    <input type="tel" id="telephone" required />
+    <input type="tel" id="telephone" name="telephone" />
 
     <label>WhatsApp Number:</label>
-    <input type="tel" id="whatsapp" required />
+    <input type="tel" id="whatsapp" name="whatsapp" />
 
-    <!-- WhatsApp Option -->
-    <button type="button" onclick="openWhatsApp()">Submit via WhatsApp</button>
+    <button type="button" class="btn" onclick="openWhatsApp()">Submit via WhatsApp</button>
 
-    <!-- Call Option -->
     <a href="tel:+254759222512">
-      <button type="button">Call Us</button>
+      <button type="button" class="btn" style="margin-top:10px">Call Us</button>
     </a>
 
-    <!-- Email Option -->
-    <a id="emailLink" href="#">
-      <button type="button" onclick="openEmail()">Email Us</button>
-    </a>
+    <button type="button" class="btn" style="margin-top:10px" onclick="openEmail()">Email Us</button>
   </form>
 </section>
 
 <section id="featured-payment">
   <h2>⭐ Boost to Featured Listing</h2>
 
-  <div>
-    <h3>Pay via M-Pesa Till</h3>
+  <div style="background:#f4f9ff;padding:20px;border-radius:14px">
+    <h3 style="color:#005bbb">Pay via M-Pesa Till</h3>
 
     <p><strong>Till Number:</strong> <span style="font-size:1.2rem">4348516</span></p>
     <p><strong>Amount:</strong> KES 5,000</p>
@@ -441,11 +401,16 @@ input, select, textarea {
       <li>Confirm payment</li>
     </ol>
 
-    <hr>
+    <hr />
 
     <h4>Submit Payment Confirmation</h4>
 
-    <form action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data">
+    <form
+      action="https://api.web3forms.com/submit"
+      method="POST"
+      enctype="multipart/form-data"
+      style="max-width:400px"
+    >
       <input type="hidden" name="access_key" value="8949f955-6dc3-40ef-937d-593bf6235c1e" />
       <input type="hidden" name="subject" value="FEATURED LISTING PAYMENT" />
 
@@ -461,7 +426,7 @@ input, select, textarea {
       <label>Upload Screenshot (Optional)</label>
       <input type="file" name="attachment" accept="image/*" />
 
-      <button type="submit">Submit Confirmation</button>
+      <button type="submit" class="btn" style="margin-top:10px">Submit Confirmation</button>
     </form>
 
     <p style="margin-top:15px">
@@ -476,18 +441,6 @@ input, select, textarea {
   </div>
 </section>
 
-<section>
-  <h2>Why Our Properties</h2>
-  <div class="grid">
-    <div class="card">⚡ Electricity & 3-Phase Power</div>
-    <div class="card">💧 Reliable Water Supply</div>
-    <div class="card">🛣️ Access Roads & Transport</div>
-    <div class="card">📈 High Appreciation Zones</div>
-    <div class="card">🏦 Bank & Installment Financing</div>
-    <div class="card">📍 Verified Google Maps Locations</div>
-  </div>
-</section>
-
 <section id="contact">
   <h2>Contact HomesInvest</h2>
   <p><strong>Phone / WhatsApp:</strong> 0759 222 512</p>
@@ -495,9 +448,7 @@ input, select, textarea {
 </section>
 
 <div class="float">
-  <a class="whatsapp-float" href="https://wa.me/254759222512" target="_blank">
-    WhatsApp
-  </a>
+  <a class="whatsapp-float" href="https://wa.me/254759222512" target="_blank">WhatsApp</a>
   <a class="call-float" href="tel:+254759222512">Call</a>
   <a class="email-float" href="mailto:homesinvest2@gmail.com">Email</a>
 </div>
@@ -508,3 +459,43 @@ input, select, textarea {
 
 <script>
   (function () {
+    const slides = document.querySelectorAll(".slideshow-slide");
+    const prevBtn = document.getElementById("prev-slide");
+    const nextBtn = document.getElementById("next-slide");
+    let currentIndex = 0;
+    let timer;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle("active", i === index);
+      });
+      currentIndex = index;
+    }
+
+    function nextSlide() {
+      let nextIndex = currentIndex + 1;
+      if (nextIndex >= slides.length) nextIndex = 0;
+      showSlide(nextIndex);
+    }
+
+    function prevSlideFn() {
+      let prevIndex = currentIndex - 1;
+      if (prevIndex < 0) prevIndex = slides.length - 1;
+      showSlide(prevIndex);
+    }
+
+    function startTimer() {
+      timer = setInterval(nextSlide, 5000);
+    }
+
+    function resetTimer() {
+      clearInterval(timer);
+      startTimer();
+    }
+
+    prevBtn.addEventListener("click", () => {
+      prevSlideFn();
+      resetTimer();
+    });
+
+    nextBtn.addEventListener("click", () => {

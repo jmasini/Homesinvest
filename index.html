@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>HomesInvest Kenya | Property Marketplace</title>
 
-<meta name="description" content="Buy, Sell, Rent or Lease property in Kenya. Featured listings, bank financing, Google Maps locations, WhatsApp instant support.">
-<meta name="keywords" content="Kenya property, buy land, rent house, lease apartment, Kitengela plots, Mombasa real estate">
-<meta name="author" content="HomesInvest Kenya">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://www.homesinvest.net/">
+<meta name="description" content="Buy, Sell, Rent or Lease property in Kenya. Featured listings, bank financing, Google Maps locations, WhatsApp instant support." />
+<meta name="keywords" content="Kenya property, buy land, rent house, lease apartment, Kitengela plots, Mombasa real estate" />
+<meta name="author" content="HomesInvest Kenya" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://www.homesinvest.net/" />
 
 <!-- Open Graph -->
-<meta property="og:title" content="HomesInvest Kenya | Smart Property Marketplace">
-<meta property="og:description" content="Buy, Sell, Rent or Lease property in Kenya. Featured listings, bank financing, instant WhatsApp support.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://www.homesinvest.net/">
-<meta property="og:image" content="https://www.homesinvest.net/preview.jpg">
+<meta property="og:title" content="HomesInvest Kenya | Smart Property Marketplace" />
+<meta property="og:description" content="Buy, Sell, Rent or Lease property in Kenya. Featured listings, bank financing, instant WhatsApp support." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.homesinvest.net/" />
+<meta property="og:image" content="https://www.homesinvest.net/preview.jpg" />
 
 <!-- Schema -->
 <script type="application/ld+json">
@@ -37,30 +37,181 @@
 </script>
 
 <style>
-body{margin:0;font-family:sans-serif;background:#eef5ff;color:#333}
-h1,h2,h3{margin:0}
-a{text-decoration:none}
-header{background:#005bbb;color:#fff;padding:15px 20px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:1000}
-nav a{color:#fff;margin-left:15px;font-weight:600}
-.hero{background:linear-gradient(135deg,#005bbb,#003f7f);color:#fff;text-align:center;padding:80px 20px}
-section{max-width:1200px;margin:30px auto;background:#fff;padding:30px;border-radius:16px;box-shadow:0 6px 20px rgba(0,91,187,.15)}
-h2{color:#005bbb;margin-bottom:20px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
-.card{padding:20px;border-radius:14px;box-shadow:0 5px 14px rgba(0,0,0,.1)}
-.featured{border:3px solid gold;background:#fffbea}
-.btn{display:inline-block;background:#005bbb;color:#fff;padding:14px 22px;border-radius:10px;font-weight:700;margin-top:10px}
-.btn.whatsapp{background:#25D366}
-input,select,textarea{width:100%;padding:12px;margin-top:10px;border-radius:8px;border:1px solid #005bbb}
-.float{position:fixed;right:20px;bottom:20px;z-index:999}
-.float a{display:block;margin-top:10px;padding:14px 20px;border-radius:50px;color:#fff;font-weight:700}
-.whatsapp-float{background:#25D366}
-.call-float{background:#ff9800}
-.email-float{background:#005bbb}
-footer{text-align:center;padding:30px;background:#005bbb;color:#fff}
-small{color:#666}
-</style>
-</head>
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: #eef5ff;
+  color: #333;
+}
+h1, h2, h3 {
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+header {
+  background: #005bbb;
+  color: #fff;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+nav a {
+  color: #fff;
+  margin-left: 15px;
+  font-weight: 600;
+}
+.hero {
+  background: linear-gradient(135deg, #005bbb, #003f7f);
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px;
+}
+section {
+  max-width: 1200px;
+  margin: 30px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 91, 187, .15);
+}
+h2 {
+  color: #005bbb;
+  margin-bottom: 20px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+}
+.card {
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 5px 14px rgba(0, 0, 0, .1);
+}
+.featured {
+  border: 3px solid gold;
+  background: #fffbea;
+}
+.btn {
+  display: inline-block;
+  background: #005bbb;
+  color: #fff;
+  padding: 14px 22px;
+  border-radius: 10px;
+  font-weight: 700;
+  margin-top: 10px;
+}
+.btn.whatsapp {
+  background: #25D366;
+}
+input, select, textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: 1px solid #005bbb;
+}
 
+/* Floating buttons */
+.float {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 999;
+}
+.float a {
+  display: block;
+  margin-top: 10px;
+  padding: 14px 20px;
+  border-radius: 50px;
+  color: #fff;
+  font-weight: 700;
+}
+.whatsapp-float {
+  background: #25D366;
+}
+.call-float {
+  background: #ff9800;
+}
+.email-float {
+  background: #005bbb;
+}
+
+/* Riverside Slideshow Styles */
+.gallery-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+.slideshow-card {
+  display: none;
+  padding: 15px 0;
+  text-align: center;
+  animation: fadeIn 1s ease forwards;
+}
+.slideshow-card.active {
+  display: block;
+}
+.slideshow-card img {
+  width: 30%;
+  max-width: 300px;
+  margin: 0 5px;
+  border-radius: 10px;
+  vertical-align: middle;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  object-fit: cover;
+  height: 180px;
+}
+
+/* Navigation arrows */
+.slideshow-nav {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.slideshow-nav button {
+  pointer-events: all;
+  background: rgba(0, 91, 187, 0.7);
+  border: none;
+  color: #fff;
+  font-size: 28px;
+  padding: 5px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.slideshow-nav button:hover {
+  background: #003f7f;
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  background: #005bbb;
+  color: #fff;
+}
+small {
+  color: #666;
+}
+</style>
+
+</head>
 <body>
 
 <header>
@@ -76,104 +227,108 @@ small{color:#666}
 <div class="hero">
   <h2>Kenya’s Smart Property Marketplace</h2>
   <p>Buy • Sell • Rent • Lease | Bank Financing Available</p>
-  <a class="btn whatsapp" target="_blank"
-     href="https://wa.me/254759222512?text=Hello%20HomesInvest,%20I%20want%20to%20book%20a%20site%20visit.">
-     📍 Book Site Visit
-  </a>
+  <a
+    class="btn whatsapp"
+    target="_blank"
+    href="https://wa.me/254759222512?text=Hello%20HomesInvest,%20I%20want%20to%20book%20a%20site%20visit."
+    >📍 Book Site Visit</a
+  >
 </div>
 
-  <section id="riverside">
+<section id="riverside">
   <h2>🏙️ Riverside Nairobi – 2 Bedroom Furnished Apartment (To Let)</h2>
 
   <!-- Image Gallery -->
-  <div class="grid">
-
-    <!-- Living & Dining -->
-    <div class="card">
-      <img src="Riverside-sitting.jpg" alt="Living room Riverside Nairobi"
-           style="width:100%;border-radius:12px;margin-bottom:10px">
-      <img src="Riverside-dinning.jpg" alt="Dining area Riverside Nairobi"
-           style="width:100%;border-radius:12px;margin-bottom:10px">
-      <img src="Riverside-Tv.jpg" alt="TV lounge Riverside Nairobi"
-           style="width:100%;border-radius:12px">
+  <div class="gallery-wrapper" aria-live="polite" aria-atomic="true">
+    <div class="slideshow-card active">
+      <img
+        src="Riverside-sitting.jpg"
+        loading="lazy"
+        alt="Spacious living room with modern furniture in Riverside Nairobi apartment"
+      />
+      <img
+        src="Riverside-dinning.jpg"
+        loading="lazy"
+        alt="Dining area with elegant setup in Riverside Nairobi apartment"
+      />
+      <img
+        src="Riverside-Tv.jpg"
+        loading="lazy"
+        alt="TV lounge with cozy seating in Riverside Nairobi apartment"
+      />
+    </div>
+    <div class="slideshow-card">
+      <img
+        src="Riverside-kitchen.jpg"
+        loading="lazy"
+        alt="Modern fitted kitchen in Riverside Nairobi apartment"
+      />
+      <img
+        src="Riverside-workarea.jpg"
+        loading="lazy"
+        alt="Dedicated work area in Riverside Nairobi apartment"
+      />
+      <img
+        src="Riverside-restarea.jpg"
+        loading="lazy"
+        alt="Relaxation corner in Riverside Nairobi apartment"
+      />
+    </div>
+    <div class="slideshow-card">
+      <img
+        src="Riverside-bedwindow.jpg"
+        loading="lazy"
+        alt="Ensuite bedroom with large window in Riverside Nairobi apartment"
+      />
+      <img
+        src="Riverside-bed3.jpg"
+        loading="lazy"
+        alt="Second furnished bedroom in Riverside Nairobi apartment"
+      />
+      <img
+        src="Riverside-bed4.jpg"
+        loading="lazy"
+        alt="Bedroom with stylish decor in Riverside Nairobi apartment"
+      />
+    </div>
+    <div class="slideshow-card">
+      <img
+        src="Riverside-washroom.jpg"
+        loading="lazy"
+        alt="Modern washroom in Riverside Nairobi apartment"
+      />
+      <img
+        src="Riverside-Gym.jpg"
+        loading="lazy"
+        alt="Fully equipped gym in Riverside Nairobi apartment complex"
+      />
+      <img
+        src="Riverside-porch.jpg"
+        loading="lazy"
+        alt="Balcony with outdoor seating in Riverside Nairobi apartment"
+      />
+    </div>
+    <div class="slideshow-card">
+      <img
+        src="Riverside-views.jpg"
+        loading="lazy"
+        alt="Scenic views from Riverside Nairobi apartment"
+      />
+      <img
+        src="Riverside-openview.jpg"
+        loading="lazy"
+        alt="Open view from Riverside Nairobi apartment"
+      />
     </div>
 
-    <!-- Kitchen & Work Area -->
-    <div class="card">
-      <img src="Riverside-kitchen.jpg" alt="Modern kitchen Riverside Nairobi"
-           style="width:100%;border-radius:12px;margin-bottom:10px">
-      <img src="Riverside-workarea.jpg" alt="Work area Riverside Nairobi"
-           style="width:100%;border-radius:12px;margin-bottom:10px">
-      <img src="Riverside-restarea.jpg" alt="Rest area Riverside Nairobi"
-           style="width:100%;border-radius:12px">
+    <!-- Navigation buttons -->
+    <div class="slideshow-nav">
+      <button id="prev-slide" aria-label="Previous Slide">&#10094;</button>
+      <button id="next-slide" aria-label="Next Slide">&#10095;</button>
     </div>
-
-    <!-- Bedrooms -->
-    <div class="card">
-      <img src="Riverside-bedwindow.jpg" alt="Bedroom with window Riverside Nairobi"
-           style="width:100%;border-radius:12px;margin-bottom:10px">
-      <img src="Riverside-bed3.jpg" alt="Second bedroom Riverside Nairobi"
-           style="width:100%;border-radius:12px;margin-bottom:10px">
-      <img src="Riverside-bed4.jpg" alt="Bedroom Riverside Nairobi"
-           style="width:100%;border-radius:12px">
-    </div>
-
-    <!-- Bathroom & Amenities -->
-    <div class="card">
-      <img src="Riverside-washroom.jpg" alt="Washroom Riverside Nairobi"
-           style="width:100%;border-radius:12px;margin-bottom:10px">
-      <img src="Riverside-Gym.jpg" alt="Gym Riverside Nairobi"
-           style="width:100%;border-radius:12px;margin-bottom:10px">
-      <img src="Riverside-porch.jpg" alt="Balcony / Porch Riverside Nairobi"
-           style="width:100%;border-radius:12px">
-    </div>
-
-    <!-- Views & Outdoor -->
-    <div class="card">
-      <img src="Riverside-views.jpg" alt="Riverside Nairobi views"
-           style="width:100%;border-radius:12px;margin-bottom:10px">
-      <img src="Riverside-openview.jpg" alt="Open view Riverside Nairobi"
-           style="width:100%;border-radius:12px;margin-bottom:10px">
-      <img src="Riverside-outdoorview.jpg" alt="Outdoor view Riverside Nairobi"
-           style="width:100%;border-radius:12px">
-    </div>
-
-  </div>
-
-  <!-- Details -->
-  <div class="card featured" style="margin-top:25px">
-    <h3>💎 Executive 2 Bedroom – Riverside Drive</h3>
-    <p><strong>Rent:</strong> KES <strong>300,000 per month</strong></p>
-    <p><strong>Lease:</strong> Long Term Only</p>
-
-    <ul>
-      <li>✔ Fully furnished</li>
-      <li>✔ Master bedroom ensuite</li>
-      <li>✔ Modern fitted kitchen</li>
-      <li>✔ Dining & spacious lounge</li>
-      <li>✔ High-speed Wi-Fi Internet</li>
-      <li>✔ Service charge included</li>
-      <li>✔ Backup generator & lift</li>
-      <li>✔ Gym & common facilities</li>
-      <li>✔ 24/7 security & CCTV</li>
-      <li>✔ Prime Riverside location</li>
-    </ul>
-
-    <iframe
-      src="https://www.google.com/maps?q=Riverside%20Drive%20Nairobi&output=embed"
-      width="100%" height="220"
-      style="border:0;border-radius:10px;margin-top:10px"
-      loading="lazy">
-    </iframe>
-
-    <a class="btn whatsapp" target="_blank"
-       href="https://wa.me/254759222512?text=RIVERSIDE%202%20BEDROOM%20APARTMENT:%20KES%20300,000%20inclusive.%20I%20am%20interested.">
-       📞 Enquire / Book Viewing
-    </a>
-
-    <small>📍 Riverside Drive, Nairobi | Long-Term Let</small>
   </div>
 </section>
+
 <section id="featured">
   <h2>🔥 Featured Properties</h2>
   <div class="grid">
@@ -181,12 +336,19 @@ small{color:#666}
       <h3>Kitengela Prime 50×100</h3>
       <p><strong>KES 1,299,000</strong></p>
       <p>Electricity • Water • 3-Phase Power</p>
-      <iframe src="https://www.google.com/maps?q=Kitengela,Kenya&output=embed"
-              width="100%" height="220" style="border:0;border-radius:10px" loading="lazy"></iframe>
-      <a class="btn whatsapp" target="_blank"
-         href="https://wa.me/254759222512?text=FEATURED%20PROPERTY:%20Kitengela%2050x100">
-         Enquire Instantly
-      </a>
+      <iframe
+        src="https://www.google.com/maps?q=Kitengela,Kenya&output=embed"
+        width="100%"
+        height="220"
+        style="border:0;border-radius:10px"
+        loading="lazy"
+      ></iframe>
+      <a
+        class="btn whatsapp"
+        target="_blank"
+        href="https://wa.me/254759222512?text=FEATURED%20PROPERTY:%20Kitengela%2050x100"
+        >Enquire Instantly</a
+      >
       <small>⭐ Paid Featured Listing</small>
     </div>
   </div>
@@ -195,7 +357,11 @@ small{color:#666}
 <section id="list">
   <h2>List Property (Sell Faster)</h2>
   <form action="https://api.web3forms.com/submit" method="POST">
-    <input type="hidden" name="access_key" value="8949f955-6dc3-40ef-937d-593bf6235c1e">
+    <input
+      type="hidden"
+      name="access_key"
+      value="8949f955-6dc3-40ef-937d-593bf6235c1e"
+    />
     <select name="role" required>
       <option value="">I am a…</option>
       <option>Landlord / Owner</option>
@@ -209,9 +375,9 @@ small{color:#666}
       <option>Apartment</option>
       <option>Rooms</option>
     </select>
-    <input name="location" placeholder="Location" required>
-    <input name="price" placeholder="Price (KES)" required>
-    <input name="phone" placeholder="Phone / WhatsApp" required>
+    <input name="location" placeholder="Location" required />
+    <input name="price" placeholder="Price (KES)" required />
+    <input name="phone" placeholder="Phone / WhatsApp" required />
     <textarea name="description" placeholder="Utilities, access roads, views"></textarea>
     <button class="btn" type="submit">Submit Property</button>
   </form>
@@ -220,14 +386,20 @@ small{color:#666}
 <section id="search">
   <h2>Find Property Fast</h2>
   <div class="grid">
-    <select><option>Property Type</option></select>
-    <select><option>Buy / Rent / Lease</option></select>
-    <input placeholder="Location">
-    <input placeholder="Budget (KES)">
-    <a class="btn whatsapp" target="_blank"
-       href="https://wa.me/254759222512?text=PROPERTY%20SEARCH%20REQUEST">
-       Search via WhatsApp
-    </a>
+    <select>
+      <option>Property Type</option>
+    </select>
+    <select>
+      <option>Buy / Rent / Lease</option>
+    </select>
+    <input placeholder="Location" />
+    <input placeholder="Budget (KES)" />
+    <a
+      class="btn whatsapp"
+      target="_blank"
+      href="https://wa.me/254759222512?text=PROPERTY%20SEARCH%20REQUEST"
+      >Search via WhatsApp</a
+    >
   </div>
 </section>
 
@@ -250,7 +422,9 @@ small{color:#666}
 </section>
 
 <div class="float">
-  <a class="whatsapp-float" href="https://wa.me/254759222512" target="_blank">WhatsApp</a>
+  <a class="whatsapp-float" href="https://wa.me/254759222512" target="_blank"
+    >WhatsApp</a
+  >
   <a class="call-float" href="tel:+254759222512">Call</a>
   <a class="email-float" href="mailto:homesinvest2@gmail.com">Email</a>
 </div>
@@ -259,6 +433,58 @@ small{color:#666}
   <p>© 2026 HomesInvest Kenya — All Rights Reserved</p>
 </footer>
 
+<script>
+  (function () {
+    const slides = document.querySelectorAll(".slideshow-card");
+    const prevBtn = document.getElementById("prev-slide");
+    const nextBtn = document.getElementById("next-slide");
+    let currentIndex = 0;
+    let timer;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle("active", i === index);
+      });
+      currentIndex = index;
+    }
+
+    function nextSlide() {
+      let nextIndex = currentIndex + 1;
+      if (nextIndex >= slides.length) nextIndex = 0;
+      showSlide(nextIndex);
+    }
+
+    function prevSlideFn() {
+      let prevIndex = currentIndex - 1;
+      if (prevIndex < 0) prevIndex = slides.length - 1;
+      showSlide(prevIndex);
+    }
+
+    function startTimer() {
+      timer = setInterval(nextSlide, 5000);
+    }
+
+    function resetTimer() {
+      clearInterval(timer);
+      startTimer();
+    }
+
+    prevBtn.addEventListener("click", () => {
+      prevSlideFn();
+      resetTimer();
+    });
+
+    nextBtn.addEventListener("click", () => {
+      nextSlide();
+      resetTimer();
+    });
+
+    // Initialize
+    showSlide(currentIndex);
+    startTimer();
+  })();
+</script>
+
 </body>
-    </html>
+  </html>
   

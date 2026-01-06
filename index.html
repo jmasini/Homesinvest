@@ -352,23 +352,91 @@ small {
 </section>
 
 <section id="search">
-  <h2>Find Property Fast</h2>
-  <div class="grid">
-    <select>
-      <option>Property Type</option>
+  <h2>Get Your Property</h2>
+  <form id="propertyForm">
+    <label>Type of Property:</label>
+    <select id="propertyType">
+      <option>House</option>
+      <option>Apartment</option>
+      <option>Land</option>
+      <option>Commercial</option>
     </select>
-    <select>
-      <option>Buy / Rent / Lease</option>
+
+    <label>Transaction Type:</label>
+    <select id="transactionType">
+      <option>Buy</option>
+      <option>Sell</option>
+      <option>Rent</option>
+      <option>Lease</option>
+      <option>Letting</option>
     </select>
-    <input placeholder="Location" />
-    <input placeholder="Budget (KES)" />
-    <a
-      class="btn whatsapp"
-      target="_blank"
-      href="https://wa.me/254759222512?text=PROPERTY%20SEARCH%20REQUEST"
-      >Search via WhatsApp</a
-    >
-  </div>
+
+    <label>Location Needed:</label>
+    <input type="text" id="location" placeholder="e.g. Nairobi, Westlands" />
+
+    <label>Price Budget (KES):</label>
+    <input type="number" id="budget" />
+
+    <label>Telephone:</label>
+    <input type="tel" id="telephone" />
+
+    <label>WhatsApp Number:</label>
+    <input type="tel" id="whatsapp" />
+
+    <!-- WhatsApp Option -->
+    <button type="button" onclick="openWhatsApp()">Submit via WhatsApp</button>
+
+    <!-- Call Option -->
+    <a href="tel:+254759222512">
+      <button type="button">Call Us</button>
+    </a>
+
+    <!-- Email Option -->
+    <a id="emailLink" href="#">
+      <button type="button" onclick="openEmail()">Email Us</button>
+    </a>
+  </form>
+
+  <script>
+    function openWhatsApp() {
+      const type = document.getElementById("propertyType").value;
+      const transaction = document.getElementById("transactionType").value;
+      const location = document.getElementById("location").value;
+      const budget = document.getElementById("budget").value;
+      const telephone = document.getElementById("telephone").value;
+      const whatsapp = document.getElementById("whatsapp").value;
+
+      const message = `Property Request:
+Type: ${type}
+Transaction: ${transaction}
+Location: ${location}
+Budget: KES ${budget}
+Telephone: ${telephone}
+WhatsApp: ${whatsapp}`;
+
+      window.open(`https://wa.me/254759222512?text=${encodeURIComponent(message)}`, "_blank");
+    }
+
+    function openEmail() {
+      const type = document.getElementById("propertyType").value;
+      const transaction = document.getElementById("transactionType").value;
+      const location = document.getElementById("location").value;
+      const budget = document.getElementById("budget").value;
+      const telephone = document.getElementById("telephone").value;
+      const whatsapp = document.getElementById("whatsapp").value;
+
+      const subject = "Property Request Submission";
+      const body = `Property Request:%0D%0A
+Type: ${type}%0D%0A
+Transaction: ${transaction}%0D%0A
+Location: ${location}%0D%0A
+Budget: KES ${budget}%0D%0A
+Telephone: ${telephone}%0D%0A
+WhatsApp: ${whatsapp}`;
+
+      window.location.href = `mailto:homesinvest2@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+    }
+  </script>
 </section>
 
 <section>
@@ -455,4 +523,3 @@ small {
 
 </body>
   </html>
-                        

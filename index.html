@@ -142,31 +142,31 @@ input, select, textarea {
   background: #005bbb;
 }
 
-/* Riverside Slideshow Styles */
+/* Riverside Single Image Slideshow Styles */
 .gallery-wrapper {
   position: relative;
   overflow: hidden;
   border-radius: 16px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: auto;
 }
-.slideshow-card {
+
+.slideshow-slide {
   display: none;
-  padding: 15px 0;
   text-align: center;
+}
+
+.slideshow-slide.active {
+  display: block;
   animation: fadeIn 1s ease forwards;
 }
-.slideshow-card.active {
-  display: block;
-}
-.slideshow-card img {
-  width: 30%;
-  max-width: 300px;
-  margin: 0 5px;
-  border-radius: 10px;
-  vertical-align: middle;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+
+.slideshow-slide img {
+  width: 100%;
+  max-height: 450px;
   object-fit: cover;
-  height: 180px;
+  border-radius: 12px;
 }
 
 /* Navigation arrows */
@@ -178,6 +178,8 @@ input, select, textarea {
   justify-content: space-between;
   transform: translateY(-50%);
   pointer-events: none;
+  padding: 0 15px;
+  box-sizing: border-box;
 }
 .slideshow-nav button {
   pointer-events: all;
@@ -185,7 +187,7 @@ input, select, textarea {
   border: none;
   color: #fff;
   font-size: 28px;
-  padding: 5px 15px;
+  padding: 8px 14px;
   border-radius: 50%;
   cursor: pointer;
   transition: background 0.3s ease;
@@ -194,10 +196,14 @@ input, select, textarea {
   background: #003f7f;
 }
 
-/* Fade in animation */
+/* Fade animation */
 @keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 footer {
@@ -238,87 +244,49 @@ small {
 <section id="riverside">
   <h2>🏙️ Riverside Nairobi – 2 Bedroom Furnished Apartment (To Let)</h2>
 
-  <!-- Image Gallery -->
+  <!-- Single Image Slideshow -->
   <div class="gallery-wrapper" aria-live="polite" aria-atomic="true">
-    <div class="slideshow-card active">
-      <img
-        src="Riverside-sitting.jpg"
-        loading="lazy"
-        alt="Spacious living room with modern furniture in Riverside Nairobi apartment"
-      />
-      <img
-        src="Riverside-dinning.jpg"
-        loading="lazy"
-        alt="Dining area with elegant setup in Riverside Nairobi apartment"
-      />
-      <img
-        src="Riverside-Tv.jpg"
-        loading="lazy"
-        alt="TV lounge with cozy seating in Riverside Nairobi apartment"
-      />
+    <div class="slideshow-slide active">
+      <img src="Riverside-sitting.jpg" loading="lazy" alt="Spacious living room with modern furniture in Riverside Nairobi apartment" />
     </div>
-    <div class="slideshow-card">
-      <img
-        src="Riverside-kitchen.jpg"
-        loading="lazy"
-        alt="Modern fitted kitchen in Riverside Nairobi apartment"
-      />
-      <img
-        src="Riverside-workarea.jpg"
-        loading="lazy"
-        alt="Dedicated work area in Riverside Nairobi apartment"
-      />
-      <img
-        src="Riverside-restarea.jpg"
-        loading="lazy"
-        alt="Relaxation corner in Riverside Nairobi apartment"
-      />
+    <div class="slideshow-slide">
+      <img src="Riverside-dinning.jpg" loading="lazy" alt="Dining area with elegant setup in Riverside Nairobi apartment" />
     </div>
-    <div class="slideshow-card">
-      <img
-        src="Riverside-bedwindow.jpg"
-        loading="lazy"
-        alt="Ensuite bedroom with large window in Riverside Nairobi apartment"
-      />
-      <img
-        src="Riverside-bed3.jpg"
-        loading="lazy"
-        alt="Second furnished bedroom in Riverside Nairobi apartment"
-      />
-      <img
-        src="Riverside-bed4.jpg"
-        loading="lazy"
-        alt="Bedroom with stylish decor in Riverside Nairobi apartment"
-      />
+    <div class="slideshow-slide">
+      <img src="Riverside-Tv.jpg" loading="lazy" alt="TV lounge with cozy seating in Riverside Nairobi apartment" />
     </div>
-    <div class="slideshow-card">
-      <img
-        src="Riverside-washroom.jpg"
-        loading="lazy"
-        alt="Modern washroom in Riverside Nairobi apartment"
-      />
-      <img
-        src="Riverside-Gym.jpg"
-        loading="lazy"
-        alt="Fully equipped gym in Riverside Nairobi apartment complex"
-      />
-      <img
-        src="Riverside-porch.jpg"
-        loading="lazy"
-        alt="Balcony with outdoor seating in Riverside Nairobi apartment"
-      />
+    <div class="slideshow-slide">
+      <img src="Riverside-kitchen.jpg" loading="lazy" alt="Modern fitted kitchen in Riverside Nairobi apartment" />
     </div>
-    <div class="slideshow-card">
-      <img
-        src="Riverside-views.jpg"
-        loading="lazy"
-        alt="Scenic views from Riverside Nairobi apartment"
-      />
-      <img
-        src="Riverside-openview.jpg"
-        loading="lazy"
-        alt="Open view from Riverside Nairobi apartment"
-      />
+    <div class="slideshow-slide">
+      <img src="Riverside-workarea.jpg" loading="lazy" alt="Dedicated work area in Riverside Nairobi apartment" />
+    </div>
+    <div class="slideshow-slide">
+      <img src="Riverside-restarea.jpg" loading="lazy" alt="Relaxation corner in Riverside Nairobi apartment" />
+    </div>
+    <div class="slideshow-slide">
+      <img src="Riverside-bedwindow.jpg" loading="lazy" alt="Ensuite bedroom with large window in Riverside Nairobi apartment" />
+    </div>
+    <div class="slideshow-slide">
+      <img src="Riverside-bed3.jpg" loading="lazy" alt="Second furnished bedroom in Riverside Nairobi apartment" />
+    </div>
+    <div class="slideshow-slide">
+      <img src="Riverside-bed4.jpg" loading="lazy" alt="Bedroom with stylish decor in Riverside Nairobi apartment" />
+    </div>
+    <div class="slideshow-slide">
+      <img src="Riverside-washroom.jpg" loading="lazy" alt="Modern washroom in Riverside Nairobi apartment" />
+    </div>
+    <div class="slideshow-slide">
+      <img src="Riverside-Gym.jpg" loading="lazy" alt="Fully equipped gym in Riverside Nairobi apartment complex" />
+    </div>
+    <div class="slideshow-slide">
+      <img src="Riverside-porch.jpg" loading="lazy" alt="Balcony with outdoor seating in Riverside Nairobi apartment" />
+    </div>
+    <div class="slideshow-slide">
+      <img src="Riverside-views.jpg" loading="lazy" alt="Scenic views from Riverside Nairobi apartment" />
+    </div>
+    <div class="slideshow-slide">
+      <img src="Riverside-openview.jpg" loading="lazy" alt="Open view from Riverside Nairobi apartment" />
     </div>
 
     <!-- Navigation buttons -->
@@ -422,9 +390,9 @@ small {
 </section>
 
 <div class="float">
-  <a class="whatsapp-float" href="https://wa.me/254759222512" target="_blank"
-    >WhatsApp</a
-  >
+  <a class="whatsapp-float" href="https://wa.me/254759222512" target="_blank">
+    WhatsApp
+  </a>
   <a class="call-float" href="tel:+254759222512">Call</a>
   <a class="email-float" href="mailto:homesinvest2@gmail.com">Email</a>
 </div>
@@ -435,7 +403,7 @@ small {
 
 <script>
   (function () {
-    const slides = document.querySelectorAll(".slideshow-card");
+    const slides = document.querySelectorAll(".slideshow-slide");
     const prevBtn = document.getElementById("prev-slide");
     const nextBtn = document.getElementById("next-slide");
     let currentIndex = 0;
@@ -487,4 +455,4 @@ small {
 
 </body>
   </html>
-  
+                        
